@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D82777AC-249B-4F6F-9D71-9B20F90AE69A}</ProjectGuid>
+    <ProjectGuid>{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AGAT.LocoDispatcher.Data</RootNamespace>
-    <AssemblyName>AGAT.LocoDispatcher.Data</AssemblyName>
+    <RootNamespace>AGAT.LocoDispatcher.RailData</RootNamespace>
+    <AssemblyName>AGAT.LocoDispatcher.RailData</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,20 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Models\CheckpointEvent.cs" />
-    <Compile Include="Models\EmergencyModel.cs" />
-    <Compile Include="Models\LocoShiftEvent.cs" />
-    <Compile Include="Models\MoveEventBase.cs" />
-    <Compile Include="Models\StartModelEvent.cs" />
-    <Compile Include="Models\StopMoveEvent.cs" />
+    <Compile Include="DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\BaseEventRepository.cs" />
-    <Compile Include="Repositories\CheckpointEventRepository.cs" />
-    <Compile Include="Repositories\EmergencyRepository.cs" />
-    <Compile Include="Repositories\ShiftRepository.cs" />
-    <Compile Include="Repositories\StartEventRepository.cs" />
-    <Compile Include="Repositories\StopEventRepository.cs" />
+    <Compile Include="Models\BaseCoord.cs" />
+    <Compile Include="Models\Carriage.cs" />
+    <Compile Include="Models\Coord.cs" />
+    <Compile Include="Models\Park.cs" />
+    <Compile Include="Models\Rail.cs" />
+    <Compile Include="Models\RoutePlate.cs" />
+    <Compile Include="Repositories\RailsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -74,10 +69,6 @@
     <ProjectReference Include="..\AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj">
       <Project>{54feba75-21e8-4f43-8f5f-d260c17350bf}</Project>
       <Name>AGAT.LocoDispatcher.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AGAT.LocoDispatcher.Constants\AGAT.LocoDispatcher.Constants.csproj">
-      <Project>{920C7FBE-E96D-4283-BA81-C3D8AC337946}</Project>
-      <Name>AGAT.LocoDispatcher.Constants</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

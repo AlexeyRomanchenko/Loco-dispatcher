@@ -2,6 +2,8 @@
 using AGAT.LocoDispatcher.Data.Repositories.RailRepositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core;
+using System.Data.SqlClient;
 using System.Web.Http;
 
 namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
@@ -22,6 +24,10 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
                 {
                     var rails = repository.GetById(id);
                     return rails;
+                }
+                catch (EntityCommandExecutionException ex)
+                {
+                    throw ex;
                 }
                 catch (Exception ex)
                 {

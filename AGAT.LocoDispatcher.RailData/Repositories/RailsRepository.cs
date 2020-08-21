@@ -1,11 +1,10 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
 using AGAT.LocoDispatcher.Data.Models.Rails;
+using AGAT.LocoDispatcher.RailData;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.Data.Repositories.RailRepositories
 {
@@ -17,7 +16,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories.RailRepositories
             {
                 try
                 {
-                    using (DatabaseContext db = new DatabaseContext())
+                    using (DataContext db = new DataContext())
                     {
                         db.Rails.Add(rail);
                         db.SaveChanges();
@@ -39,11 +38,15 @@ namespace AGAT.LocoDispatcher.Data.Repositories.RailRepositories
             {
                 try
                 {
-                    using (DatabaseContext db = new DatabaseContext())
+                    using (DataContext db = new DataContext())
                     {
                         var routes = db.Rails.Where(e => e.ParkId == id).Include(e => e.Coords).Include(e => e.Carriage).Include(e => e.RoutePlate).ToList();
                         return routes;
                     }
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    throw ex;
                 }
                 catch (Exception exception)
                 {

@@ -280,6 +280,10 @@
       <Project>{d82777ac-249b-4f6f-9d71-9b20f90ae69a}</Project>
       <Name>AGAT.LocoDispatcher.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.RailData\AGAT.LocoDispatcher.RailData.csproj">
+      <Project>{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}</Project>
+      <Name>AGAT.LocoDispatcher.RailData</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

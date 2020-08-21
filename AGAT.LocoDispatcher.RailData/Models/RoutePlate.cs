@@ -9,7 +9,6 @@ namespace AGAT.LocoDispatcher.Data.Models.Rails
         public  int Id { get; set; }
         public string Name { get; set; }
         public int RailId { get; set; }
-        [ForeignKey("RailId")]
         [Required]
         public Rail Rail { get; set; }
         public int X { get; set; }
