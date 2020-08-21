@@ -1,0 +1,134 @@
+[
+  {
+    "id": 115,
+    "code": "string",
+    "coord": {"X": 410, "Y": 60},
+    "angle": 0
+  },
+  {
+    "id": 1081,
+    "code": "string",
+    "coord": {"X": 790, "Y": 60},
+    "angle": 0
+  },
+  {
+    "id": 119,
+    "code": "string",
+    "coord": {"X": 410, "Y": 110},
+    "angle": 0
+  },
+  {
+    "id": 1082,
+    "code": "string",
+    "coord": {"X": 790, "Y": 110},
+    "angle": 0
+  },
+  {
+    "id": 129,
+    "code": "string",
+    "coord": {"X": 440, "Y": 140},
+    "angle": 0
+  },
+  {
+    "id": 114,
+    "code": "string",
+    "coord": {"X": 705, "Y": 140},
+    "angle": 0
+  },
+  {
+    "id": 1314,
+    "code": "string",
+    "coord": {"X": 470, "Y": 170},
+    "angle": 0
+  },
+  {
+    "id": 1104,
+    "code": "string",
+    "coord": {"X": 780, "Y": 170},
+    "angle": 0
+  },
+  {
+    "id": 1315,
+    "code": "string",
+    "coord": {"X": 490, "Y": 200},
+    "angle": 0
+  },
+  {
+    "id": 1105,
+    "code": "string",
+    "coord": {"X": 770, "Y": 200},
+    "angle": 0
+  },
+  {
+    "id": 123,
+    "code": "string",
+    "coord": {"X": 350, "Y": 140},
+    "angle": 0
+  },
+  {
+    "id": 11220,
+    "code": "string",
+    "coord": {"X": 770, "Y": 230},
+    "angle": 0
+  },
+  {
+    "id": 127,
+    "code": "string",
+    "coord": {"X": 470, "Y": 260},
+    "angle": 0
+  },
+  {
+    "id": 11221,
+    "code": "string",
+    "coord": {"X": 760, "Y": 260},
+    "angle": 0
+  },
+  {
+    "id": 13518,
+    "code": "string",
+    "coord": {"X": 655, "Y": 320},
+    "angle": 0
+  },
+  {
+    "id": 13511,
+    "code": "string",
+    "coord": {"X": 635, "Y": 350},
+    "angle": 0
+  },
+  {
+    "id": 1396,
+    "code": "string",
+    "coord": {"X": 745, "Y": 410},
+    "angle": 0
+  },
+  {
+    "id": 1397,
+    "code": "string",
+    "coord": {"X": 730, "Y": 440},
+    "angle": 0
+  },
+  {
+    "id": 1418,
+    "code": "string",
+    "coord": {"X": 710, "Y": 500},
+    "angle": 0
+  },
+  {
+    "id": 1419,
+    "code": "string",
+    "coord": {"X": 730, "Y": 530},
+    "angle": 0
+  },
+  {
+    "id": 106,
+    "code": "string",
+    "coord": {"X": 910, "Y": 70},
+    "angle": 0
+  },
+  {
+    "id": 10613,
+    "code": "string",
+    "coord": {"X": 1075, "Y": 50},
+    "angle": 0
+  }
+]

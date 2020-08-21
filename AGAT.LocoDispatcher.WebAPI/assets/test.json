@@ -1,0 +1,718 @@
+[
+  {
+    "status": false,
+    "startX": 200,
+    "startY": 30,
+    "coords": [
+      { "X": 230, "Y": 60 },
+      { "X": 330, "Y": 60 }
+    ],
+    "railCode": "string",
+    "id": 999117,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 330,
+    "startY": 60,
+    "coords": [{ "X": 380, "Y": 60 }],
+    "railCode": "string",
+    "id": 117115,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 380,
+    "startY": 60,
+    "coords": [
+      { "X": 800, "Y": 60 },
+      { "X": 830, "Y": 90 }
+    ],
+    "railCode": "1",
+    "id": 1,
+    "label": { "name": "1", "x": 579, "y": 40, "angle": 0 },
+    "carriage": { "x": 560, "y": 55, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 30,
+    "startY": 110,
+    "coords": [{ "X": 80, "Y": 110 }],
+    "railCode": "string",
+    "id": 999101,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 80,
+    "startY": 110,
+    "coords": [{ "X": 200, "Y": 110 }],
+    "railCode": "string",
+    "id": 101105,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 200,
+    "startY": 110,
+    "coords": [{ "X": 290, "Y": 110 }],
+    "railCode": "string",
+    "id": 105111,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 290,
+    "startY": 110,
+    "coords": [{ "X": 330, "Y": 110 }],
+    "railCode": "string",
+    "id": 111113,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 330,
+    "startY": 110,
+    "coords": [{ "X": 380, "Y": 110 }],
+    "railCode": "string",
+    "id": 113119,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 380,
+    "startY": 110,
+    "coords": [{ "X": 785, "Y": 110 }],
+    "railCode": "2",
+    "id": 2,
+    "label": { "name": "2", "x": 580, "y": 90, "angle": 0 },
+    "carriage": { "x": 560, "y": 105, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 785,
+    "startY": 110,
+    "coords": [
+      { "X": 810, "Y": 110 },
+      { "X": 830, "Y": 90 }
+    ],
+    "railCode": "string",
+    "id": 114108,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 830,
+    "startY": 90,
+    "coords": [{ "X": 890, "Y": 90 }],
+    "railCode": "string",
+    "id": 108104,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 890,
+    "startY": 90,
+    "coords": [{ "X": 940, "Y": 90 }],
+    "railCode": "string",
+    "id": 104102,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 940,
+    "startY": 90,
+    "coords": [{ "X": 1170, "Y": 90 }],
+    "railCode": "string",
+    "id": 102999,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 890,
+    "startY": 90,
+    "coords": [
+      { "X": 930, "Y": 50 },
+      { "X": 1090, "Y": 50 }
+    ],
+    "railCode": "13",
+    "id": 13,
+    "label": { "name": "13", "x": 1010, "y": 30, "angle": 0 },
+    "carriage": { "x": 1010, "y": 45, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 1090,
+    "startY": 50,
+    "coords": [
+      { "X": 1120, "Y": 20 },
+      { "X": 1170, "Y": 20 }
+    ],
+    "railCode": "string",
+    "id": 139991,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 1090,
+    "startY": 50,
+    "coords": [{ "X": 1170, "Y": 50 }],
+    "railCode": "string",
+    "id": 139992,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 20,
+    "startY": 100,
+    "coords": [
+      { "X": 30, "Y": 100 },
+      { "X": 30, "Y": 120 },
+      { "X": 20, "Y": 120 }
+    ],
+    "railCode": "string",
+    "id": 9991,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 330,
+    "startY": 60,
+    "coords": [{ "X": 380, "Y": 110 }],
+    "railCode": "string",
+    "id": 117119,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 380,
+    "startY": 60,
+    "coords": [{ "X": 330, "Y": 110 }],
+    "railCode": "string",
+    "id": 115113,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 380,
+    "startY": 110,
+    "coords": [{ "X": 410, "Y": 140 }],
+    "railCode": "string",
+    "id": 119129,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 410,
+    "startY": 140,
+    "coords": [
+      { "X": 720, "Y": 140 },
+      { "X": 750, "Y": 110 }
+    ],
+    "railCode": "3",
+    "id": 3,
+    "label": { "name": "3", "x": 580, "y": 120, "angle": 0 },
+    "carriage": { "x": 560, "y": 135, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 410,
+    "startY": 140,
+    "coords": [{ "X": 440, "Y": 170 }],
+    "railCode": "string",
+    "id": 129131,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 440,
+    "startY": 170,
+    "coords": [{ "X": 810, "Y": 170 }],
+    "railCode": "4",
+    "id": 4,
+    "label": { "name": "4", "x": 580, "y": 150, "angle": 0 },
+    "carriage": { "x": 560, "y": 165, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 810,
+    "startY": 170,
+    "coords": [{ "X": 890, "Y": 90 }],
+    "railCode": "string",
+    "id": 110104,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 440,
+    "startY": 170,
+    "coords": [
+      { "X": 470, "Y": 200 },
+      { "X": 780, "Y": 200 },
+      { "X": 810, "Y": 170 }
+    ],
+    "railCode": "5",
+    "id": 5,
+    "label": { "name": "5", "x": 580, "y": 180, "angle": 0 },
+    "carriage": { "x": 560, "y": 195, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 290,
+    "startY": 110,
+    "coords": [{ "X": 320, "Y": 140 }],
+    "railCode": "string",
+    "id": 111123,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 320,
+    "startY": 140,
+    "coords": [
+      { "X": 380, "Y": 140 },
+      { "X": 470, "Y": 230 },
+      { "X": 800, "Y": 230 }
+    ],
+    "railCode": "20",
+    "id": 20,
+    "label": { "name": "20", "x": 577, "y": 210, "angle": 0 },
+    "carriage": { "x": 560, "y": 225, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 800,
+    "startY": 230,
+    "coords": [{ "X": 940, "Y": 90 }],
+    "railCode": "string",
+    "id": 112102,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 320,
+    "startY": 140,
+    "coords": [{ "X": 380, "Y": 200 }],
+    "railCode": "string",
+    "id": 123125,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 380,
+    "startY": 200,
+    "coords": [{ "X": 440, "Y": 260 }],
+    "railCode": "string",
+    "id": 125127,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 440,
+    "startY": 260,
+    "coords": [
+      { "X": 770, "Y": 260 },
+      { "X": 800, "Y": 230 }
+    ],
+    "railCode": "21",
+    "id": 21,
+    "label": { "name": "21", "x": 577, "y": 240, "angle": 0 },
+    "carriage": { "x": 560, "y": 255, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 440,
+    "startY": 260,
+    "coords": [{ "X": 530, "Y": 350 }],
+    "railCode": "string",
+    "id": 127133,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 530,
+    "startY": 350,
+    "coords": [{ "X": 610, "Y": 350 }],
+    "railCode": "string",
+    "id": 133135,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 610,
+    "startY": 350,
+    "coords": [
+      { "X": 640, "Y": 320 },
+      { "X": 880, "Y": 320 }
+    ],
+    "railCode": "18",
+    "id": 18,
+    "label": { "name": "18", "x": 760, "y": 300, "angle": 0 },
+    "carriage": { "x": 780, "y": 315, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 890,
+    "startY": 330,
+    "coords": [
+      { "X": 880, "Y": 330 },
+      { "X": 880, "Y": 310 },
+      { "X": 890, "Y": 310 }
+    ],
+    "railCode": "string",
+    "id": 9992,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 610,
+    "startY": 350,
+    "coords": [{ "X": 785, "Y": 350 }],
+    "railCode": "11",
+    "id": 11,
+    "label": { "name": "11", "x": 695, "y": 330, "angle": 0 },
+    "carriage": { "x": 695, "y": 345, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 795,
+    "startY": 340,
+    "coords": [
+      { "X": 785, "Y": 340 },
+      { "X": 785, "Y": 360 },
+      { "X": 795, "Y": 360 }
+    ],
+    "railCode": "string",
+    "id": 9993,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 530,
+    "startY": 350,
+    "coords": [{ "X": 620, "Y": 440 }],
+    "railCode": "string",
+    "id": 133137,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 620,
+    "startY": 440,
+    "coords": [{ "X": 700, "Y": 440 }],
+    "railCode": "string",
+    "id": 137139,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 700,
+    "startY": 440,
+    "coords": [
+      { "X": 730, "Y": 410 },
+      { "X": 1030, "Y": 410 }
+    ],
+    "railCode": "6",
+    "id": 6,
+    "label": { "name": "6", "x": 830, "y": 390, "angle": 0 },
+    "carriage": { "x": 860, "y": 405, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 1040,
+    "startY": 400,
+    "coords": [
+      { "X": 1030, "Y": 400 },
+      { "X": 1030, "Y": 420 },
+      { "X": 1040, "Y": 420 }
+    ],
+    "railCode": "string",
+    "id": 9994,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 700,
+    "startY": 440,
+    "coords": [{ "X": 1030, "Y": 440 }],
+    "railCode": "7",
+    "id": 7,
+    "label": { "name": "7", "x": 830, "y": 420, "angle": 0 },
+    "carriage": { "x": 860, "y": 435, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 1040,
+    "startY": 430,
+    "coords": [
+      { "X": 1030, "Y": 430 },
+      { "X": 1030, "Y": 450 },
+      { "X": 1040, "Y": 450 }
+    ],
+    "railCode": "string",
+    "id": 9995,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 620,
+    "startY": 440,
+    "coords": [{ "X": 680, "Y": 500 }],
+    "railCode": "string",
+    "id": 137141,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 680,
+    "startY": 500,
+    "coords": [{ "X": 900, "Y": 500 }],
+    "railCode": "8",
+    "id": 8,
+    "label": { "name": "8", "x": 790, "y": 480, "angle": 0 },
+    "carriage": { "x": 810, "y": 495, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 910,
+    "startY": 490,
+    "coords": [
+      { "X": 900, "Y": 490 },
+      { "X": 900, "Y": 510 },
+      { "X": 910, "Y": 510 }
+    ],
+    "railCode": "string",
+    "id": 9996,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 680,
+    "startY": 500,
+    "coords": [
+      { "X": 710, "Y": 530 },
+      { "X": 900, "Y": 530 }
+    ],
+    "railCode": "9",
+    "id": 9,
+    "label": { "name": "9", "x": 790, "y": 510, "angle": 0 },
+    "carriage": { "x": 810, "y": 525, "angle": 0 }
+  },
+  {
+    "status": false,
+    "startX": 910,
+    "startY": 520,
+    "coords": [
+      { "X": 900, "Y": 520 },
+      { "X": 900, "Y": 540 },
+      { "X": 910, "Y": 540 }
+    ],
+    "railCode": "string",
+    "id": 9997,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 380,
+    "startY": 200,
+    "coords": [
+      { "X": 380, "Y": 240 },
+      { "X": 663, "Y": 523 }
+    ],
+    "railCode": "14",
+    "id": 14,
+    "label": { "name": "14", "x": 534, "y": 366, "angle": 45 },
+    "carriage": { "x": 700, "y": -104, "angle": 45 }
+  },
+  {
+    "status": false,
+    "startX": 675,
+    "startY": 520,
+    "coords": [
+      { "X": 670, "Y": 515 },
+      { "X": 655, "Y": 530 },
+      { "X": 660, "Y": 535 }
+    ],
+    "railCode": "string",
+    "id": 9998,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 200,
+    "startY": 110,
+    "coords": [{ "X": 230, "Y": 140 }],
+    "railCode": "string",
+    "id": 105107,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 230,
+    "startY": 140,
+    "coords": [{ "X": 363, "Y": 273 }],
+    "railCode": "15",
+    "id": 15,
+    "label": { "name": "15", "x": 308, "y": 191, "angle": 45 },
+    "carriage": { "x": 360, "y": -69, "angle": 45 }
+  },
+  {
+    "status": false,
+    "startX": 375,
+    "startY": 270,
+    "coords": [
+      { "X": 370, "Y": 265 },
+      { "X": 355, "Y": 280 },
+      { "X": 360, "Y": 285 }
+    ],
+    "railCode": "string",
+    "id": 9999,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 230,
+    "startY": 140,
+    "coords": [
+      { "X": 230, "Y": 190 },
+      { "X": 338, "Y": 298 }
+    ],
+    "railCode": "16",
+    "id": 16,
+    "label": { "name": "16", "x": 296, "y": 229, "angle": 45 },
+    "carriage": { "x": 360, "y": -33, "angle": 45 }
+  },
+  {
+    "status": false,
+    "startX": 350,
+    "startY": 295,
+    "coords": [
+      { "X": 345, "Y": 290 },
+      { "X": 330, "Y": 305 },
+      { "X": 335, "Y": 310 }
+    ],
+    "railCode": "string",
+    "id": 99910,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 80,
+    "startY": 110,
+    "coords": [{ "X": 110, "Y": 140 }],
+    "railCode": "string",
+    "id": 101103,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 110,
+    "startY": 140,
+    "coords": [{ "X": 223, "Y": 253 }],
+    "railCode": "17",
+    "id": 17,
+    "label": { "name": "17", "x": 173, "y": 175, "angle": 45 },
+    "carriage": { "x": 240, "y": 16, "angle": 45 }
+  },
+  {
+    "status": false,
+    "startX": 235,
+    "startY": 250,
+    "coords": [
+      { "X": 230, "Y": 245 },
+      { "X": 215, "Y": 260 },
+      { "X": 220, "Y": 265 }
+    ],
+    "railCode": "string",
+    "id": 99911,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 110,
+    "startY": 140,
+    "coords": [
+      { "X": 110, "Y": 190 },
+      { "X": 223, "Y": 303 }
+    ],
+    "railCode": "19",
+    "id": 19,
+    "label": { "name": "19", "x": 179, "y": 231, "angle": 45 },
+    "carriage": { "x": 280, "y": 51, "angle": 45 }
+  },
+  {
+    "status": false,
+    "startX": 235,
+    "startY": 300,
+    "coords": [
+      { "X": 230, "Y": 295 },
+      { "X": 215, "Y": 310 },
+      { "X": 220, "Y": 315 }
+    ],
+    "railCode": "string",
+    "id": 99912,
+    "label": null,
+    "carriage": null
+  },
+  {
+    "status": false,
+    "startX": 1090,
+    "startY": 375,
+    "coords": [
+      { "X": 860, "Y": 375 },
+      { "X": 860, "Y": 390 },
+      { "X": 1050, "Y": 390 },
+      { "X": 1050, "Y": 460 },
+      { "X": 860, "Y": 460 },
+      { "X": 860, "Y": 480 },
+      { "X": 920, "Y": 480 },
+      { "X": 920, "Y": 550 },
+      { "X": 860, "Y": 550 },
+      { "X": 860, "Y": 565 },
+      { "X": 1090, "Y": 565 }
+    ],
+    "railCode": "string",
+    "id": 999000,
+    "label": null,
+    "carriage": null
+  }
+]

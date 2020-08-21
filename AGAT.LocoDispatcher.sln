@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Parser", "AGAT.LocoDispatcher.Parser\AGAT.LocoDispatcher.Parser.csproj", "{60A9766E-A692-403A-83B3-1BADD9E0014B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Common", "AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj", "{54FEBA75-21E8-4F43-8F5F-D260C17350BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Constants", "AGAT.LocoDispatcher.Constants\AGAT.LocoDispatcher.Constants.csproj", "{920C7FBE-E96D-4283-BA81-C3D8AC337946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Data", "AGAT.LocoDispatcher.Data\AGAT.LocoDispatcher.Data.csproj", "{D82777AC-249B-4F6F-9D71-9B20F90AE69A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.WebAPI", "AGAT.LocoDispatcher.WebAPI\AGAT.LocoDispatcher.WebAPI.csproj", "{58D21610-B268-4DBB-B5D8-8E08938DD80D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60A9766E-A692-403A-83B3-1BADD9E0014B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A9766E-A692-403A-83B3-1BADD9E0014B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A9766E-A692-403A-83B3-1BADD9E0014B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A9766E-A692-403A-83B3-1BADD9E0014B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54FEBA75-21E8-4F43-8F5F-D260C17350BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54FEBA75-21E8-4F43-8F5F-D260C17350BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54FEBA75-21E8-4F43-8F5F-D260C17350BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54FEBA75-21E8-4F43-8F5F-D260C17350BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920C7FBE-E96D-4283-BA81-C3D8AC337946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920C7FBE-E96D-4283-BA81-C3D8AC337946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920C7FBE-E96D-4283-BA81-C3D8AC337946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920C7FBE-E96D-4283-BA81-C3D8AC337946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82777AC-249B-4F6F-9D71-9B20F90AE69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82777AC-249B-4F6F-9D71-9B20F90AE69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82777AC-249B-4F6F-9D71-9B20F90AE69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82777AC-249B-4F6F-9D71-9B20F90AE69A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D21610-B268-4DBB-B5D8-8E08938DD80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D21610-B268-4DBB-B5D8-8E08938DD80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D21610-B268-4DBB-B5D8-8E08938DD80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D21610-B268-4DBB-B5D8-8E08938DD80D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E76CE85-B39A-45DE-94A4-CE24551C23F5}
+	EndGlobalSection
+EndGlobal
