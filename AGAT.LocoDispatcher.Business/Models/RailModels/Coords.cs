@@ -1,15 +1,13 @@
-﻿using AGAT.LocoDispatcher.Common.Interfaces.Rails;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AGAT.LocoDispatcher.Data.Models.Rails
+namespace AGAT.LocoDispatcher.Business.Models.RailModels
 {
-    public class BaseCoord : ICoord
+    public class Coords
     {
-        public int Id { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
     }

@@ -1,19 +1,18 @@
-﻿using AGAT.LocoDispatcher.Data.Models.Rails;
-using AGAT.LocoDispatcher.Data.Repositories.RailRepositories;
+﻿using AGAT.LocoDispatcher.Business.Managers;
+using AGAT.LocoDispatcher.Business.Models.RailModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core;
-using System.Data.SqlClient;
 using System.Web.Http;
 
 namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
 {
     public class RailsController : ApiController
     {
-        private RailsRepository repository;
+        private RailsManager manager;
         public RailsController()
         {
-            repository = new RailsRepository();
+            manager = new RailsManager();
         }
         // GET: api/Rails/5
         public IEnumerable<Rail> Get(int id)
@@ -22,7 +21,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
             {
                 try
                 {
-                    var rails = repository.GetById(id);
+                    var rails = manager.GetRailsByParkId(id);
                     return rails;
                 }
                 catch (EntityCommandExecutionException ex)

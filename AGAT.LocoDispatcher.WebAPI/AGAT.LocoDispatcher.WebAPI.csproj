@@ -164,6 +164,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Main\RailsController.cs" />
+    <Compile Include="Controllers\Main\RoutesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -276,13 +277,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AGAT.LocoDispatcher.Data\AGAT.LocoDispatcher.Data.csproj">
-      <Project>{d82777ac-249b-4f6f-9d71-9b20f90ae69a}</Project>
-      <Name>AGAT.LocoDispatcher.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AGAT.LocoDispatcher.RailData\AGAT.LocoDispatcher.RailData.csproj">
-      <Project>{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}</Project>
-      <Name>AGAT.LocoDispatcher.RailData</Name>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.Business\AGAT.LocoDispatcher.Business.csproj">
+      <Project>{1d1acbe1-22ec-492c-922e-ee39b0241ecf}</Project>
+      <Name>AGAT.LocoDispatcher.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.WebAPI"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.RailData", "AGAT.LocoDispatcher.RailData\AGAT.LocoDispatcher.RailData.csproj", "{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.AsusDb", "AGAT.LocoDispatcher.AsusDb\AGAT.LocoDispatcher.AsusDb.csproj", "{408FB7D4-C533-41ED-B5F8-D4157F2D3024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Business", "AGAT.LocoDispatcher.Business\AGAT.LocoDispatcher.Business.csproj", "{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408FB7D4-C533-41ED-B5F8-D4157F2D3024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408FB7D4-C533-41ED-B5F8-D4157F2D3024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408FB7D4-C533-41ED-B5F8-D4157F2D3024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408FB7D4-C533-41ED-B5F8-D4157F2D3024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}</ProjectGuid>
+    <ProjectGuid>{408FB7D4-C533-41ED-B5F8-D4157F2D3024}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AGAT.LocoDispatcher.RailData</RootNamespace>
-    <AssemblyName>AGAT.LocoDispatcher.RailData</AssemblyName>
+    <RootNamespace>AGAT.LocoDispatcher.AsusDb</RootNamespace>
+    <AssemblyName>AGAT.LocoDispatcher.AsusDb</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,8 +43,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,32 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContext.cs" />
-    <Compile Include="Models\Carriage.cs" />
-    <Compile Include="Models\Coord.cs" />
-    <Compile Include="Models\Park.cs" />
-    <Compile Include="Models\Point.cs" />
-    <Compile Include="Models\Rail.cs" />
-    <Compile Include="Models\RoutePlate.cs" />
+    <Compile Include="AsusDbContext.cs" />
+    <Compile Include="Models\Assignment.cs" />
+    <Compile Include="Models\CarriageInfo.cs" />
+    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\StationPark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CarriageRepository.cs" />
-    <Compile Include="Repositories\PlateRepository.cs" />
-    <Compile Include="Repositories\PointRepository.cs" />
-    <Compile Include="Repositories\RailsRepository.cs" />
+    <Compile Include="Repositories\AssignmentRepository.cs" />
+    <Compile Include="Repositories\RouteRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj">
-      <Project>{54feba75-21e8-4f43-8f5f-d260c17350bf}</Project>
-      <Name>AGAT.LocoDispatcher.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
