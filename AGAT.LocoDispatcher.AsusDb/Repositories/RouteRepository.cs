@@ -9,13 +9,13 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
 {
     public class RouteRepository
     {
-        public IList<Route> GetByCode(int parkId, string code)
+        public IList<way> GetByCode(int parkId, string code)
         {
             if (!string.IsNullOrEmpty(code?.Trim()))
             {
-                using (AsusDbContext _db = new AsusDbContext())
+                using (asusEntities _db = new asusEntities())
                 {
-                    return _db.Routes.Where(e => e.ParkCode == code && e.ParkId == parkId).ToList();
+                    return _db.way.Where(e => e.num_prk == code && e.prk_id == parkId).ToList();
                 }
             }
             else

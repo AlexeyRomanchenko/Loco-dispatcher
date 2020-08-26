@@ -48,8 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\AssignmentManager.cs" />
+    <Compile Include="Managers\CarriageManager.cs" />
+    <Compile Include="Managers\LocoManager.cs" />
     <Compile Include="Managers\PointManager.cs" />
     <Compile Include="Managers\RailsManager.cs" />
+    <Compile Include="Managers\RoutesManager.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Locomotive.cs" />

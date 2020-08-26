@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.AsusDb"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Business", "AGAT.LocoDispatcher.Business\AGAT.LocoDispatcher.Business.csproj", "{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispather.AsusDb.UnitTests", "AGAT.LocoDispather.AsusDb.UnitTests\AGAT.LocoDispather.AsusDb.UnitTests.csproj", "{A082B620-5561-4CC0-AB61-8C4A449D6466}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1ACBE1-22EC-492C-922E-EE39B0241ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A082B620-5561-4CC0-AB61-8C4A449D6466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A082B620-5561-4CC0-AB61-8C4A449D6466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A082B620-5561-4CC0-AB61-8C4A449D6466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A082B620-5561-4CC0-AB61-8C4A449D6466}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

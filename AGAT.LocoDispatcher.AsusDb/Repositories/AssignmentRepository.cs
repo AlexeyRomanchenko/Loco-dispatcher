@@ -8,18 +8,18 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
 {
     public class AssignmentRepository
     {
-        private AsusDbContext context;
+        private asusEntities context;
         public AssignmentRepository()
         {
-            context = new AsusDbContext();
+            context = new  asusEntities();
         }
-        public async Task<IEnumerable<Assignment>> GetActiveAsync()
+        public async Task<IEnumerable<LokM_operWork>> GetActiveAsync()
         {
-            return await context.Assignments.Where(e => e.EndDate == null).ToListAsync();
+            return await context.LokM_operWork.Where(e => e.dt_end == null).ToListAsync();
         }
-        public async Task<IEnumerable<Assignment>> GetActiveByStationCodeAsync(string code)
+        public async Task<IEnumerable<LokM_operWork>> GetActiveByStationCodeAsync(string code)
         {
-            return await context.Assignments.Where(e => e.EndDate == null && e.Station == code).ToListAsync();
+            return await context.LokM_operWork.Where(e => e.dt_end == null && e.stanc == code).ToListAsync();
         }
     }
 }

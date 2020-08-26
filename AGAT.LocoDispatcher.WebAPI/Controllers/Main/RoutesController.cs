@@ -1,8 +1,11 @@
-﻿using System;
+﻿using AGAT.LocoDispatcher.Business.Managers;
+using AGAT.LocoDispatcher.Business.Models.RouteModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
@@ -10,22 +13,21 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
 {
     public class RoutesController : ApiController
     {
-        // GET: api/Routes
-        public IEnumerable<string> Get()
+        private RoutesManager _routesManager;
+        public RoutesController()
         {
-            return new string[] { "value1", "value2" };
+            _routesManager = new RoutesManager();
         }
 
-        // GET: api/Routes/5
-        public IHttpActionResult Get(string station)
+        public async Task<IHttpActionResult> Get(int id)
         {
             try
             {
                 string code = HttpContext.Current.Request.QueryString["code"];
-                if (!string.IsNullOrEmpty(station?.Trim()) && !string.IsNullOrEmpty(code?.Trim()))
+                if (id > 0)//!string.IsNullOrEmpty(station?.Trim()) && !string.IsNullOrEmpty(code?.Trim())
                 {
-                   // IEnumerable<Route> routes = await _routesManager.GetRoutesByParkCodeAsync(station, code);
-                    return Ok();//routes
+                    IEnumerable<Route> routes = await _routesManager.GetRoutesByParkCodeAsync(id.ToString(), code);
+                    return Ok(routes);//routes
                 }
                 else
                 {
@@ -36,21 +38,6 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
             {
                 return BadRequest(ex.Message);
             }
-        }
-
-        // POST: api/Routes
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Routes/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Routes/5
-        public void Delete(int id)
-        {
         }
     }
 }
