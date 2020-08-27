@@ -18,13 +18,13 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
             _locoManager = new LocoManager();
         }
         [HttpGet]
-        public async Task<IHttpActionResult> Get(string station)
+        public async Task<IHttpActionResult> Get(string id)
         {
             try
             {
                 string parkId = HttpContext.Current.Request.QueryString["parkId"];
                 int _parkId = Convert.ToInt32(parkId);
-                var locomotives = await _locoManager.GetActiveByStationAsync(station, _parkId);
+                var locomotives = await _locoManager.GetActiveByStationAsync(id, _parkId);
                 return Ok(locomotives);
             }
             catch (Exception ex)

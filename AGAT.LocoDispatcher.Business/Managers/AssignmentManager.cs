@@ -32,9 +32,27 @@ namespace AGAT.LocoDispatcher.Business.Managers
                     throw new ArgumentNullException("Код станции неопознан");
                 }
 
-                var _assignments = await repository.GetActiveByStationCodeAsync(code);
+                IEnumerable<AsusDb.Models.LokM_operWork> _assignments = await repository.GetActiveByStationCodeAsync(code);
+                List<AsusDb.Models.Assignment> _assignmentList = new List<AsusDb.Models.Assignment>();
+                foreach (var assignment in _assignments)
+                {
+                    AsusDb.Models.Assignment _assignment = new AsusDb.Models.Assignment
+                    {
+                    Id = assignment.lokM_operW_id,
+                    Station  = assignment.stanc,
+                    LocomotiveNumber = assignment.num_lok,
+                    SerialNumber = assignment.ser_lok,
+                    WorkCode = assignment.cod_work,
+                    PaymentCode = assignment.cod_opL,
+                    StartDate = assignment.dt_beg,
+                    EndDate = assignment.dt_end,
+                    InsertDate = assignment.dt_ins,
+                    AppliedCode = assignment.utv
+                    };
+                    _assignmentList.Add(_assignment);
+                }
                 IEnumerable<Assignment> assignments =
-                    Mapper.GetMapperInstance().Map<IEnumerable<Assignment>>(_assignments);
+                    Mapper.GetMapperInstance().Map<IEnumerable<Assignment>>(_assignmentList);
                 return assignments;
             }
             catch (Exception ex)

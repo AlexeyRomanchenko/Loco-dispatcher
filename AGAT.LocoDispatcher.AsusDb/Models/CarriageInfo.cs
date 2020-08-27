@@ -13,9 +13,9 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
         [Column("in_vgn")]
         public string Id { get; set; }
         [Column("way_id")]
-        public int RouteId { get; set; }
+        public int? RouteId { get; set; }
         [Column("ord_num")]
-        public short Order { get; set; }
+        public short? Order { get; set; }
         [Column("cod_sbs")]
         public string OwnerCode { get; set; }
         [Column("ves_gruz")]

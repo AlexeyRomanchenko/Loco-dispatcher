@@ -19,7 +19,8 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             try
             {
-                return await context.LocoShiftEvents.Where(e => e.EndShift == null && e.ESR == station).ToListAsync();
+                var shifts =  await context.LocoShiftEvents.Where(e => e.EndShift == null && e.ESR == station).ToListAsync();
+                return shifts;
             }
             catch (Exception ex)
             {

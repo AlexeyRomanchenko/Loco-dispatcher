@@ -12,9 +12,9 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Assignments
     public class AssignmentController : ApiController
     {
         private AssignmentManager manager;
-        public AssignmentController(AssignmentManager _manager)
+        public AssignmentController()
         {
-            manager = _manager;
+            manager = new AssignmentManager();
         }
         [HttpGet]
         public async Task<IEnumerable<Business.Models.Assignment>> Get()
@@ -22,9 +22,9 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Assignments
             return await manager.GetAsync();
         }
         [HttpGet]
-        public async Task<IEnumerable<Business.Models.Assignment>> Get(string code)
+        public async Task<IEnumerable<Business.Models.Assignment>> Get(string id)
         {
-            return await manager.GetByCodeAsync(code);
+            return await manager.GetByCodeAsync(id);
         }
     }
 }
