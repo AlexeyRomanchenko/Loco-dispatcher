@@ -109,9 +109,6 @@ MIT
 @angular/router
 MIT
 
-@aspnet/signalr
-Apache-2.0
-
 @pixi/accessibility
 MIT
 The MIT License
