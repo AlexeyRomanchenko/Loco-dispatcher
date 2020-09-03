@@ -46,10 +46,18 @@
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IProvider.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\Managers\IRailManager.cs" />
+    <Compile Include="Interfaces\Managers\IRouteManager.cs" />
     <Compile Include="Interfaces\Rails\ICoord.cs" />
     <Compile Include="Interfaces\Rails\IPark.cs" />
     <Compile Include="Interfaces\Rails\IRail.cs" />
+    <Compile Include="Models\Carriage.cs" />
+    <Compile Include="Models\Coords.cs" />
+    <Compile Include="Models\Rail.cs" />
+    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\RoutePlate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

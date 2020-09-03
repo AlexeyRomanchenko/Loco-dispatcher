@@ -1,0 +1,2449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="asusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.char_vag' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="char_vag">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="nod" Type="char" MaxLength="2" />
+          <Property Name="rod_v" Type="char" MaxLength="2" />
+          <Property Name="rod_v_pr" Type="char" MaxLength="1" />
+          <Property Name="usl_tip" Type="char" MaxLength="5" />
+          <Property Name="kol_os_v" Type="char" MaxLength="2" />
+          <Property Name="tip_park" Type="char" MaxLength="1" />
+          <Property Name="vid_v" Type="char" MaxLength="1" />
+          <Property Name="num_mar" Type="varchar" MaxLength="8" />
+          <Property Name="dni" Type="varchar" MaxLength="3" />
+          <Property Name="prizn_v" Type="tinyint" />
+          <Property Name="usl_cod_gr" Type="char" MaxLength="2" />
+          <Property Name="arenda" Type="char" MaxLength="1" />
+          <Property Name="intrv" Type="int" />
+          <Property Name="st_otpr_v" Type="varchar" MaxLength="6" />
+          <Property Name="dop_pogr_st" Type="char" MaxLength="5" />
+          <Property Name="dlbaz" Type="char" MaxLength="1" />
+          <Property Name="pr_ed" Type="char" MaxLength="1" />
+          <Property Name="PV_Lokm" Type="varchar" MaxLength="4" />
+          <Property Name="PV_Gruz" Type="varchar" MaxLength="4" />
+          <Property Name="PV_prS" Type="char" MaxLength="1" />
+          <Property Name="PV_KpsOtpr_id" Type="int" />
+          <Property Name="PV_AsusOtpr_id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'asus.dbo.chet_napr' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="chet_napr">
+          <Property Name="num_napr" Type="int" />
+          <Property Name="chetchik" Type="int" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.curr_sost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="curr_sost">
+          <Key>
+            <PropertyRef Name="sostav_id" />
+            <PropertyRef Name="stanc" />
+            <PropertyRef Name="vid_tr" />
+            <PropertyRef Name="razr_tr" />
+          </Key>
+          <Property Name="sostav_id" Type="int" Nullable="false" />
+          <Property Name="cod_sost" Type="char" MaxLength="2" />
+          <Property Name="st_prib" Type="char" MaxLength="6" />
+          <Property Name="st_otpr" Type="char" MaxLength="6" />
+          <Property Name="data_sost" Type="datetime" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="vid_tr" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="razr_tr" Type="tinyint" Nullable="false" />
+          <Property Name="stPos" Type="varchar" MaxLength="6" />
+          <Property Name="PV_cod" Type="char" MaxLength="2" />
+          <Property Name="PV_fio_perev" Type="nvarchar" MaxLength="50" />
+          <Property Name="PV_codPerev" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.data_sort' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="data_sort">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="nplf" />
+            <PropertyRef Name="nprz" />
+            <PropertyRef Name="npmr" />
+            <PropertyRef Name="nplf1" />
+            <PropertyRef Name="pto" />
+            <PropertyRef Name="usl_dl_v" />
+            <PropertyRef Name="ves_tr_v" />
+            <PropertyRef Name="ves_grz" />
+            <PropertyRef Name="brut" />
+            <PropertyRef Name="opv" />
+            <PropertyRef Name="pko" />
+            <PropertyRef Name="grpd_v" />
+            <PropertyRef Name="kateg" />
+            <PropertyRef Name="nom_act" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="nplf" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="nprz" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="npmr" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="nplf1" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="pto" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="way_id" Type="int" />
+          <Property Name="usl_dl_v" Type="smallint" Nullable="false" />
+          <Property Name="ves_tr_v" Type="smallint" Nullable="false" />
+          <Property Name="ves_grz" Type="smallint" Nullable="false" />
+          <Property Name="brut" Type="smallint" Nullable="false" />
+          <Property Name="opv" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="pko" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="grpd_v" Type="smallint" Nullable="false" />
+          <Property Name="kateg" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="sader" Type="smallint" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+          <Property Name="prikaz_id" Type="int" />
+          <Property Name="nom_act" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="osngr_id" Type="int" />
+          <Property Name="num" Type="smallint" />
+          <Property Name="kol_in_gr" Type="smallint" />
+          <Property Name="pr_gr" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="LokM_operWork">
+          <Key>
+            <PropertyRef Name="lokM_operW_id" />
+          </Key>
+          <Property Name="lokM_operW_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="lokm_workid" Type="int" Nullable="false" />
+          <Property Name="num_lok" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ser_lok" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="cod_work" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="cod_opL" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="dt_beg" Type="datetime" />
+          <Property Name="dt_end" Type="datetime" />
+          <Property Name="dt_ins" Type="datetime" />
+          <Property Name="utv" Type="int" />
+        </EntityType>
+        <EntityType Name="lokomot">
+          <Key>
+            <PropertyRef Name="lok_id" />
+          </Key>
+          <Property Name="train_id" Type="int" />
+          <Property Name="ser_lok" Type="char" MaxLength="3" />
+          <Property Name="num_lok" Type="varchar" MaxLength="9" />
+          <Property Name="vid_sled" Type="char" MaxLength="1" />
+          <Property Name="time_brig" Type="datetime" />
+          <Property Name="time_depo" Type="datetime" />
+          <Property Name="fam_m" Type="nvarchar" MaxLength="20" />
+          <Property Name="priz_lok" Type="char" MaxLength="1" />
+          <Property Name="lok_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+          <Property Name="tr2_id" Type="int" />
+          <Property Name="id_per" Type="int" />
+          <Property Name="tab_m" Type="varchar" MaxLength="5" />
+          <Property Name="dor_prip" Type="varchar" MaxLength="4" />
+          <Property Name="kod_sost" Type="char" MaxLength="2" />
+          <Property Name="time_s" Type="varchar" MaxLength="4" />
+          <Property Name="time_205" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.lokomot_LDIS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="lokomot_LDIS">
+          <Key>
+            <PropertyRef Name="num_train" />
+          </Key>
+          <Property Name="ser_lok" Type="char" MaxLength="3" />
+          <Property Name="num_lok" Type="varchar" MaxLength="9" />
+          <Property Name="vid_sled" Type="char" MaxLength="1" />
+          <Property Name="time_brig" Type="datetime" />
+          <Property Name="time_depo" Type="datetime" />
+          <Property Name="fam_m" Type="varchar" MaxLength="15" />
+          <Property Name="priz_lok" Type="char" MaxLength="1" />
+          <Property Name="num_train" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ind_s" Type="char" MaxLength="11" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.lokomot_ssps' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="lokomot_ssps">
+          <Key>
+            <PropertyRef Name="lok_id" />
+          </Key>
+          <Property Name="lok_id" Type="int" Nullable="false" />
+          <Property Name="cod_polz" Type="varchar" MaxLength="2" />
+          <Property Name="serija" Type="varchar" MaxLength="12" />
+          <Property Name="nomer" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="oper_gr">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="sost" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="vid_r" Type="char" MaxLength="1" />
+          <Property Name="num_tr" Type="varchar" MaxLength="6" />
+          <Property Name="date_prib" Type="datetime" />
+          <Property Name="date_pereadr" Type="datetime" />
+          <Property Name="fio_uved" Type="nvarchar" MaxLength="50" />
+          <Property Name="date_uved" Type="datetime" />
+          <Property Name="date_rask" Type="datetime" />
+          <Property Name="date_pod" Type="datetime" />
+          <Property Name="date_osv" Type="datetime" />
+          <Property Name="date_vigr" Type="datetime" />
+          <Property Name="date_sdv" Type="datetime" />
+          <Property Name="date_pogr" Type="datetime" />
+          <Property Name="date_ubor" Type="datetime" />
+          <Property Name="cod_gr_op" Type="varchar" MaxLength="2" />
+          <Property Name="pr_op" Type="varchar" MaxLength="2" />
+          <Property Name="lokom" Type="char" MaxLength="1" />
+          <Property Name="pr_pod" Type="bit" />
+          <Property Name="prim" Type="varchar" MaxLength="20" />
+          <Property Name="prik_id" Type="int" />
+          <Property Name="num_241" Type="int" Nullable="false" />
+          <Property Name="num_242" Type="int" Nullable="false" />
+          <Property Name="pr_end" Type="int" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="id_zad" Type="int" />
+          <Property Name="date_tvk" Type="datetime" />
+          <Property Name="date_rast" Type="datetime" />
+          <Property Name="date_tlg" Type="datetime" />
+          <Property Name="date_predv_ub" Type="datetime" />
+          <Property Name="date_post_kont" Type="datetime" />
+          <Property Name="date_snat_kont" Type="datetime" />
+          <Property Name="date_got_ubor" Type="datetime" />
+          <Property Name="prim_opl" Type="varchar" MaxLength="2" />
+          <Property Name="prim_oper" Type="varchar" MaxLength="50" />
+          <Property Name="pam_id" Type="int" />
+          <Property Name="date_vigr_XML" Type="datetime" />
+          <Property Name="date_pogr_XML" Type="datetime" />
+          <Property Name="lokMw_id" Type="int" />
+          <Property Name="prim_243" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.oper_rem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="oper_rem">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="oper_rem_id" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="tip" Type="char" MaxLength="2" />
+          <Property Name="uwed" Type="char" MaxLength="2" />
+          <Property Name="cod" Type="varchar" MaxLength="3" />
+          <Property Name="data" Type="datetime" />
+          <Property Name="family" Type="nvarchar" MaxLength="100" />
+          <Property Name="pr_ut" Type="char" MaxLength="1" />
+          <Property Name="beg_rem" Type="datetime" />
+          <Property Name="modern" Type="varchar" MaxLength="50" />
+          <Property Name="in_vgn_new" Type="varchar" MaxLength="8" />
+          <Property Name="dop_inf_ns" Type="nvarchar" MaxLength="100" />
+          <Property Name="oper_rem_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'asus.dbo.oper_v_sader' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="oper_v_sader">
+          <Property Name="in_vgn" Type="char" MaxLength="8" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+          <Property Name="st_nazn" Type="varchar" MaxLength="6" />
+          <Property Name="cod_sobst" Type="nvarchar" MaxLength="50" />
+          <Property Name="date_prib" Type="datetime" />
+          <Property Name="date_tlg" Type="datetime" />
+          <Property Name="number_tlg" Type="varchar" MaxLength="5" />
+          <Property Name="date_zad" Type="datetime" />
+          <Property Name="number_zad" Type="varchar" MaxLength="5" />
+          <Property Name="number_aof" Type="varchar" MaxLength="5" />
+          <Property Name="date_otm_zad" Type="datetime" />
+          <Property Name="number_otm_zad" Type="varchar" MaxLength="5" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.osmotr' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="osmotr">
+          <Key>
+            <PropertyRef Name="tr_rem_id" />
+          </Key>
+          <Property Name="tr_rem_id" Type="int" Nullable="false" />
+          <Property Name="otv" Type="char" MaxLength="1" />
+          <Property Name="family" Type="nvarchar" MaxLength="60" />
+          <Property Name="gol_vag" Type="char" MaxLength="8" />
+          <Property Name="ord_num" Type="smallint" />
+        </EntityType>
+        <EntityType Name="park">
+          <Key>
+            <PropertyRef Name="prk_id" />
+          </Key>
+          <Property Name="num_prk" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="name_park_l" Type="nvarchar" MaxLength="30" />
+          <Property Name="name_park_r" Type="nvarchar" MaxLength="50" />
+          <Property Name="tip_prk" Type="tinyint" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="prk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sort" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.rem_brig' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="rem_brig">
+          <Key>
+            <PropertyRef Name="stanc" />
+          </Key>
+          <Property Name="fio" Type="nvarchar" MaxLength="60" />
+          <Property Name="tip" Type="char" MaxLength="1" />
+          <Property Name="rem_smen_id" Type="int" />
+          <Property Name="num" Type="int" />
+          <Property Name="park" Type="varchar" MaxLength="2" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rem_smen">
+          <Key>
+            <PropertyRef Name="rem_smen_id" />
+          </Key>
+          <Property Name="fio" Type="nvarchar" MaxLength="60" />
+          <Property Name="date_pr" Type="datetime" />
+          <Property Name="login" Type="varchar" MaxLength="25" />
+          <Property Name="rem_smen_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.rem_spec_vag' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="rem_spec_vag">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="stanc" />
+            <PropertyRef Name="date_c" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="reason" Type="nvarchar" MaxLength="60" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="date_c" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rem_vag">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="vid_r" Type="char" MaxLength="4" />
+          <Property Name="ind_s" Type="char" MaxLength="11" />
+          <Property Name="num_train" Type="varchar" MaxLength="6" />
+          <Property Name="data_prib" Type="datetime" />
+          <Property Name="vid_v" Type="char" MaxLength="1" />
+          <Property Name="rod_v" Type="char" MaxLength="2" />
+          <Property Name="data_postr" Type="datetime" />
+          <Property Name="vid_rp" Type="char" MaxLength="1" />
+          <Property Name="data_rp" Type="datetime" />
+          <Property Name="place_rp" Type="varchar" MaxLength="6" />
+          <Property Name="cod_sbs" Type="char" MaxLength="2" />
+          <Property Name="grup" Type="char" MaxLength="4" />
+          <Property Name="sost" Type="char" MaxLength="2" />
+          <Property Name="place_remf" Type="varchar" MaxLength="6" />
+          <Property Name="vc1353" Type="smallint" />
+          <Property Name="vc1354" Type="smallint" />
+          <Property Name="belong" Type="varchar" MaxLength="2" />
+          <Property Name="tr_rem_id" Type="int" />
+          <Property Name="tip_br" Type="tinyint" />
+          <Property Name="disloc" Type="char" MaxLength="4" />
+          <Property Name="place_wh" Type="nvarchar" MaxLength="15" />
+          <Property Name="cod_rem" Type="char" MaxLength="1" />
+          <Property Name="stanc" Type="varchar" MaxLength="6" />
+          <Property Name="vid_br" Type="tinyint" />
+          <Property Name="st_destn" Type="varchar" MaxLength="6" />
+          <Property Name="vc1352" Type="smallint" />
+        </EntityType>
+        <EntityType Name="rezerv">
+          <Key>
+            <PropertyRef Name="rezerv_id" />
+          </Key>
+          <Property Name="rezerv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kod_rez" Type="char" MaxLength="1" />
+          <Property Name="data_ot" Type="datetime" />
+          <Property Name="index_rez" Type="char" MaxLength="11" />
+          <Property Name="num_pr_rez" Type="nvarchar" MaxLength="11" />
+          <Property Name="date_pr_rez" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sostav">
+          <Key>
+            <PropertyRef Name="sostav_id" />
+          </Key>
+          <Property Name="sostav_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="way_id" Type="int" />
+          <Property Name="ind_s" Type="char" MaxLength="11" />
+          <Property Name="tip_s" Type="char" MaxLength="1" />
+          <Property Name="por_gr" Type="char" MaxLength="1" />
+          <Property Name="usl_dl_s" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ves_s" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="prikr_s" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="negab_s" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ziwn_s" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="mar_s" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ohr_s" Type="char" MaxLength="1" />
+          <Property Name="tara_s" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="netto_s" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="otv_pt" Type="char" MaxLength="2" />
+          <Property Name="otv_ot" Type="char" MaxLength="2" />
+          <Property Name="num_vag_h" Type="char" MaxLength="8" />
+          <Property Name="num_vag_t" Type="char" MaxLength="8" />
+          <Property Name="pv_p" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="pv_o" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="pr_razl" Type="int" Nullable="false" />
+          <Property Name="zvk_tr" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.spesl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="spesl">
+          <Key>
+            <PropertyRef Name="mplf" />
+            <PropertyRef Name="head" />
+          </Key>
+          <Property Name="way_id" Type="int" />
+          <Property Name="mplf" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="head" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.stanz' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="stanz">
+          <Key>
+            <PropertyRef Name="num_stan" />
+            <PropertyRef Name="name_stan_r" />
+            <PropertyRef Name="name_stan_l" />
+            <PropertyRef Name="num_stan_osn" />
+            <PropertyRef Name="vid" />
+            <PropertyRef Name="napr1" />
+            <PropertyRef Name="napr2" />
+          </Key>
+          <Property Name="num_stan" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="name_stan_r" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name_stan_l" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="nod" Type="char" MaxLength="2" />
+          <Property Name="num_stan_osn" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="vid" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="napr1" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="napr2" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="num_stan6" Type="varchar" MaxLength="6" />
+          <Property Name="num_stan_KPS" Type="varchar" MaxLength="6" />
+          <Property Name="num_stan_osn_KPS" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="train">
+          <Key>
+            <PropertyRef Name="train_id" />
+          </Key>
+          <Property Name="train_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sostav_id" Type="int" />
+          <Property Name="cod_per" Type="varchar" MaxLength="6" />
+          <Property Name="num_train" Type="varchar" MaxLength="6" />
+          <Property Name="priz_spis" Type="char" MaxLength="1" />
+          <Property Name="data_tr" Type="datetime" />
+          <Property Name="face" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="train_rem">
+          <Key>
+            <PropertyRef Name="tr_rem_id" />
+          </Key>
+          <Property Name="tr_rem_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vid" Type="char" MaxLength="1" />
+          <Property Name="ind_s" Type="char" MaxLength="11" />
+          <Property Name="num_train" Type="varchar" MaxLength="6" />
+          <Property Name="data_op" Type="datetime" />
+          <Property Name="pr_to" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'asus.dbo.vag_kont' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vag_kont">
+          <Property Name="nom_kont" Type="varchar" MaxLength="11" />
+          <Property Name="nom_otpk" Type="varchar" MaxLength="20" />
+          <Property Name="way" Type="char" MaxLength="5" />
+          <Property Name="arenda" Type="char" MaxLength="2" />
+          <Property Name="ks" Type="char" MaxLength="2" />
+          <Property Name="npmr" Type="smallint" />
+          <Property Name="nplf" Type="char" MaxLength="5" />
+          <Property Name="st_otpr" Type="varchar" MaxLength="6" />
+          <Property Name="st_destn" Type="varchar" MaxLength="6" />
+          <Property Name="cod_grpl" Type="char" MaxLength="4" />
+          <Property Name="name_pol_kont" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_otpr" Type="nvarchar" MaxLength="50" />
+          <Property Name="cod_gruz" Type="char" MaxLength="5" />
+          <Property Name="cod_garm_gruz" Type="varchar" MaxLength="9" />
+          <Property Name="massa_kont" Type="int" />
+          <Property Name="num_tr" Type="varchar" MaxLength="4" />
+          <Property Name="date_pr" Type="datetime" />
+          <Property Name="sost" Type="char" MaxLength="2" />
+          <Property Name="in_vgn" Type="varchar" MaxLength="8" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.vag_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vag_list">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="ves" />
+            <PropertyRef Name="vag_id" />
+            <PropertyRef Name="ves_tara" />
+            <PropertyRef Name="vid_r_sdv" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="primech" Type="nvarchar" MaxLength="6" />
+          <Property Name="cod_gr" Type="varchar" MaxLength="8" />
+          <Property Name="cod_grp" Type="varchar" MaxLength="4" />
+          <Property Name="ves" Type="int" Nullable="false" />
+          <Property Name="vag_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="st_pereh" Type="varchar" MaxLength="60" />
+          <Property Name="cod_str" Type="varchar" MaxLength="3" />
+          <Property Name="sposob_opr_m" Type="nvarchar" MaxLength="50" />
+          <Property Name="kont" Type="varchar" MaxLength="5" />
+          <Property Name="max_negab" Type="varchar" MaxLength="4" />
+          <Property Name="num_marsh" Type="varchar" MaxLength="2" />
+          <Property Name="ves_tara" Type="smallint" Nullable="false" />
+          <Property Name="marsh" Type="varchar" MaxLength="1" />
+          <Property Name="num_por241" Type="int" />
+          <Property Name="num_por242" Type="int" />
+          <Property Name="punkt_vigr" Type="nvarchar" MaxLength="50" />
+          <Property Name="vid_r_sdv" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="sapod_raskr" Type="char" MaxLength="1" />
+          <Property Name="otmetki" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.vag_oper' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vag_oper">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="op_id" />
+          </Key>
+          <Property Name="in_vgn" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="way_id" Type="int" />
+          <Property Name="ind_s" Type="varchar" MaxLength="11" />
+          <Property Name="data_op" Type="datetime" />
+          <Property Name="op_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vagon">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="way_id" Type="int" />
+          <Property Name="ord_num" Type="smallint" />
+          <Property Name="sostav_id" Type="int" />
+          <Property Name="rezerv_id" Type="int" />
+          <Property Name="priz_k" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="cod_sbs" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="rolik" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ves_gruz" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="st_destn" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="cod_gruz" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="cod_grpl" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="mach" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="cod_prk" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="negab_vg" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="plomb" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="knt_stn" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="knt_ktn" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="srok" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="pogr_st" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tara" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="prim" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="privat" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.vagon_204' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vagon_204">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="god_p" Type="char" MaxLength="2" />
+          <Property Name="st_pogr" Type="varchar" MaxLength="6" />
+          <Property Name="st_arenda" Type="varchar" MaxLength="6" />
+          <Property Name="st_prp" Type="varchar" MaxLength="6" />
+          <Property Name="str_sv" Type="nvarchar" MaxLength="5" />
+          <Property Name="prim" Type="varchar" MaxLength="50" />
+          <Property Name="remont" Type="varchar" MaxLength="12" />
+          <Property Name="ost_prob" Type="varchar" MaxLength="8" />
+          <Property Name="tara" Type="varchar" MaxLength="4" />
+          <Property Name="grpd" Type="varchar" MaxLength="4" />
+          <Property Name="etsng" Type="varchar" MaxLength="6" />
+          <Property Name="kd" Type="varchar" MaxLength="3" />
+          <Property Name="rsv" Type="varchar" MaxLength="15" />
+          <Property Name="sv" Type="nvarchar" MaxLength="15" />
+          <Property Name="usl_dl" Type="varchar" MaxLength="3" />
+          <Property Name="priv_204" Type="char" MaxLength="1" />
+          <Property Name="nrp" Type="nvarchar" MaxLength="11" />
+          <Property Name="vrv" Type="nvarchar" MaxLength="35" />
+          <Property Name="ksA" Type="varchar" MaxLength="6" />
+          <Property Name="nsA" Type="nvarchar" MaxLength="10" />
+          <Property Name="npA" Type="nvarchar" MaxLength="50" />
+          <Property Name="dtA" Type="varchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'asus.dbo.vagon_pogr_otbor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vagon_pogr_otbor">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="date_check" />
+            <PropertyRef Name="godn" />
+            <PropertyRef Name="station" />
+            <PropertyRef Name="vagon_pogr_otbor_id" />
+          </Key>
+          <Property Name="in_vgn" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="date_check" Type="datetime" Nullable="false" />
+          <Property Name="godn" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="route" Type="varchar" MaxLength="1" />
+          <Property Name="rw_dest" Type="varchar" MaxLength="5" />
+          <Property Name="code_godn_gr" Type="varchar" MaxLength="5" />
+          <Property Name="fio" Type="nvarchar" MaxLength="60" />
+          <Property Name="note" Type="nvarchar" MaxLength="100" />
+          <Property Name="station" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="id_z" Type="int" />
+          <Property Name="type" Type="smallint" />
+          <Property Name="vagon_pogr_otbor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="way">
+          <Key>
+            <PropertyRef Name="way_id" />
+          </Key>
+          <Property Name="way_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="num_prk" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="num_way" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="name_way" Type="char" MaxLength="15" />
+          <Property Name="long_way" Type="smallint" />
+          <Property Name="weight_way" Type="int" />
+          <Property Name="lng_sum" Type="int" Nullable="false" />
+          <Property Name="ves_sum" Type="int" Nullable="false" />
+          <Property Name="blk_way" Type="smallint" Nullable="false" />
+          <Property Name="kvo_vgn" Type="smallint" Nullable="false" />
+          <Property Name="grup_way" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="pr_way" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="pr_otv" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="prk_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__curr_sost__sosta">
+          <End Role="sostav" Type="Self.sostav" Multiplicity="1" />
+          <End Role="curr_sost" Type="Self.curr_sost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sostav">
+              <PropertyRef Name="sostav_id" />
+            </Principal>
+            <Dependent Role="curr_sost">
+              <PropertyRef Name="sostav_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_char_vag_vagon">
+          <End Role="vagon" Type="Self.vagon" Multiplicity="1" />
+          <End Role="char_vag" Type="Self.char_vag" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="vagon">
+              <PropertyRef Name="in_vgn" />
+            </Principal>
+            <Dependent Role="char_vag">
+              <PropertyRef Name="in_vgn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_data_sort_vagon">
+          <End Role="vagon" Type="Self.vagon" Multiplicity="1" />
+          <End Role="data_sort" Type="Self.data_sort" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vagon">
+              <PropertyRef Name="in_vgn" />
+            </Principal>
+            <Dependent Role="data_sort">
+              <PropertyRef Name="in_vgn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lokomot_ssps_lokomot">
+          <End Role="lokomot" Type="Self.lokomot" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="lokomot_ssps" Type="Self.lokomot_ssps" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="lokomot">
+              <PropertyRef Name="lok_id" />
+            </Principal>
+            <Dependent Role="lokomot_ssps">
+              <PropertyRef Name="lok_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lokomot_train">
+          <End Role="train" Type="Self.train" Multiplicity="0..1" />
+          <End Role="lokomot" Type="Self.lokomot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="train">
+              <PropertyRef Name="train_id" />
+            </Principal>
+            <Dependent Role="lokomot">
+              <PropertyRef Name="train_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_oper_gr_vagon">
+          <End Role="vagon" Type="Self.vagon" Multiplicity="1" />
+          <End Role="oper_gr" Type="Self.oper_gr" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="vagon">
+              <PropertyRef Name="in_vgn" />
+            </Principal>
+            <Dependent Role="oper_gr">
+              <PropertyRef Name="in_vgn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_osmotr_train_rem">
+          <End Role="train_rem" Type="Self.train_rem" Multiplicity="1" />
+          <End Role="osmotr" Type="Self.osmotr" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="train_rem">
+              <PropertyRef Name="tr_rem_id" />
+            </Principal>
+            <Dependent Role="osmotr">
+              <PropertyRef Name="tr_rem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rem_vag_train_rem">
+          <End Role="train_rem" Type="Self.train_rem" Multiplicity="0..1" />
+          <End Role="rem_vag" Type="Self.rem_vag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="train_rem">
+              <PropertyRef Name="tr_rem_id" />
+            </Principal>
+            <Dependent Role="rem_vag">
+              <PropertyRef Name="tr_rem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spesl_way">
+          <End Role="way" Type="Self.way" Multiplicity="0..1" />
+          <End Role="spesl" Type="Self.spesl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="way">
+              <PropertyRef Name="way_id" />
+            </Principal>
+            <Dependent Role="spesl">
+              <PropertyRef Name="way_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_train_sostav">
+          <End Role="sostav" Type="Self.sostav" Multiplicity="0..1" />
+          <End Role="train" Type="Self.train" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sostav">
+              <PropertyRef Name="sostav_id" />
+            </Principal>
+            <Dependent Role="train">
+              <PropertyRef Name="sostav_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vagon_rezerv">
+          <End Role="rezerv" Type="Self.rezerv" Multiplicity="0..1" />
+          <End Role="vagon" Type="Self.vagon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rezerv">
+              <PropertyRef Name="rezerv_id" />
+            </Principal>
+            <Dependent Role="vagon">
+              <PropertyRef Name="rezerv_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vagon_sostav">
+          <End Role="sostav" Type="Self.sostav" Multiplicity="0..1" />
+          <End Role="vagon" Type="Self.vagon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sostav">
+              <PropertyRef Name="sostav_id" />
+            </Principal>
+            <Dependent Role="vagon">
+              <PropertyRef Name="sostav_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vagon_way">
+          <End Role="way" Type="Self.way" Multiplicity="0..1" />
+          <End Role="vagon" Type="Self.vagon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="way">
+              <PropertyRef Name="way_id" />
+            </Principal>
+            <Dependent Role="vagon">
+              <PropertyRef Name="way_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_way_park">
+          <End Role="park" Type="Self.park" Multiplicity="1" />
+          <End Role="way" Type="Self.way" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="park">
+              <PropertyRef Name="prk_id" />
+            </Principal>
+            <Dependent Role="way">
+              <PropertyRef Name="prk_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="asusModelStoreContainer">
+          <EntitySet Name="LokM_operWork" EntityType="Self.LokM_operWork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lokomot" EntityType="Self.lokomot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="oper_gr" EntityType="Self.oper_gr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="park" EntityType="Self.park" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rem_smen" EntityType="Self.rem_smen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rem_vag" EntityType="Self.rem_vag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rezerv" EntityType="Self.rezerv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sostav" EntityType="Self.sostav" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="train" EntityType="Self.train" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="train_rem" EntityType="Self.train_rem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vagon" EntityType="Self.vagon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="way" EntityType="Self.way" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="char_vag" EntityType="Self.char_vag" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [char_vag].[in_vgn] AS [in_vgn], 
+    [char_vag].[nod] AS [nod], 
+    [char_vag].[rod_v] AS [rod_v], 
+    [char_vag].[rod_v_pr] AS [rod_v_pr], 
+    [char_vag].[usl_tip] AS [usl_tip], 
+    [char_vag].[kol_os_v] AS [kol_os_v], 
+    [char_vag].[tip_park] AS [tip_park], 
+    [char_vag].[vid_v] AS [vid_v], 
+    [char_vag].[num_mar] AS [num_mar], 
+    [char_vag].[dni] AS [dni], 
+    [char_vag].[prizn_v] AS [prizn_v], 
+    [char_vag].[usl_cod_gr] AS [usl_cod_gr], 
+    [char_vag].[arenda] AS [arenda], 
+    [char_vag].[intrv] AS [intrv], 
+    [char_vag].[st_otpr_v] AS [st_otpr_v], 
+    [char_vag].[dop_pogr_st] AS [dop_pogr_st], 
+    [char_vag].[dlbaz] AS [dlbaz], 
+    [char_vag].[pr_ed] AS [pr_ed], 
+    [char_vag].[PV_Lokm] AS [PV_Lokm], 
+    [char_vag].[PV_Gruz] AS [PV_Gruz], 
+    [char_vag].[PV_prS] AS [PV_prS], 
+    [char_vag].[PV_KpsOtpr_id] AS [PV_KpsOtpr_id], 
+    [char_vag].[PV_AsusOtpr_id] AS [PV_AsusOtpr_id]
+    FROM [dbo].[char_vag] AS [char_vag]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="curr_sost" EntityType="Self.curr_sost" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [curr_sost].[sostav_id] AS [sostav_id], 
+    [curr_sost].[cod_sost] AS [cod_sost], 
+    [curr_sost].[st_prib] AS [st_prib], 
+    [curr_sost].[st_otpr] AS [st_otpr], 
+    [curr_sost].[data_sost] AS [data_sost], 
+    [curr_sost].[stanc] AS [stanc], 
+    [curr_sost].[vid_tr] AS [vid_tr], 
+    [curr_sost].[razr_tr] AS [razr_tr], 
+    [curr_sost].[stPos] AS [stPos], 
+    [curr_sost].[PV_cod] AS [PV_cod], 
+    [curr_sost].[PV_fio_perev] AS [PV_fio_perev], 
+    [curr_sost].[PV_codPerev] AS [PV_codPerev]
+    FROM [dbo].[curr_sost] AS [curr_sost]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="data_sort" EntityType="Self.data_sort" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [data_sort].[in_vgn] AS [in_vgn], 
+    [data_sort].[nplf] AS [nplf], 
+    [data_sort].[nprz] AS [nprz], 
+    [data_sort].[npmr] AS [npmr], 
+    [data_sort].[nplf1] AS [nplf1], 
+    [data_sort].[pto] AS [pto], 
+    [data_sort].[way_id] AS [way_id], 
+    [data_sort].[usl_dl_v] AS [usl_dl_v], 
+    [data_sort].[ves_tr_v] AS [ves_tr_v], 
+    [data_sort].[ves_grz] AS [ves_grz], 
+    [data_sort].[brut] AS [brut], 
+    [data_sort].[opv] AS [opv], 
+    [data_sort].[pko] AS [pko], 
+    [data_sort].[grpd_v] AS [grpd_v], 
+    [data_sort].[kateg] AS [kateg], 
+    [data_sort].[sader] AS [sader], 
+    [data_sort].[stanc] AS [stanc], 
+    [data_sort].[prikaz_id] AS [prikaz_id], 
+    [data_sort].[nom_act] AS [nom_act], 
+    [data_sort].[osngr_id] AS [osngr_id], 
+    [data_sort].[num] AS [num], 
+    [data_sort].[kol_in_gr] AS [kol_in_gr], 
+    [data_sort].[pr_gr] AS [pr_gr]
+    FROM [dbo].[data_sort] AS [data_sort]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="lokomot_LDIS" EntityType="Self.lokomot_LDIS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [lokomot_LDIS].[ser_lok] AS [ser_lok], 
+    [lokomot_LDIS].[num_lok] AS [num_lok], 
+    [lokomot_LDIS].[vid_sled] AS [vid_sled], 
+    [lokomot_LDIS].[time_brig] AS [time_brig], 
+    [lokomot_LDIS].[time_depo] AS [time_depo], 
+    [lokomot_LDIS].[fam_m] AS [fam_m], 
+    [lokomot_LDIS].[priz_lok] AS [priz_lok], 
+    [lokomot_LDIS].[num_train] AS [num_train], 
+    [lokomot_LDIS].[ind_s] AS [ind_s], 
+    [lokomot_LDIS].[stanc] AS [stanc]
+    FROM [dbo].[lokomot_LDIS] AS [lokomot_LDIS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="lokomot_ssps" EntityType="Self.lokomot_ssps" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [lokomot_ssps].[lok_id] AS [lok_id], 
+    [lokomot_ssps].[cod_polz] AS [cod_polz], 
+    [lokomot_ssps].[serija] AS [serija], 
+    [lokomot_ssps].[nomer] AS [nomer]
+    FROM [dbo].[lokomot_ssps] AS [lokomot_ssps]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="oper_rem" EntityType="Self.oper_rem" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [oper_rem].[in_vgn] AS [in_vgn], 
+    [oper_rem].[tip] AS [tip], 
+    [oper_rem].[uwed] AS [uwed], 
+    [oper_rem].[cod] AS [cod], 
+    [oper_rem].[data] AS [data], 
+    [oper_rem].[family] AS [family], 
+    [oper_rem].[pr_ut] AS [pr_ut], 
+    [oper_rem].[beg_rem] AS [beg_rem], 
+    [oper_rem].[modern] AS [modern], 
+    [oper_rem].[in_vgn_new] AS [in_vgn_new], 
+    [oper_rem].[dop_inf_ns] AS [dop_inf_ns], 
+    [oper_rem].[oper_rem_id] AS [oper_rem_id]
+    FROM [dbo].[oper_rem] AS [oper_rem]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="osmotr" EntityType="Self.osmotr" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [osmotr].[tr_rem_id] AS [tr_rem_id], 
+    [osmotr].[otv] AS [otv], 
+    [osmotr].[family] AS [family], 
+    [osmotr].[gol_vag] AS [gol_vag], 
+    [osmotr].[ord_num] AS [ord_num]
+    FROM [dbo].[osmotr] AS [osmotr]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="rem_brig" EntityType="Self.rem_brig" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [rem_brig].[fio] AS [fio], 
+    [rem_brig].[tip] AS [tip], 
+    [rem_brig].[rem_smen_id] AS [rem_smen_id], 
+    [rem_brig].[num] AS [num], 
+    [rem_brig].[park] AS [park], 
+    [rem_brig].[stanc] AS [stanc]
+    FROM [dbo].[rem_brig] AS [rem_brig]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="rem_spec_vag" EntityType="Self.rem_spec_vag" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [rem_spec_vag].[in_vgn] AS [in_vgn], 
+    [rem_spec_vag].[reason] AS [reason], 
+    [rem_spec_vag].[stanc] AS [stanc], 
+    [rem_spec_vag].[date_c] AS [date_c]
+    FROM [dbo].[rem_spec_vag] AS [rem_spec_vag]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spesl" EntityType="Self.spesl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [spesl].[way_id] AS [way_id], 
+    [spesl].[mplf] AS [mplf], 
+    [spesl].[head] AS [head]
+    FROM [dbo].[spesl] AS [spesl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stanz" EntityType="Self.stanz" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [stanz].[num_stan] AS [num_stan], 
+    [stanz].[name_stan_r] AS [name_stan_r], 
+    [stanz].[name_stan_l] AS [name_stan_l], 
+    [stanz].[nod] AS [nod], 
+    [stanz].[num_stan_osn] AS [num_stan_osn], 
+    [stanz].[vid] AS [vid], 
+    [stanz].[napr1] AS [napr1], 
+    [stanz].[napr2] AS [napr2], 
+    [stanz].[num_stan6] AS [num_stan6], 
+    [stanz].[num_stan_KPS] AS [num_stan_KPS], 
+    [stanz].[num_stan_osn_KPS] AS [num_stan_osn_KPS]
+    FROM [dbo].[stanz] AS [stanz]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vag_list" EntityType="Self.vag_list" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vag_list].[in_vgn] AS [in_vgn], 
+    [vag_list].[primech] AS [primech], 
+    [vag_list].[cod_gr] AS [cod_gr], 
+    [vag_list].[cod_grp] AS [cod_grp], 
+    [vag_list].[ves] AS [ves], 
+    [vag_list].[vag_id] AS [vag_id], 
+    [vag_list].[st_pereh] AS [st_pereh], 
+    [vag_list].[cod_str] AS [cod_str], 
+    [vag_list].[sposob_opr_m] AS [sposob_opr_m], 
+    [vag_list].[kont] AS [kont], 
+    [vag_list].[max_negab] AS [max_negab], 
+    [vag_list].[num_marsh] AS [num_marsh], 
+    [vag_list].[ves_tara] AS [ves_tara], 
+    [vag_list].[marsh] AS [marsh], 
+    [vag_list].[num_por241] AS [num_por241], 
+    [vag_list].[num_por242] AS [num_por242], 
+    [vag_list].[punkt_vigr] AS [punkt_vigr], 
+    [vag_list].[vid_r_sdv] AS [vid_r_sdv], 
+    [vag_list].[sapod_raskr] AS [sapod_raskr], 
+    [vag_list].[otmetki] AS [otmetki]
+    FROM [dbo].[vag_list] AS [vag_list]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vag_oper" EntityType="Self.vag_oper" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vag_oper].[in_vgn] AS [in_vgn], 
+    [vag_oper].[way_id] AS [way_id], 
+    [vag_oper].[ind_s] AS [ind_s], 
+    [vag_oper].[data_op] AS [data_op], 
+    [vag_oper].[op_id] AS [op_id]
+    FROM [dbo].[vag_oper] AS [vag_oper]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vagon_204" EntityType="Self.vagon_204" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vagon_204].[in_vgn] AS [in_vgn], 
+    [vagon_204].[god_p] AS [god_p], 
+    [vagon_204].[st_pogr] AS [st_pogr], 
+    [vagon_204].[st_arenda] AS [st_arenda], 
+    [vagon_204].[st_prp] AS [st_prp], 
+    [vagon_204].[str_sv] AS [str_sv], 
+    [vagon_204].[prim] AS [prim], 
+    [vagon_204].[remont] AS [remont], 
+    [vagon_204].[ost_prob] AS [ost_prob], 
+    [vagon_204].[tara] AS [tara], 
+    [vagon_204].[grpd] AS [grpd], 
+    [vagon_204].[etsng] AS [etsng], 
+    [vagon_204].[kd] AS [kd], 
+    [vagon_204].[rsv] AS [rsv], 
+    [vagon_204].[sv] AS [sv], 
+    [vagon_204].[usl_dl] AS [usl_dl], 
+    [vagon_204].[priv_204] AS [priv_204], 
+    [vagon_204].[nrp] AS [nrp], 
+    [vagon_204].[vrv] AS [vrv], 
+    [vagon_204].[ksA] AS [ksA], 
+    [vagon_204].[nsA] AS [nsA], 
+    [vagon_204].[npA] AS [npA], 
+    [vagon_204].[dtA] AS [dtA]
+    FROM [dbo].[vagon_204] AS [vagon_204]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vagon_pogr_otbor" EntityType="Self.vagon_pogr_otbor" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vagon_pogr_otbor].[in_vgn] AS [in_vgn], 
+    [vagon_pogr_otbor].[date_check] AS [date_check], 
+    [vagon_pogr_otbor].[godn] AS [godn], 
+    [vagon_pogr_otbor].[route] AS [route], 
+    [vagon_pogr_otbor].[rw_dest] AS [rw_dest], 
+    [vagon_pogr_otbor].[code_godn_gr] AS [code_godn_gr], 
+    [vagon_pogr_otbor].[fio] AS [fio], 
+    [vagon_pogr_otbor].[note] AS [note], 
+    [vagon_pogr_otbor].[station] AS [station], 
+    [vagon_pogr_otbor].[id_z] AS [id_z], 
+    [vagon_pogr_otbor].[type] AS [type], 
+    [vagon_pogr_otbor].[vagon_pogr_otbor_id] AS [vagon_pogr_otbor_id]
+    FROM [dbo].[vagon_pogr_otbor] AS [vagon_pogr_otbor]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__curr_sost__sosta" Association="Self.FK__curr_sost__sosta">
+            <End Role="sostav" EntitySet="sostav" />
+            <End Role="curr_sost" EntitySet="curr_sost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_char_vag_vagon" Association="Self.FK_char_vag_vagon">
+            <End Role="vagon" EntitySet="vagon" />
+            <End Role="char_vag" EntitySet="char_vag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_data_sort_vagon" Association="Self.FK_data_sort_vagon">
+            <End Role="vagon" EntitySet="vagon" />
+            <End Role="data_sort" EntitySet="data_sort" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lokomot_ssps_lokomot" Association="Self.FK_lokomot_ssps_lokomot">
+            <End Role="lokomot" EntitySet="lokomot" />
+            <End Role="lokomot_ssps" EntitySet="lokomot_ssps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lokomot_train" Association="Self.FK_lokomot_train">
+            <End Role="train" EntitySet="train" />
+            <End Role="lokomot" EntitySet="lokomot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_oper_gr_vagon" Association="Self.FK_oper_gr_vagon">
+            <End Role="vagon" EntitySet="vagon" />
+            <End Role="oper_gr" EntitySet="oper_gr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_osmotr_train_rem" Association="Self.FK_osmotr_train_rem">
+            <End Role="train_rem" EntitySet="train_rem" />
+            <End Role="osmotr" EntitySet="osmotr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rem_vag_train_rem" Association="Self.FK_rem_vag_train_rem">
+            <End Role="train_rem" EntitySet="train_rem" />
+            <End Role="rem_vag" EntitySet="rem_vag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spesl_way" Association="Self.FK_spesl_way">
+            <End Role="way" EntitySet="way" />
+            <End Role="spesl" EntitySet="spesl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_train_sostav" Association="Self.FK_train_sostav">
+            <End Role="sostav" EntitySet="sostav" />
+            <End Role="train" EntitySet="train" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vagon_rezerv" Association="Self.FK_vagon_rezerv">
+            <End Role="rezerv" EntitySet="rezerv" />
+            <End Role="vagon" EntitySet="vagon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vagon_sostav" Association="Self.FK_vagon_sostav">
+            <End Role="sostav" EntitySet="sostav" />
+            <End Role="vagon" EntitySet="vagon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vagon_way" Association="Self.FK_vagon_way">
+            <End Role="way" EntitySet="way" />
+            <End Role="vagon" EntitySet="vagon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_way_park" Association="Self.FK_way_park">
+            <End Role="park" EntitySet="park" />
+            <End Role="way" EntitySet="way" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="asusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LokM_operWork">
+          <Key>
+            <PropertyRef Name="lokM_operW_id" />
+          </Key>
+          <Property Name="lokM_operW_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lokm_workid" Type="Int32" Nullable="false" />
+          <Property Name="num_lok" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ser_lok" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cod_work" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cod_opL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_beg" Type="DateTime" Precision="3" />
+          <Property Name="dt_end" Type="DateTime" Precision="3" />
+          <Property Name="dt_ins" Type="DateTime" Precision="3" />
+          <Property Name="utv" Type="Int32" />
+        </EntityType>
+        <EntityType Name="lokomot">
+          <Key>
+            <PropertyRef Name="lok_id" />
+          </Key>
+          <Property Name="train_id" Type="Int32" />
+          <Property Name="ser_lok" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="num_lok" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="vid_sled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="time_brig" Type="DateTime" Precision="3" />
+          <Property Name="time_depo" Type="DateTime" Precision="3" />
+          <Property Name="fam_m" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="priz_lok" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="lok_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="tr2_id" Type="Int32" />
+          <Property Name="id_per" Type="Int32" />
+          <Property Name="tab_m" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="dor_prip" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="kod_sost" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="time_s" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="time_205" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="lokomot_ssps" Relationship="Self.FK_lokomot_ssps_lokomot" FromRole="lokomot" ToRole="lokomot_ssps" />
+          <NavigationProperty Name="train" Relationship="Self.FK_lokomot_train" FromRole="lokomot" ToRole="train" />
+        </EntityType>
+        <EntityType Name="oper_gr">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="sost" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vid_r" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="num_tr" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="date_prib" Type="DateTime" Precision="3" />
+          <Property Name="date_pereadr" Type="DateTime" Precision="3" />
+          <Property Name="fio_uved" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date_uved" Type="DateTime" Precision="3" />
+          <Property Name="date_rask" Type="DateTime" Precision="3" />
+          <Property Name="date_pod" Type="DateTime" Precision="3" />
+          <Property Name="date_osv" Type="DateTime" Precision="3" />
+          <Property Name="date_vigr" Type="DateTime" Precision="3" />
+          <Property Name="date_sdv" Type="DateTime" Precision="3" />
+          <Property Name="date_pogr" Type="DateTime" Precision="3" />
+          <Property Name="date_ubor" Type="DateTime" Precision="3" />
+          <Property Name="cod_gr_op" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="pr_op" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="lokom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="pr_pod" Type="Boolean" />
+          <Property Name="prim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="prik_id" Type="Int32" />
+          <Property Name="num_241" Type="Int32" Nullable="false" />
+          <Property Name="num_242" Type="Int32" Nullable="false" />
+          <Property Name="pr_end" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="id_zad" Type="Int32" />
+          <Property Name="date_tvk" Type="DateTime" Precision="3" />
+          <Property Name="date_rast" Type="DateTime" Precision="3" />
+          <Property Name="date_tlg" Type="DateTime" Precision="3" />
+          <Property Name="date_predv_ub" Type="DateTime" Precision="3" />
+          <Property Name="date_post_kont" Type="DateTime" Precision="3" />
+          <Property Name="date_snat_kont" Type="DateTime" Precision="3" />
+          <Property Name="date_got_ubor" Type="DateTime" Precision="3" />
+          <Property Name="prim_opl" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="prim_oper" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pam_id" Type="Int32" />
+          <Property Name="date_vigr_XML" Type="DateTime" Precision="3" />
+          <Property Name="date_pogr_XML" Type="DateTime" Precision="3" />
+          <Property Name="lokMw_id" Type="Int32" />
+          <Property Name="prim_243" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="vagon" Relationship="Self.FK_oper_gr_vagon" FromRole="oper_gr" ToRole="vagon" />
+        </EntityType>
+        <EntityType Name="park">
+          <Key>
+            <PropertyRef Name="prk_id" />
+          </Key>
+          <Property Name="num_prk" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_park_l" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="name_park_r" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tip_prk" Type="Byte" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sort" Type="Int32" />
+          <NavigationProperty Name="way" Relationship="Self.FK_way_park" FromRole="park" ToRole="way" />
+        </EntityType>
+        <EntityType Name="rem_smen">
+          <Key>
+            <PropertyRef Name="rem_smen_id" />
+          </Key>
+          <Property Name="fio" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="date_pr" Type="DateTime" Precision="3" />
+          <Property Name="login" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="rem_smen_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="rem_vag">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vid_r" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="ind_s" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="num_train" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="data_prib" Type="DateTime" Precision="3" />
+          <Property Name="vid_v" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="rod_v" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="data_postr" Type="DateTime" Precision="3" />
+          <Property Name="vid_rp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="data_rp" Type="DateTime" Precision="3" />
+          <Property Name="place_rp" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="cod_sbs" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="grup" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="sost" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="place_remf" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="vc1353" Type="Int16" />
+          <Property Name="vc1354" Type="Int16" />
+          <Property Name="belong" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="tr_rem_id" Type="Int32" />
+          <Property Name="tip_br" Type="Byte" />
+          <Property Name="disloc" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="place_wh" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="cod_rem" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="vid_br" Type="Byte" />
+          <Property Name="st_destn" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="vc1352" Type="Int16" />
+          <NavigationProperty Name="train_rem" Relationship="Self.FK_rem_vag_train_rem" FromRole="rem_vag" ToRole="train_rem" />
+        </EntityType>
+        <EntityType Name="rezerv">
+          <Key>
+            <PropertyRef Name="rezerv_id" />
+          </Key>
+          <Property Name="rezerv_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kod_rez" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="data_ot" Type="DateTime" Precision="3" />
+          <Property Name="index_rez" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="num_pr_rez" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="date_pr_rez" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="vagon" Relationship="Self.FK_vagon_rezerv" FromRole="rezerv" ToRole="vagon" />
+        </EntityType>
+        <EntityType Name="sostav">
+          <Key>
+            <PropertyRef Name="sostav_id" />
+          </Key>
+          <Property Name="sostav_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="way_id" Type="Int32" />
+          <Property Name="ind_s" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="tip_s" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="por_gr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="usl_dl_s" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ves_s" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="prikr_s" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="negab_s" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ziwn_s" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mar_s" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ohr_s" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="tara_s" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="netto_s" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="otv_pt" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="otv_ot" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="num_vag_h" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="num_vag_t" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="pv_p" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pv_o" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pr_razl" Type="Int32" Nullable="false" />
+          <Property Name="zvk_tr" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="curr_sost" Relationship="Self.FK__curr_sost__sosta" FromRole="sostav" ToRole="curr_sost" />
+          <NavigationProperty Name="train" Relationship="Self.FK_train_sostav" FromRole="sostav" ToRole="train" />
+          <NavigationProperty Name="vagon" Relationship="Self.FK_vagon_sostav" FromRole="sostav" ToRole="vagon" />
+        </EntityType>
+        <EntityType Name="train">
+          <Key>
+            <PropertyRef Name="train_id" />
+          </Key>
+          <Property Name="train_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sostav_id" Type="Int32" />
+          <Property Name="cod_per" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="num_train" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="priz_spis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="data_tr" Type="DateTime" Precision="3" />
+          <Property Name="face" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="lokomot" Relationship="Self.FK_lokomot_train" FromRole="train" ToRole="lokomot" />
+          <NavigationProperty Name="sostav" Relationship="Self.FK_train_sostav" FromRole="train" ToRole="sostav" />
+        </EntityType>
+        <EntityType Name="train_rem">
+          <Key>
+            <PropertyRef Name="tr_rem_id" />
+          </Key>
+          <Property Name="tr_rem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vid" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ind_s" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="num_train" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="data_op" Type="DateTime" Precision="3" />
+          <Property Name="pr_to" Type="Int32" />
+          <NavigationProperty Name="rem_vag" Relationship="Self.FK_rem_vag_train_rem" FromRole="train_rem" ToRole="rem_vag" />
+          <NavigationProperty Name="osmotr" Relationship="Self.FK_osmotr_train_rem" FromRole="train_rem" ToRole="osmotr" />
+        </EntityType>
+        <EntityType Name="vagon">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="way_id" Type="Int32" />
+          <Property Name="ord_num" Type="Int16" />
+          <Property Name="sostav_id" Type="Int32" />
+          <Property Name="rezerv_id" Type="Int32" />
+          <Property Name="priz_k" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cod_sbs" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="rolik" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ves_gruz" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="st_destn" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cod_gruz" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cod_grpl" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mach" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="cod_prk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="negab_vg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="plomb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="knt_stn" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="knt_ktn" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="srok" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pogr_st" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tara" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="prim" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="privat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="oper_gr" Relationship="Self.FK_oper_gr_vagon" FromRole="vagon" ToRole="oper_gr" />
+          <NavigationProperty Name="rezerv" Relationship="Self.FK_vagon_rezerv" FromRole="vagon" ToRole="rezerv" />
+          <NavigationProperty Name="sostav" Relationship="Self.FK_vagon_sostav" FromRole="vagon" ToRole="sostav" />
+          <NavigationProperty Name="char_vag" Relationship="Self.FK_char_vag_vagon" FromRole="vagon" ToRole="char_vag" />
+          <NavigationProperty Name="data_sort" Relationship="Self.FK_data_sort_vagon" FromRole="vagon" ToRole="data_sort" />
+          <NavigationProperty Name="way" Relationship="Self.FK_vagon_way" FromRole="vagon" ToRole="way" />
+        </EntityType>
+        <EntityType Name="way">
+          <Key>
+            <PropertyRef Name="way_id" />
+          </Key>
+          <Property Name="way_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="num_prk" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="num_way" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="name_way" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="long_way" Type="Int16" />
+          <Property Name="weight_way" Type="Int32" />
+          <Property Name="lng_sum" Type="Int32" Nullable="false" />
+          <Property Name="ves_sum" Type="Int32" Nullable="false" />
+          <Property Name="blk_way" Type="Int16" Nullable="false" />
+          <Property Name="kvo_vgn" Type="Int16" Nullable="false" />
+          <Property Name="grup_way" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pr_way" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pr_otv" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="prk_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="park" Relationship="Self.FK_way_park" FromRole="way" ToRole="park" />
+          <NavigationProperty Name="vagon" Relationship="Self.FK_vagon_way" FromRole="way" ToRole="vagon" />
+          <NavigationProperty Name="spesl" Relationship="Self.FK_spesl_way" FromRole="way" ToRole="spesl" />
+        </EntityType>
+        <EntityType Name="char_vag">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="rod_v" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="rod_v_pr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="usl_tip" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="kol_os_v" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="tip_park" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="vid_v" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="num_mar" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="dni" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="prizn_v" Type="Byte" />
+          <Property Name="usl_cod_gr" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="arenda" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="intrv" Type="Int32" />
+          <Property Name="st_otpr_v" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="dop_pogr_st" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="dlbaz" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="pr_ed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PV_Lokm" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PV_Gruz" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PV_prS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PV_KpsOtpr_id" Type="Int32" />
+          <Property Name="PV_AsusOtpr_id" Type="Int32" />
+          <NavigationProperty Name="vagon" Relationship="Self.FK_char_vag_vagon" FromRole="char_vag" ToRole="vagon" />
+        </EntityType>
+        <EntityType Name="curr_sost">
+          <Key>
+            <PropertyRef Name="sostav_id" />
+            <PropertyRef Name="stanc" />
+            <PropertyRef Name="vid_tr" />
+            <PropertyRef Name="razr_tr" />
+          </Key>
+          <Property Name="sostav_id" Type="Int32" Nullable="false" />
+          <Property Name="cod_sost" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="st_prib" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="st_otpr" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="data_sost" Type="DateTime" Precision="3" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vid_tr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="razr_tr" Type="Byte" Nullable="false" />
+          <Property Name="stPos" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="PV_cod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PV_fio_perev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PV_codPerev" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="sostav" Relationship="Self.FK__curr_sost__sosta" FromRole="curr_sost" ToRole="sostav" />
+        </EntityType>
+        <EntityType Name="data_sort">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="nplf" />
+            <PropertyRef Name="nprz" />
+            <PropertyRef Name="npmr" />
+            <PropertyRef Name="nplf1" />
+            <PropertyRef Name="pto" />
+            <PropertyRef Name="usl_dl_v" />
+            <PropertyRef Name="ves_tr_v" />
+            <PropertyRef Name="ves_grz" />
+            <PropertyRef Name="brut" />
+            <PropertyRef Name="opv" />
+            <PropertyRef Name="pko" />
+            <PropertyRef Name="grpd_v" />
+            <PropertyRef Name="kateg" />
+            <PropertyRef Name="nom_act" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nplf" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nprz" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="npmr" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="nplf1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="pto" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="way_id" Type="Int32" />
+          <Property Name="usl_dl_v" Type="Int16" Nullable="false" />
+          <Property Name="ves_tr_v" Type="Int16" Nullable="false" />
+          <Property Name="ves_grz" Type="Int16" Nullable="false" />
+          <Property Name="brut" Type="Int16" Nullable="false" />
+          <Property Name="opv" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="pko" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="grpd_v" Type="Int16" Nullable="false" />
+          <Property Name="kateg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="sader" Type="Int16" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="prikaz_id" Type="Int32" />
+          <Property Name="nom_act" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="osngr_id" Type="Int32" />
+          <Property Name="num" Type="Int16" />
+          <Property Name="kol_in_gr" Type="Int16" />
+          <Property Name="pr_gr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="vagon" Relationship="Self.FK_data_sort_vagon" FromRole="data_sort" ToRole="vagon" />
+        </EntityType>
+        <EntityType Name="lokomot_LDIS">
+          <Key>
+            <PropertyRef Name="num_train" />
+          </Key>
+          <Property Name="ser_lok" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="num_lok" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="vid_sled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="time_brig" Type="DateTime" Precision="3" />
+          <Property Name="time_depo" Type="DateTime" Precision="3" />
+          <Property Name="fam_m" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="priz_lok" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="num_train" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ind_s" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="lokomot_ssps">
+          <Key>
+            <PropertyRef Name="lok_id" />
+          </Key>
+          <Property Name="lok_id" Type="Int32" Nullable="false" />
+          <Property Name="cod_polz" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="serija" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="nomer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="lokomot" Relationship="Self.FK_lokomot_ssps_lokomot" FromRole="lokomot_ssps" ToRole="lokomot" />
+        </EntityType>
+        <EntityType Name="oper_rem">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="oper_rem_id" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tip" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="uwed" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="cod" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="DateTime" Precision="3" />
+          <Property Name="family" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pr_ut" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="beg_rem" Type="DateTime" Precision="3" />
+          <Property Name="modern" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="in_vgn_new" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="dop_inf_ns" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="oper_rem_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="osmotr">
+          <Key>
+            <PropertyRef Name="tr_rem_id" />
+          </Key>
+          <Property Name="tr_rem_id" Type="Int32" Nullable="false" />
+          <Property Name="otv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="family" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="gol_vag" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ord_num" Type="Int16" />
+          <NavigationProperty Name="train_rem" Relationship="Self.FK_osmotr_train_rem" FromRole="osmotr" ToRole="train_rem" />
+        </EntityType>
+        <EntityType Name="rem_brig">
+          <Key>
+            <PropertyRef Name="stanc" />
+          </Key>
+          <Property Name="fio" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="tip" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="rem_smen_id" Type="Int32" />
+          <Property Name="num" Type="Int32" />
+          <Property Name="park" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rem_spec_vag">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="stanc" />
+            <PropertyRef Name="date_c" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="reason" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="stanc" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_c" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="spesl">
+          <Key>
+            <PropertyRef Name="mplf" />
+            <PropertyRef Name="head" />
+          </Key>
+          <Property Name="way_id" Type="Int32" />
+          <Property Name="mplf" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="head" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="way" Relationship="Self.FK_spesl_way" FromRole="spesl" ToRole="way" />
+        </EntityType>
+        <EntityType Name="stanz">
+          <Key>
+            <PropertyRef Name="num_stan" />
+            <PropertyRef Name="name_stan_r" />
+            <PropertyRef Name="name_stan_l" />
+            <PropertyRef Name="num_stan_osn" />
+            <PropertyRef Name="vid" />
+            <PropertyRef Name="napr1" />
+            <PropertyRef Name="napr2" />
+          </Key>
+          <Property Name="num_stan" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_stan_r" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_stan_l" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="num_stan_osn" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vid" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="napr1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="napr2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="num_stan6" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="num_stan_KPS" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="num_stan_osn_KPS" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vag_list">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="ves" />
+            <PropertyRef Name="vag_id" />
+            <PropertyRef Name="ves_tara" />
+            <PropertyRef Name="vid_r_sdv" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="primech" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="cod_gr" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="cod_grp" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="ves" Type="Int32" Nullable="false" />
+          <Property Name="vag_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="st_pereh" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cod_str" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="sposob_opr_m" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kont" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="max_negab" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="num_marsh" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ves_tara" Type="Int16" Nullable="false" />
+          <Property Name="marsh" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="num_por241" Type="Int32" />
+          <Property Name="num_por242" Type="Int32" />
+          <Property Name="punkt_vigr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vid_r_sdv" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sapod_raskr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="otmetki" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vag_oper">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="op_id" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="way_id" Type="Int32" />
+          <Property Name="ind_s" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="data_op" Type="DateTime" Precision="3" />
+          <Property Name="op_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="vagon_204">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="god_p" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="st_pogr" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="st_arenda" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="st_prp" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="str_sv" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="prim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="remont" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ost_prob" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="tara" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="grpd" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="etsng" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="kd" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="rsv" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="sv" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="usl_dl" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="priv_204" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="nrp" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="vrv" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="ksA" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="nsA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="npA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dtA" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vagon_pogr_otbor">
+          <Key>
+            <PropertyRef Name="in_vgn" />
+            <PropertyRef Name="date_check" />
+            <PropertyRef Name="godn" />
+            <PropertyRef Name="station" />
+            <PropertyRef Name="vagon_pogr_otbor_id" />
+          </Key>
+          <Property Name="in_vgn" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="date_check" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="godn" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="route" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="rw_dest" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="code_godn_gr" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="fio" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="station" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_z" Type="Int32" />
+          <Property Name="type" Type="Int16" />
+          <Property Name="vagon_pogr_otbor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_lokomot_ssps_lokomot">
+          <End Role="lokomot" Type="Self.lokomot" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="lokomot_ssps" Type="Self.lokomot_ssps" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="lokomot">
+              <PropertyRef Name="lok_id" />
+            </Principal>
+            <Dependent Role="lokomot_ssps">
+              <PropertyRef Name="lok_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lokomot_train">
+          <End Role="train" Type="Self.train" Multiplicity="0..1" />
+          <End Role="lokomot" Type="Self.lokomot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="train">
+              <PropertyRef Name="train_id" />
+            </Principal>
+            <Dependent Role="lokomot">
+              <PropertyRef Name="train_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_oper_gr_vagon">
+          <End Role="vagon" Type="Self.vagon" Multiplicity="1" />
+          <End Role="oper_gr" Type="Self.oper_gr" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="vagon">
+              <PropertyRef Name="in_vgn" />
+            </Principal>
+            <Dependent Role="oper_gr">
+              <PropertyRef Name="in_vgn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_way_park">
+          <End Role="park" Type="Self.park" Multiplicity="1" />
+          <End Role="way" Type="Self.way" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="park">
+              <PropertyRef Name="prk_id" />
+            </Principal>
+            <Dependent Role="way">
+              <PropertyRef Name="prk_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rem_vag_train_rem">
+          <End Role="train_rem" Type="Self.train_rem" Multiplicity="0..1" />
+          <End Role="rem_vag" Type="Self.rem_vag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="train_rem">
+              <PropertyRef Name="tr_rem_id" />
+            </Principal>
+            <Dependent Role="rem_vag">
+              <PropertyRef Name="tr_rem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vagon_rezerv">
+          <End Role="rezerv" Type="Self.rezerv" Multiplicity="0..1" />
+          <End Role="vagon" Type="Self.vagon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rezerv">
+              <PropertyRef Name="rezerv_id" />
+            </Principal>
+            <Dependent Role="vagon">
+              <PropertyRef Name="rezerv_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__curr_sost__sosta">
+          <End Role="sostav" Type="Self.sostav" Multiplicity="1" />
+          <End Role="curr_sost" Type="Self.curr_sost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sostav">
+              <PropertyRef Name="sostav_id" />
+            </Principal>
+            <Dependent Role="curr_sost">
+              <PropertyRef Name="sostav_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_train_sostav">
+          <End Role="sostav" Type="Self.sostav" Multiplicity="0..1" />
+          <End Role="train" Type="Self.train" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sostav">
+              <PropertyRef Name="sostav_id" />
+            </Principal>
+            <Dependent Role="train">
+              <PropertyRef Name="sostav_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vagon_sostav">
+          <End Role="sostav" Type="Self.sostav" Multiplicity="0..1" />
+          <End Role="vagon" Type="Self.vagon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sostav">
+              <PropertyRef Name="sostav_id" />
+            </Principal>
+            <Dependent Role="vagon">
+              <PropertyRef Name="sostav_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_osmotr_train_rem">
+          <End Role="train_rem" Type="Self.train_rem" Multiplicity="1" />
+          <End Role="osmotr" Type="Self.osmotr" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="train_rem">
+              <PropertyRef Name="tr_rem_id" />
+            </Principal>
+            <Dependent Role="osmotr">
+              <PropertyRef Name="tr_rem_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_char_vag_vagon">
+          <End Role="vagon" Type="Self.vagon" Multiplicity="1" />
+          <End Role="char_vag" Type="Self.char_vag" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="vagon">
+              <PropertyRef Name="in_vgn" />
+            </Principal>
+            <Dependent Role="char_vag">
+              <PropertyRef Name="in_vgn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_data_sort_vagon">
+          <End Role="vagon" Type="Self.vagon" Multiplicity="1" />
+          <End Role="data_sort" Type="Self.data_sort" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vagon">
+              <PropertyRef Name="in_vgn" />
+            </Principal>
+            <Dependent Role="data_sort">
+              <PropertyRef Name="in_vgn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vagon_way">
+          <End Role="way" Type="Self.way" Multiplicity="0..1" />
+          <End Role="vagon" Type="Self.vagon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="way">
+              <PropertyRef Name="way_id" />
+            </Principal>
+            <Dependent Role="vagon">
+              <PropertyRef Name="way_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_spesl_way">
+          <End Role="way" Type="Self.way" Multiplicity="0..1" />
+          <End Role="spesl" Type="Self.spesl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="way">
+              <PropertyRef Name="way_id" />
+            </Principal>
+            <Dependent Role="spesl">
+              <PropertyRef Name="way_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AsusContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LokM_operWork" EntityType="Self.LokM_operWork" />
+          <EntitySet Name="lokomot" EntityType="Self.lokomot" />
+          <EntitySet Name="oper_gr" EntityType="Self.oper_gr" />
+          <EntitySet Name="park" EntityType="Self.park" />
+          <EntitySet Name="rem_smen" EntityType="Self.rem_smen" />
+          <EntitySet Name="rem_vag" EntityType="Self.rem_vag" />
+          <EntitySet Name="rezerv" EntityType="Self.rezerv" />
+          <EntitySet Name="sostav" EntityType="Self.sostav" />
+          <EntitySet Name="train" EntityType="Self.train" />
+          <EntitySet Name="train_rem" EntityType="Self.train_rem" />
+          <EntitySet Name="vagon" EntityType="Self.vagon" />
+          <EntitySet Name="way" EntityType="Self.way" />
+          <EntitySet Name="char_vag" EntityType="Self.char_vag" />
+          <EntitySet Name="curr_sost" EntityType="Self.curr_sost" />
+          <EntitySet Name="data_sort" EntityType="Self.data_sort" />
+          <EntitySet Name="lokomot_LDIS" EntityType="Self.lokomot_LDIS" />
+          <EntitySet Name="lokomot_ssps" EntityType="Self.lokomot_ssps" />
+          <EntitySet Name="oper_rem" EntityType="Self.oper_rem" />
+          <EntitySet Name="osmotr" EntityType="Self.osmotr" />
+          <EntitySet Name="rem_brig" EntityType="Self.rem_brig" />
+          <EntitySet Name="rem_spec_vag" EntityType="Self.rem_spec_vag" />
+          <EntitySet Name="spesl" EntityType="Self.spesl" />
+          <EntitySet Name="stanz" EntityType="Self.stanz" />
+          <EntitySet Name="vag_list" EntityType="Self.vag_list" />
+          <EntitySet Name="vag_oper" EntityType="Self.vag_oper" />
+          <EntitySet Name="vagon_204" EntityType="Self.vagon_204" />
+          <EntitySet Name="vagon_pogr_otbor" EntityType="Self.vagon_pogr_otbor" />
+          <AssociationSet Name="FK_lokomot_ssps_lokomot" Association="Self.FK_lokomot_ssps_lokomot">
+            <End Role="lokomot" EntitySet="lokomot" />
+            <End Role="lokomot_ssps" EntitySet="lokomot_ssps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lokomot_train" Association="Self.FK_lokomot_train">
+            <End Role="train" EntitySet="train" />
+            <End Role="lokomot" EntitySet="lokomot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_oper_gr_vagon" Association="Self.FK_oper_gr_vagon">
+            <End Role="vagon" EntitySet="vagon" />
+            <End Role="oper_gr" EntitySet="oper_gr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_way_park" Association="Self.FK_way_park">
+            <End Role="park" EntitySet="park" />
+            <End Role="way" EntitySet="way" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rem_vag_train_rem" Association="Self.FK_rem_vag_train_rem">
+            <End Role="train_rem" EntitySet="train_rem" />
+            <End Role="rem_vag" EntitySet="rem_vag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vagon_rezerv" Association="Self.FK_vagon_rezerv">
+            <End Role="rezerv" EntitySet="rezerv" />
+            <End Role="vagon" EntitySet="vagon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__curr_sost__sosta" Association="Self.FK__curr_sost__sosta">
+            <End Role="sostav" EntitySet="sostav" />
+            <End Role="curr_sost" EntitySet="curr_sost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_train_sostav" Association="Self.FK_train_sostav">
+            <End Role="sostav" EntitySet="sostav" />
+            <End Role="train" EntitySet="train" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vagon_sostav" Association="Self.FK_vagon_sostav">
+            <End Role="sostav" EntitySet="sostav" />
+            <End Role="vagon" EntitySet="vagon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_osmotr_train_rem" Association="Self.FK_osmotr_train_rem">
+            <End Role="train_rem" EntitySet="train_rem" />
+            <End Role="osmotr" EntitySet="osmotr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_char_vag_vagon" Association="Self.FK_char_vag_vagon">
+            <End Role="vagon" EntitySet="vagon" />
+            <End Role="char_vag" EntitySet="char_vag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_data_sort_vagon" Association="Self.FK_data_sort_vagon">
+            <End Role="vagon" EntitySet="vagon" />
+            <End Role="data_sort" EntitySet="data_sort" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vagon_way" Association="Self.FK_vagon_way">
+            <End Role="way" EntitySet="way" />
+            <End Role="vagon" EntitySet="vagon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_spesl_way" Association="Self.FK_spesl_way">
+            <End Role="way" EntitySet="way" />
+            <End Role="spesl" EntitySet="spesl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="asusModelStoreContainer" CdmEntityContainer="AsusContext">
+          <EntitySetMapping Name="LokM_operWork">
+            <EntityTypeMapping TypeName="asusModel.LokM_operWork">
+              <MappingFragment StoreEntitySet="LokM_operWork">
+                <ScalarProperty Name="lokM_operW_id" ColumnName="lokM_operW_id" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="lokm_workid" ColumnName="lokm_workid" />
+                <ScalarProperty Name="num_lok" ColumnName="num_lok" />
+                <ScalarProperty Name="ser_lok" ColumnName="ser_lok" />
+                <ScalarProperty Name="cod_work" ColumnName="cod_work" />
+                <ScalarProperty Name="cod_opL" ColumnName="cod_opL" />
+                <ScalarProperty Name="dt_beg" ColumnName="dt_beg" />
+                <ScalarProperty Name="dt_end" ColumnName="dt_end" />
+                <ScalarProperty Name="dt_ins" ColumnName="dt_ins" />
+                <ScalarProperty Name="utv" ColumnName="utv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lokomot">
+            <EntityTypeMapping TypeName="asusModel.lokomot">
+              <MappingFragment StoreEntitySet="lokomot">
+                <ScalarProperty Name="train_id" ColumnName="train_id" />
+                <ScalarProperty Name="ser_lok" ColumnName="ser_lok" />
+                <ScalarProperty Name="num_lok" ColumnName="num_lok" />
+                <ScalarProperty Name="vid_sled" ColumnName="vid_sled" />
+                <ScalarProperty Name="time_brig" ColumnName="time_brig" />
+                <ScalarProperty Name="time_depo" ColumnName="time_depo" />
+                <ScalarProperty Name="fam_m" ColumnName="fam_m" />
+                <ScalarProperty Name="priz_lok" ColumnName="priz_lok" />
+                <ScalarProperty Name="lok_id" ColumnName="lok_id" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="tr2_id" ColumnName="tr2_id" />
+                <ScalarProperty Name="id_per" ColumnName="id_per" />
+                <ScalarProperty Name="tab_m" ColumnName="tab_m" />
+                <ScalarProperty Name="dor_prip" ColumnName="dor_prip" />
+                <ScalarProperty Name="kod_sost" ColumnName="kod_sost" />
+                <ScalarProperty Name="time_s" ColumnName="time_s" />
+                <ScalarProperty Name="time_205" ColumnName="time_205" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oper_gr">
+            <EntityTypeMapping TypeName="asusModel.oper_gr">
+              <MappingFragment StoreEntitySet="oper_gr">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="sost" ColumnName="sost" />
+                <ScalarProperty Name="vid_r" ColumnName="vid_r" />
+                <ScalarProperty Name="num_tr" ColumnName="num_tr" />
+                <ScalarProperty Name="date_prib" ColumnName="date_prib" />
+                <ScalarProperty Name="date_pereadr" ColumnName="date_pereadr" />
+                <ScalarProperty Name="fio_uved" ColumnName="fio_uved" />
+                <ScalarProperty Name="date_uved" ColumnName="date_uved" />
+                <ScalarProperty Name="date_rask" ColumnName="date_rask" />
+                <ScalarProperty Name="date_pod" ColumnName="date_pod" />
+                <ScalarProperty Name="date_osv" ColumnName="date_osv" />
+                <ScalarProperty Name="date_vigr" ColumnName="date_vigr" />
+                <ScalarProperty Name="date_sdv" ColumnName="date_sdv" />
+                <ScalarProperty Name="date_pogr" ColumnName="date_pogr" />
+                <ScalarProperty Name="date_ubor" ColumnName="date_ubor" />
+                <ScalarProperty Name="cod_gr_op" ColumnName="cod_gr_op" />
+                <ScalarProperty Name="pr_op" ColumnName="pr_op" />
+                <ScalarProperty Name="lokom" ColumnName="lokom" />
+                <ScalarProperty Name="pr_pod" ColumnName="pr_pod" />
+                <ScalarProperty Name="prim" ColumnName="prim" />
+                <ScalarProperty Name="prik_id" ColumnName="prik_id" />
+                <ScalarProperty Name="num_241" ColumnName="num_241" />
+                <ScalarProperty Name="num_242" ColumnName="num_242" />
+                <ScalarProperty Name="pr_end" ColumnName="pr_end" />
+                <ScalarProperty Name="id_zad" ColumnName="id_zad" />
+                <ScalarProperty Name="date_tvk" ColumnName="date_tvk" />
+                <ScalarProperty Name="date_rast" ColumnName="date_rast" />
+                <ScalarProperty Name="date_tlg" ColumnName="date_tlg" />
+                <ScalarProperty Name="date_predv_ub" ColumnName="date_predv_ub" />
+                <ScalarProperty Name="date_post_kont" ColumnName="date_post_kont" />
+                <ScalarProperty Name="date_snat_kont" ColumnName="date_snat_kont" />
+                <ScalarProperty Name="date_got_ubor" ColumnName="date_got_ubor" />
+                <ScalarProperty Name="prim_opl" ColumnName="prim_opl" />
+                <ScalarProperty Name="prim_oper" ColumnName="prim_oper" />
+                <ScalarProperty Name="pam_id" ColumnName="pam_id" />
+                <ScalarProperty Name="date_vigr_XML" ColumnName="date_vigr_XML" />
+                <ScalarProperty Name="date_pogr_XML" ColumnName="date_pogr_XML" />
+                <ScalarProperty Name="lokMw_id" ColumnName="lokMw_id" />
+                <ScalarProperty Name="prim_243" ColumnName="prim_243" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="park">
+            <EntityTypeMapping TypeName="asusModel.park">
+              <MappingFragment StoreEntitySet="park">
+                <ScalarProperty Name="num_prk" ColumnName="num_prk" />
+                <ScalarProperty Name="name_park_l" ColumnName="name_park_l" />
+                <ScalarProperty Name="name_park_r" ColumnName="name_park_r" />
+                <ScalarProperty Name="tip_prk" ColumnName="tip_prk" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="prk_id" ColumnName="prk_id" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rem_smen">
+            <EntityTypeMapping TypeName="asusModel.rem_smen">
+              <MappingFragment StoreEntitySet="rem_smen">
+                <ScalarProperty Name="fio" ColumnName="fio" />
+                <ScalarProperty Name="date_pr" ColumnName="date_pr" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="rem_smen_id" ColumnName="rem_smen_id" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rem_vag">
+            <EntityTypeMapping TypeName="asusModel.rem_vag">
+              <MappingFragment StoreEntitySet="rem_vag">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="vid_r" ColumnName="vid_r" />
+                <ScalarProperty Name="ind_s" ColumnName="ind_s" />
+                <ScalarProperty Name="num_train" ColumnName="num_train" />
+                <ScalarProperty Name="data_prib" ColumnName="data_prib" />
+                <ScalarProperty Name="vid_v" ColumnName="vid_v" />
+                <ScalarProperty Name="rod_v" ColumnName="rod_v" />
+                <ScalarProperty Name="data_postr" ColumnName="data_postr" />
+                <ScalarProperty Name="vid_rp" ColumnName="vid_rp" />
+                <ScalarProperty Name="data_rp" ColumnName="data_rp" />
+                <ScalarProperty Name="place_rp" ColumnName="place_rp" />
+                <ScalarProperty Name="cod_sbs" ColumnName="cod_sbs" />
+                <ScalarProperty Name="grup" ColumnName="grup" />
+                <ScalarProperty Name="sost" ColumnName="sost" />
+                <ScalarProperty Name="place_remf" ColumnName="place_remf" />
+                <ScalarProperty Name="vc1353" ColumnName="vc1353" />
+                <ScalarProperty Name="vc1354" ColumnName="vc1354" />
+                <ScalarProperty Name="belong" ColumnName="belong" />
+                <ScalarProperty Name="tr_rem_id" ColumnName="tr_rem_id" />
+                <ScalarProperty Name="tip_br" ColumnName="tip_br" />
+                <ScalarProperty Name="disloc" ColumnName="disloc" />
+                <ScalarProperty Name="place_wh" ColumnName="place_wh" />
+                <ScalarProperty Name="cod_rem" ColumnName="cod_rem" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="vid_br" ColumnName="vid_br" />
+                <ScalarProperty Name="st_destn" ColumnName="st_destn" />
+                <ScalarProperty Name="vc1352" ColumnName="vc1352" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rezerv">
+            <EntityTypeMapping TypeName="asusModel.rezerv">
+              <MappingFragment StoreEntitySet="rezerv">
+                <ScalarProperty Name="rezerv_id" ColumnName="rezerv_id" />
+                <ScalarProperty Name="kod_rez" ColumnName="kod_rez" />
+                <ScalarProperty Name="data_ot" ColumnName="data_ot" />
+                <ScalarProperty Name="index_rez" ColumnName="index_rez" />
+                <ScalarProperty Name="num_pr_rez" ColumnName="num_pr_rez" />
+                <ScalarProperty Name="date_pr_rez" ColumnName="date_pr_rez" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sostav">
+            <EntityTypeMapping TypeName="asusModel.sostav">
+              <MappingFragment StoreEntitySet="sostav">
+                <ScalarProperty Name="sostav_id" ColumnName="sostav_id" />
+                <ScalarProperty Name="way_id" ColumnName="way_id" />
+                <ScalarProperty Name="ind_s" ColumnName="ind_s" />
+                <ScalarProperty Name="tip_s" ColumnName="tip_s" />
+                <ScalarProperty Name="por_gr" ColumnName="por_gr" />
+                <ScalarProperty Name="usl_dl_s" ColumnName="usl_dl_s" />
+                <ScalarProperty Name="ves_s" ColumnName="ves_s" />
+                <ScalarProperty Name="prikr_s" ColumnName="prikr_s" />
+                <ScalarProperty Name="negab_s" ColumnName="negab_s" />
+                <ScalarProperty Name="ziwn_s" ColumnName="ziwn_s" />
+                <ScalarProperty Name="mar_s" ColumnName="mar_s" />
+                <ScalarProperty Name="ohr_s" ColumnName="ohr_s" />
+                <ScalarProperty Name="tara_s" ColumnName="tara_s" />
+                <ScalarProperty Name="netto_s" ColumnName="netto_s" />
+                <ScalarProperty Name="otv_pt" ColumnName="otv_pt" />
+                <ScalarProperty Name="otv_ot" ColumnName="otv_ot" />
+                <ScalarProperty Name="num_vag_h" ColumnName="num_vag_h" />
+                <ScalarProperty Name="num_vag_t" ColumnName="num_vag_t" />
+                <ScalarProperty Name="pv_p" ColumnName="pv_p" />
+                <ScalarProperty Name="pv_o" ColumnName="pv_o" />
+                <ScalarProperty Name="pr_razl" ColumnName="pr_razl" />
+                <ScalarProperty Name="zvk_tr" ColumnName="zvk_tr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="train">
+            <EntityTypeMapping TypeName="asusModel.train">
+              <MappingFragment StoreEntitySet="train">
+                <ScalarProperty Name="train_id" ColumnName="train_id" />
+                <ScalarProperty Name="sostav_id" ColumnName="sostav_id" />
+                <ScalarProperty Name="cod_per" ColumnName="cod_per" />
+                <ScalarProperty Name="num_train" ColumnName="num_train" />
+                <ScalarProperty Name="priz_spis" ColumnName="priz_spis" />
+                <ScalarProperty Name="data_tr" ColumnName="data_tr" />
+                <ScalarProperty Name="face" ColumnName="face" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="train_rem">
+            <EntityTypeMapping TypeName="asusModel.train_rem">
+              <MappingFragment StoreEntitySet="train_rem">
+                <ScalarProperty Name="tr_rem_id" ColumnName="tr_rem_id" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="ind_s" ColumnName="ind_s" />
+                <ScalarProperty Name="num_train" ColumnName="num_train" />
+                <ScalarProperty Name="data_op" ColumnName="data_op" />
+                <ScalarProperty Name="pr_to" ColumnName="pr_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vagon">
+            <EntityTypeMapping TypeName="asusModel.vagon">
+              <MappingFragment StoreEntitySet="vagon">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="way_id" ColumnName="way_id" />
+                <ScalarProperty Name="ord_num" ColumnName="ord_num" />
+                <ScalarProperty Name="sostav_id" ColumnName="sostav_id" />
+                <ScalarProperty Name="rezerv_id" ColumnName="rezerv_id" />
+                <ScalarProperty Name="priz_k" ColumnName="priz_k" />
+                <ScalarProperty Name="cod_sbs" ColumnName="cod_sbs" />
+                <ScalarProperty Name="rolik" ColumnName="rolik" />
+                <ScalarProperty Name="ves_gruz" ColumnName="ves_gruz" />
+                <ScalarProperty Name="st_destn" ColumnName="st_destn" />
+                <ScalarProperty Name="cod_gruz" ColumnName="cod_gruz" />
+                <ScalarProperty Name="cod_grpl" ColumnName="cod_grpl" />
+                <ScalarProperty Name="mach" ColumnName="mach" />
+                <ScalarProperty Name="cod_prk" ColumnName="cod_prk" />
+                <ScalarProperty Name="negab_vg" ColumnName="negab_vg" />
+                <ScalarProperty Name="plomb" ColumnName="plomb" />
+                <ScalarProperty Name="knt_stn" ColumnName="knt_stn" />
+                <ScalarProperty Name="knt_ktn" ColumnName="knt_ktn" />
+                <ScalarProperty Name="srok" ColumnName="srok" />
+                <ScalarProperty Name="pogr_st" ColumnName="pogr_st" />
+                <ScalarProperty Name="tara" ColumnName="tara" />
+                <ScalarProperty Name="prim" ColumnName="prim" />
+                <ScalarProperty Name="privat" ColumnName="privat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="way">
+            <EntityTypeMapping TypeName="asusModel.way">
+              <MappingFragment StoreEntitySet="way">
+                <ScalarProperty Name="way_id" ColumnName="way_id" />
+                <ScalarProperty Name="num_prk" ColumnName="num_prk" />
+                <ScalarProperty Name="num_way" ColumnName="num_way" />
+                <ScalarProperty Name="name_way" ColumnName="name_way" />
+                <ScalarProperty Name="long_way" ColumnName="long_way" />
+                <ScalarProperty Name="weight_way" ColumnName="weight_way" />
+                <ScalarProperty Name="lng_sum" ColumnName="lng_sum" />
+                <ScalarProperty Name="ves_sum" ColumnName="ves_sum" />
+                <ScalarProperty Name="blk_way" ColumnName="blk_way" />
+                <ScalarProperty Name="kvo_vgn" ColumnName="kvo_vgn" />
+                <ScalarProperty Name="grup_way" ColumnName="grup_way" />
+                <ScalarProperty Name="pr_way" ColumnName="pr_way" />
+                <ScalarProperty Name="pr_otv" ColumnName="pr_otv" />
+                <ScalarProperty Name="prk_id" ColumnName="prk_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="char_vag">
+            <EntityTypeMapping TypeName="asusModel.char_vag">
+              <MappingFragment StoreEntitySet="char_vag">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="nod" ColumnName="nod" />
+                <ScalarProperty Name="rod_v" ColumnName="rod_v" />
+                <ScalarProperty Name="rod_v_pr" ColumnName="rod_v_pr" />
+                <ScalarProperty Name="usl_tip" ColumnName="usl_tip" />
+                <ScalarProperty Name="kol_os_v" ColumnName="kol_os_v" />
+                <ScalarProperty Name="tip_park" ColumnName="tip_park" />
+                <ScalarProperty Name="vid_v" ColumnName="vid_v" />
+                <ScalarProperty Name="num_mar" ColumnName="num_mar" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="prizn_v" ColumnName="prizn_v" />
+                <ScalarProperty Name="usl_cod_gr" ColumnName="usl_cod_gr" />
+                <ScalarProperty Name="arenda" ColumnName="arenda" />
+                <ScalarProperty Name="intrv" ColumnName="intrv" />
+                <ScalarProperty Name="st_otpr_v" ColumnName="st_otpr_v" />
+                <ScalarProperty Name="dop_pogr_st" ColumnName="dop_pogr_st" />
+                <ScalarProperty Name="dlbaz" ColumnName="dlbaz" />
+                <ScalarProperty Name="pr_ed" ColumnName="pr_ed" />
+                <ScalarProperty Name="PV_Lokm" ColumnName="PV_Lokm" />
+                <ScalarProperty Name="PV_Gruz" ColumnName="PV_Gruz" />
+                <ScalarProperty Name="PV_prS" ColumnName="PV_prS" />
+                <ScalarProperty Name="PV_KpsOtpr_id" ColumnName="PV_KpsOtpr_id" />
+                <ScalarProperty Name="PV_AsusOtpr_id" ColumnName="PV_AsusOtpr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="curr_sost">
+            <EntityTypeMapping TypeName="asusModel.curr_sost">
+              <MappingFragment StoreEntitySet="curr_sost">
+                <ScalarProperty Name="sostav_id" ColumnName="sostav_id" />
+                <ScalarProperty Name="cod_sost" ColumnName="cod_sost" />
+                <ScalarProperty Name="st_prib" ColumnName="st_prib" />
+                <ScalarProperty Name="st_otpr" ColumnName="st_otpr" />
+                <ScalarProperty Name="data_sost" ColumnName="data_sost" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="vid_tr" ColumnName="vid_tr" />
+                <ScalarProperty Name="razr_tr" ColumnName="razr_tr" />
+                <ScalarProperty Name="stPos" ColumnName="stPos" />
+                <ScalarProperty Name="PV_cod" ColumnName="PV_cod" />
+                <ScalarProperty Name="PV_fio_perev" ColumnName="PV_fio_perev" />
+                <ScalarProperty Name="PV_codPerev" ColumnName="PV_codPerev" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="data_sort">
+            <EntityTypeMapping TypeName="asusModel.data_sort">
+              <MappingFragment StoreEntitySet="data_sort">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="nplf" ColumnName="nplf" />
+                <ScalarProperty Name="nprz" ColumnName="nprz" />
+                <ScalarProperty Name="npmr" ColumnName="npmr" />
+                <ScalarProperty Name="nplf1" ColumnName="nplf1" />
+                <ScalarProperty Name="pto" ColumnName="pto" />
+                <ScalarProperty Name="way_id" ColumnName="way_id" />
+                <ScalarProperty Name="usl_dl_v" ColumnName="usl_dl_v" />
+                <ScalarProperty Name="ves_tr_v" ColumnName="ves_tr_v" />
+                <ScalarProperty Name="ves_grz" ColumnName="ves_grz" />
+                <ScalarProperty Name="brut" ColumnName="brut" />
+                <ScalarProperty Name="opv" ColumnName="opv" />
+                <ScalarProperty Name="pko" ColumnName="pko" />
+                <ScalarProperty Name="grpd_v" ColumnName="grpd_v" />
+                <ScalarProperty Name="kateg" ColumnName="kateg" />
+                <ScalarProperty Name="sader" ColumnName="sader" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="prikaz_id" ColumnName="prikaz_id" />
+                <ScalarProperty Name="nom_act" ColumnName="nom_act" />
+                <ScalarProperty Name="osngr_id" ColumnName="osngr_id" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="kol_in_gr" ColumnName="kol_in_gr" />
+                <ScalarProperty Name="pr_gr" ColumnName="pr_gr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lokomot_LDIS">
+            <EntityTypeMapping TypeName="asusModel.lokomot_LDIS">
+              <MappingFragment StoreEntitySet="lokomot_LDIS">
+                <ScalarProperty Name="ser_lok" ColumnName="ser_lok" />
+                <ScalarProperty Name="num_lok" ColumnName="num_lok" />
+                <ScalarProperty Name="vid_sled" ColumnName="vid_sled" />
+                <ScalarProperty Name="time_brig" ColumnName="time_brig" />
+                <ScalarProperty Name="time_depo" ColumnName="time_depo" />
+                <ScalarProperty Name="fam_m" ColumnName="fam_m" />
+                <ScalarProperty Name="priz_lok" ColumnName="priz_lok" />
+                <ScalarProperty Name="num_train" ColumnName="num_train" />
+                <ScalarProperty Name="ind_s" ColumnName="ind_s" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lokomot_ssps">
+            <EntityTypeMapping TypeName="asusModel.lokomot_ssps">
+              <MappingFragment StoreEntitySet="lokomot_ssps">
+                <ScalarProperty Name="lok_id" ColumnName="lok_id" />
+                <ScalarProperty Name="cod_polz" ColumnName="cod_polz" />
+                <ScalarProperty Name="serija" ColumnName="serija" />
+                <ScalarProperty Name="nomer" ColumnName="nomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oper_rem">
+            <EntityTypeMapping TypeName="asusModel.oper_rem">
+              <MappingFragment StoreEntitySet="oper_rem">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="uwed" ColumnName="uwed" />
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="family" ColumnName="family" />
+                <ScalarProperty Name="pr_ut" ColumnName="pr_ut" />
+                <ScalarProperty Name="beg_rem" ColumnName="beg_rem" />
+                <ScalarProperty Name="modern" ColumnName="modern" />
+                <ScalarProperty Name="in_vgn_new" ColumnName="in_vgn_new" />
+                <ScalarProperty Name="dop_inf_ns" ColumnName="dop_inf_ns" />
+                <ScalarProperty Name="oper_rem_id" ColumnName="oper_rem_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="osmotr">
+            <EntityTypeMapping TypeName="asusModel.osmotr">
+              <MappingFragment StoreEntitySet="osmotr">
+                <ScalarProperty Name="tr_rem_id" ColumnName="tr_rem_id" />
+                <ScalarProperty Name="otv" ColumnName="otv" />
+                <ScalarProperty Name="family" ColumnName="family" />
+                <ScalarProperty Name="gol_vag" ColumnName="gol_vag" />
+                <ScalarProperty Name="ord_num" ColumnName="ord_num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rem_brig">
+            <EntityTypeMapping TypeName="asusModel.rem_brig">
+              <MappingFragment StoreEntitySet="rem_brig">
+                <ScalarProperty Name="fio" ColumnName="fio" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="rem_smen_id" ColumnName="rem_smen_id" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="park" ColumnName="park" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rem_spec_vag">
+            <EntityTypeMapping TypeName="asusModel.rem_spec_vag">
+              <MappingFragment StoreEntitySet="rem_spec_vag">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="stanc" ColumnName="stanc" />
+                <ScalarProperty Name="date_c" ColumnName="date_c" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spesl">
+            <EntityTypeMapping TypeName="asusModel.spesl">
+              <MappingFragment StoreEntitySet="spesl">
+                <ScalarProperty Name="way_id" ColumnName="way_id" />
+                <ScalarProperty Name="mplf" ColumnName="mplf" />
+                <ScalarProperty Name="head" ColumnName="head" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stanz">
+            <EntityTypeMapping TypeName="asusModel.stanz">
+              <MappingFragment StoreEntitySet="stanz">
+                <ScalarProperty Name="num_stan" ColumnName="num_stan" />
+                <ScalarProperty Name="name_stan_r" ColumnName="name_stan_r" />
+                <ScalarProperty Name="name_stan_l" ColumnName="name_stan_l" />
+                <ScalarProperty Name="nod" ColumnName="nod" />
+                <ScalarProperty Name="num_stan_osn" ColumnName="num_stan_osn" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="napr1" ColumnName="napr1" />
+                <ScalarProperty Name="napr2" ColumnName="napr2" />
+                <ScalarProperty Name="num_stan6" ColumnName="num_stan6" />
+                <ScalarProperty Name="num_stan_KPS" ColumnName="num_stan_KPS" />
+                <ScalarProperty Name="num_stan_osn_KPS" ColumnName="num_stan_osn_KPS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vag_list">
+            <EntityTypeMapping TypeName="asusModel.vag_list">
+              <MappingFragment StoreEntitySet="vag_list">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="primech" ColumnName="primech" />
+                <ScalarProperty Name="cod_gr" ColumnName="cod_gr" />
+                <ScalarProperty Name="cod_grp" ColumnName="cod_grp" />
+                <ScalarProperty Name="ves" ColumnName="ves" />
+                <ScalarProperty Name="vag_id" ColumnName="vag_id" />
+                <ScalarProperty Name="st_pereh" ColumnName="st_pereh" />
+                <ScalarProperty Name="cod_str" ColumnName="cod_str" />
+                <ScalarProperty Name="sposob_opr_m" ColumnName="sposob_opr_m" />
+                <ScalarProperty Name="kont" ColumnName="kont" />
+                <ScalarProperty Name="max_negab" ColumnName="max_negab" />
+                <ScalarProperty Name="num_marsh" ColumnName="num_marsh" />
+                <ScalarProperty Name="ves_tara" ColumnName="ves_tara" />
+                <ScalarProperty Name="marsh" ColumnName="marsh" />
+                <ScalarProperty Name="num_por241" ColumnName="num_por241" />
+                <ScalarProperty Name="num_por242" ColumnName="num_por242" />
+                <ScalarProperty Name="punkt_vigr" ColumnName="punkt_vigr" />
+                <ScalarProperty Name="vid_r_sdv" ColumnName="vid_r_sdv" />
+                <ScalarProperty Name="sapod_raskr" ColumnName="sapod_raskr" />
+                <ScalarProperty Name="otmetki" ColumnName="otmetki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vag_oper">
+            <EntityTypeMapping TypeName="asusModel.vag_oper">
+              <MappingFragment StoreEntitySet="vag_oper">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="way_id" ColumnName="way_id" />
+                <ScalarProperty Name="ind_s" ColumnName="ind_s" />
+                <ScalarProperty Name="data_op" ColumnName="data_op" />
+                <ScalarProperty Name="op_id" ColumnName="op_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vagon_204">
+            <EntityTypeMapping TypeName="asusModel.vagon_204">
+              <MappingFragment StoreEntitySet="vagon_204">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="god_p" ColumnName="god_p" />
+                <ScalarProperty Name="st_pogr" ColumnName="st_pogr" />
+                <ScalarProperty Name="st_arenda" ColumnName="st_arenda" />
+                <ScalarProperty Name="st_prp" ColumnName="st_prp" />
+                <ScalarProperty Name="str_sv" ColumnName="str_sv" />
+                <ScalarProperty Name="prim" ColumnName="prim" />
+                <ScalarProperty Name="remont" ColumnName="remont" />
+                <ScalarProperty Name="ost_prob" ColumnName="ost_prob" />
+                <ScalarProperty Name="tara" ColumnName="tara" />
+                <ScalarProperty Name="grpd" ColumnName="grpd" />
+                <ScalarProperty Name="etsng" ColumnName="etsng" />
+                <ScalarProperty Name="kd" ColumnName="kd" />
+                <ScalarProperty Name="rsv" ColumnName="rsv" />
+                <ScalarProperty Name="sv" ColumnName="sv" />
+                <ScalarProperty Name="usl_dl" ColumnName="usl_dl" />
+                <ScalarProperty Name="priv_204" ColumnName="priv_204" />
+                <ScalarProperty Name="nrp" ColumnName="nrp" />
+                <ScalarProperty Name="vrv" ColumnName="vrv" />
+                <ScalarProperty Name="ksA" ColumnName="ksA" />
+                <ScalarProperty Name="nsA" ColumnName="nsA" />
+                <ScalarProperty Name="npA" ColumnName="npA" />
+                <ScalarProperty Name="dtA" ColumnName="dtA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vagon_pogr_otbor">
+            <EntityTypeMapping TypeName="asusModel.vagon_pogr_otbor">
+              <MappingFragment StoreEntitySet="vagon_pogr_otbor">
+                <ScalarProperty Name="in_vgn" ColumnName="in_vgn" />
+                <ScalarProperty Name="date_check" ColumnName="date_check" />
+                <ScalarProperty Name="godn" ColumnName="godn" />
+                <ScalarProperty Name="route" ColumnName="route" />
+                <ScalarProperty Name="rw_dest" ColumnName="rw_dest" />
+                <ScalarProperty Name="code_godn_gr" ColumnName="code_godn_gr" />
+                <ScalarProperty Name="fio" ColumnName="fio" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="station" ColumnName="station" />
+                <ScalarProperty Name="id_z" ColumnName="id_z" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="vagon_pogr_otbor_id" ColumnName="vagon_pogr_otbor_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

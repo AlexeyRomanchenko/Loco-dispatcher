@@ -7,6 +7,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils
     public class DriveOperator
     {
         private JsonOperator _json;
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public DriveOperator()
         {
             _json = new JsonOperator();
@@ -27,6 +29,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
             }
             catch (FileNotFoundException ex)
             {
+                
                 throw ex;
             }
             catch (Exception ex)
@@ -53,6 +56,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                         }
                         catch (Exception ex)
                         {
+                            logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
                             throw ex;
                         }
 
@@ -60,11 +64,13 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 }
                 else
                 {
+                    logger.Error($"{DateTime.Now} | ERROR | directory doesn't exist");
                     throw new ArgumentNullException("directory doesn't exist");
                 }
             }
             catch (Exception ex)
             {
+                logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
                 throw ex;
             }
 

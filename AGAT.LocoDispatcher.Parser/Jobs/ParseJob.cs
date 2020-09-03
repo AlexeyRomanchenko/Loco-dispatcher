@@ -7,6 +7,7 @@ namespace AGAT.LocoDispatcher.Parser.Jobs
     public class ParseJob : IJob
     {
         private DriveOperator _drive;
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         public ParseJob()
         {
             _drive = new DriveOperator();
@@ -25,6 +26,7 @@ namespace AGAT.LocoDispatcher.Parser.Jobs
             }
             catch (Exception ex)
             {
+                logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
                 throw ex;
             }
         }

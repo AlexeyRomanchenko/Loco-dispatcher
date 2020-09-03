@@ -1,7 +1,9 @@
 ﻿using AGAT.LocoDispatcher.Business.Models;
 using AGAT.LocoDispatcher.Business.Models.RailModels;
+using AGAT.LocoDispatcher.Common.Models;
 using AutoMapper;
 using System.Linq;
+using Carriage = AGAT.LocoDispatcher.Common.Models.Carriage;
 
 namespace AGAT.LocoDispatcher.Business
 {
@@ -15,16 +17,16 @@ namespace AGAT.LocoDispatcher.Business
             {
                 cfg.AllowNullCollections = true;
 
-                cfg.CreateMap<AsusDb.Models.Route, Models.RouteModels.Route>().ReverseMap();
+                cfg.CreateMap<AsusDb.Models.Route,Route>().ReverseMap();
                 cfg.CreateMap<Data.Events.LocoShiftEvent, Locomotive>().ReverseMap();
 
-                cfg.CreateMap<RailData.Models.Coord, Coords>()
+                cfg.CreateMap<RailData.Models.Coord, Common.Models.Coords>()
                 .ForMember(e => e.X, e => e.MapFrom(_e => _e.X))
                 .ForMember(e => e.Y, e => e.MapFrom(_e => _e.Y)).ReverseMap();
 
                 // Mapping classes from DataLayer to Business
 
-                cfg.CreateMap<RailData.Models.Rail, Rail>()
+                cfg.CreateMap<RailData.Models.Rail, Common.Models.Rail>()
                 .ForMember(e => e.id, dto => dto.MapFrom(e => e.Id))
                 .ForMember(e => e.railCode, dto => dto.MapFrom(e => e.RailCode))
                 .ForMember(e => e.Coords, dto => dto.MapFrom(e => e.Coords.Where(w => w.StartFlag == false).ToList()))
@@ -37,7 +39,7 @@ namespace AGAT.LocoDispatcher.Business
                 .ForMember(e => e.Id, e => e.MapFrom(_e => _e.Id))
                 .ForMember(e => e.Angle, e => e.MapFrom(_e => _e.Angle));
 
-                cfg.CreateMap<RailData.Models.RoutePlate, RoutePlate>()
+                cfg.CreateMap<RailData.Models.RoutePlate, Common.Models.RoutePlate>()
                 .ForMember(e => e.Id, e => e.MapFrom(_e => _e.Id))
                 .ForMember(e => e.Angle, e => e.MapFrom(_e => _e.Angle))
                 .ForMember(e => e.X, e => e.MapFrom(_e => _e.X))
@@ -70,7 +72,7 @@ namespace AGAT.LocoDispatcher.Business
 
 
                 //Mapping data from Business layer to DataLayer 
-                cfg.CreateMap<Rail, RailData.Models.Rail>()
+                cfg.CreateMap<Common.Models.Rail, RailData.Models.Rail>()
                 .ForMember(dto => dto.Id, _e => _e.Ignore())
                 .ForMember(dto => dto.RailCode, e => e.MapFrom(_e => _e.railCode))
                 .ForMember(dto => dto.Coords, e => e.MapFrom(_e => _e.Coords))
@@ -91,7 +93,7 @@ namespace AGAT.LocoDispatcher.Business
                 .ForMember(e => e.Id, e => e.Ignore())
                 .ForMember(e => e.Angle, e => e.MapFrom(_e => _e.Angle));
 
-                cfg.CreateMap<RoutePlate, RailData.Models.RoutePlate>()
+                cfg.CreateMap<Common.Models.RoutePlate, RailData.Models.RoutePlate>()
                 .ForMember(e => e.Id, e => e.Ignore())
                 .ForMember(e => e.Angle, e => e.MapFrom(_e => _e.Angle))
                 .ForMember(e => e.X, e => e.MapFrom(_e => _e.X))
@@ -121,9 +123,9 @@ namespace AGAT.LocoDispatcher.Business
             return _mapper;
         }
 
-        private static Coords GetCoord(RailData.Models.Point point)
+        private static Common.Models.Coords GetCoord(RailData.Models.Point point)
         {
-            Coords coord = new Coords
+            Common.Models.Coords coord = new Common.Models.Coords
             {
                 X = point.X,
                 Y = point.Y

@@ -14,6 +14,12 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
     
     public partial class vagon
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public vagon()
+        {
+            this.data_sort = new HashSet<data_sort>();
+        }
+    
         public string in_vgn { get; set; }
         public Nullable<int> way_id { get; set; }
         public Nullable<short> ord_num { get; set; }
@@ -38,6 +44,12 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
         public string prim { get; set; }
         public string privat { get; set; }
     
+        public virtual oper_gr oper_gr { get; set; }
+        public virtual rezerv rezerv { get; set; }
+        public virtual sostav sostav { get; set; }
+        public virtual char_vag char_vag { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<data_sort> data_sort { get; set; }
         public virtual way way { get; set; }
     }
 }

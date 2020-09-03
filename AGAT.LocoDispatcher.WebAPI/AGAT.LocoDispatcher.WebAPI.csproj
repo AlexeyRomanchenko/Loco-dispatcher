@@ -52,6 +52,9 @@
     <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -201,8 +204,13 @@
     <Content Include="Public\assets\images\locomotive.png" />
     <Content Include="Public\assets\images\preloader.gif" />
     <Content Include="Public\assets\images\preloader.png" />
+    <Content Include="Public\assets\mainPoints.json" />
+    <Content Include="Public\assets\mainStation.json" />
+    <Content Include="Public\assets\points.json" />
+    <Content Include="Public\assets\test.json" />
     <Content Include="Public\favicon.ico" />
-    <Content Include="Public\main.4b9f2047468befb10db0.js" />
+    <Content Include="Public\index.html" />
+    <Content Include="Public\main.f6f94d197e75d8dc4e65.js" />
     <Content Include="Public\polyfills-es5.22ce8938e7457c1e2c23.js" />
     <Content Include="Public\polyfills.e2e70d5c4b71d2668773.js" />
     <Content Include="Public\runtime.a8ef3a8272419c2e2c66.js" />
@@ -228,10 +236,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="Public\assets\mainPoints.json" />
-    <Content Include="Public\assets\mainStation.json" />
-    <Content Include="Public\assets\points.json" />
-    <Content Include="Public\assets\test.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -297,6 +301,10 @@
     <ProjectReference Include="..\AGAT.LocoDispatcher.Business\AGAT.LocoDispatcher.Business.csproj">
       <Project>{1d1acbe1-22ec-492c-922e-ee39b0241ecf}</Project>
       <Name>AGAT.LocoDispatcher.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj">
+      <Project>{54FEBA75-21E8-4F43-8F5F-D260C17350BF}</Project>
+      <Name>AGAT.LocoDispatcher.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,22 +1,23 @@
 ﻿using AGAT.LocoDispatcher.AsusDb.Models;
 using AGAT.LocoDispatcher.AsusDb.Repositories;
+using AGAT.LocoDispatcher.Common.Interfaces.Managers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.Business.Managers
 {
-    public class RoutesManager
+    public class RoutesManager : IRouteManager
     {
         private RouteRepository _routeRepository;
         private StationParkRepository _parkRepository;
-        public RoutesManager()
+        public RoutesManager() 
         {
             _routeRepository = new RouteRepository();
             _parkRepository = new StationParkRepository();
         }
 
-        public async Task<IEnumerable<Models.RouteModels.Route>> GetRoutesByParkCodeAsync(string station, string code)
+        public async Task<IEnumerable<Common.Models.Route>> GetRoutesByParkCodeAsync(string station, string code)
         {
             try
             {
@@ -48,7 +49,7 @@ namespace AGAT.LocoDispatcher.Business.Managers
                     };
                     routes.Add(_route);
                 }
-                return Mapper.GetMapperInstance().Map<IEnumerable<Models.RouteModels.Route>>(routes);
+                return Mapper.GetMapperInstance().Map<IEnumerable<Common.Models.Route>>(routes);
             }
             catch (Exception ex)
             {

@@ -11,7 +11,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
         {
             try
             {
-                using (asusEntities context = new asusEntities())
+                using (AsusContext context = new AsusContext())
                 {
                     return context.vagon.Where(e => e.way_id == routeId).ToList();
                 }

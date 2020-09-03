@@ -18,6 +18,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
         public way()
         {
             this.vagon = new HashSet<vagon>();
+            this.spesl = new HashSet<spesl>();
         }
     
         public int way_id { get; set; }
@@ -38,5 +39,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
         public virtual park park { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<vagon> vagon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<spesl> spesl { get; set; }
     }
 }

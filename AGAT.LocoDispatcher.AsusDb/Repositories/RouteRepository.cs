@@ -13,7 +13,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
         {
             if (!string.IsNullOrEmpty(code?.Trim()))
             {
-                using (asusEntities _db = new asusEntities())
+                using (AsusContext _db = new AsusContext())
                 {
                     return _db.way.Where(e => e.num_prk == code && e.prk_id == parkId).ToList();
                 }

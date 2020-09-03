@@ -1,10 +1,9 @@
 ﻿using AGAT.LocoDispatcher.Business.Managers;
 using AGAT.LocoDispatcher.Business.Models.RouteModels;
+using AGAT.LocoDispatcher.Common.Interfaces.Managers;
+using AGAT.LocoDispatcher.Common.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -13,10 +12,10 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
 {
     public class RoutesController : ApiController
     {
-        private RoutesManager _routesManager;
-        public RoutesController()
+        private IRouteManager _routesManager;
+        public RoutesController(IRouteManager manager)
         {
-            _routesManager = new RoutesManager();
+            _routesManager = manager;
         }
 
         public async Task<IHttpActionResult> Get(int id)

@@ -65,7 +65,6 @@
     <Compile Include="Models\RailModels\Rail.cs" />
     <Compile Include="Models\RailModels\RoutePlate.cs" />
     <Compile Include="Models\RouteModels\CarriageInfo.cs" />
-    <Compile Include="Models\RouteModels\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

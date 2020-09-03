@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5f55ce87a504ca7ac8bca0b0be8d219" Name="Diagram1">
+        <EntityTypeShape EntityType="asusModel.LokM_operWork" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.lokomot" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.oper_gr" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.park" Width="1.5" PointX="1.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.rem_smen" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.rem_vag" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.rezerv" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.sostav" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.train" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.train_rem" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.vagon" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.way" Width="1.5" PointX="0.75" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.char_vag" Width="1.5" PointX="5.25" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.curr_sost" Width="1.5" PointX="3" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.data_sort" Width="1.5" PointX="5.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.lokomot_LDIS" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.lokomot_ssps" Width="1.5" PointX="7.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.oper_rem" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.osmotr" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.rem_brig" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.rem_spec_vag" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.spesl" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.stanz" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.vag_list" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.vag_oper" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.vagon_204" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asusModel.vagon_pogr_otbor" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="asusModel.FK_lokomot_ssps_lokomot" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_lokomot_train" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_oper_gr_vagon" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_way_park" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_rem_vag_train_rem" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_vagon_rezerv" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK__curr_sost__sosta" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_train_sostav" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_vagon_sostav" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_osmotr_train_rem" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_char_vag_vagon" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_data_sort_vagon" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_vagon_way" ManuallyRouted="false" />
+        <AssociationConnector Association="asusModel.FK_spesl_way" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

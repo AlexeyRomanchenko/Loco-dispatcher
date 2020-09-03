@@ -12,9 +12,9 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
     public class PointController : ApiController
     {
         private PointManager _manager;
-        public PointController()
+        public PointController(PointManager manager)
         {
-            _manager = new PointManager();
+            _manager = manager;
         }
         // GET: api/Point
         [HttpGet]

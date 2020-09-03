@@ -8,10 +8,10 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
 {
     public class AssignmentRepository
     {
-        private asusEntities context;
+        private AsusContext context;
         public AssignmentRepository()
         {
-            context = new  asusEntities();
+            context = new AsusContext();
         }
         public async Task<IEnumerable<LokM_operWork>> GetActiveAsync()
         {

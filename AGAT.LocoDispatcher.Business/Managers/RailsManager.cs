@@ -1,11 +1,13 @@
-﻿using AGAT.LocoDispatcher.Business.Models.RailModels;
-using AGAT.LocoDispatcher.Data.Repositories.RailRepositories;
+﻿using AGAT.LocoDispatcher.Data.Repositories.RailRepositories;
 using System;
 using System.Collections.Generic;
+using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Common.Interfaces.Managers;
+using AGAT.LocoDispatcher.Common.Models;
 
 namespace AGAT.LocoDispatcher.Business.Managers
 {
-    public class RailsManager
+    public class RailsManager : IRailManager
     {
         RailsRepository _repository;
         public RailsManager()

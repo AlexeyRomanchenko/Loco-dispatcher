@@ -11,9 +11,9 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
     public class CarriageInfoController : ApiController
     {
         private CarriageManager _manager;
-        public CarriageInfoController()
+        public CarriageInfoController(CarriageManager manager)
         {
-            _manager = new CarriageManager();
+            _manager = manager;
         }
         [HttpGet]
         public IHttpActionResult Get(int id)

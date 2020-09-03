@@ -14,5 +14,13 @@ namespace AGAT.LocoDispather.AsusDb.UnitTests
             StationParkRepository repository = new StationParkRepository();
             var station = await repository.GetParkByStationAndCodeAsync("14043", "01");
         }
+
+        [TestMethod]
+        public async Task GetTrainsOk()
+        {
+            TrainRepository repository = new TrainRepository();
+            var trains = repository.GetTrains();
+            Assert.IsNotNull(trains);
+        }
     }
 }

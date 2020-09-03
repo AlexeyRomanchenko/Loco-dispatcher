@@ -14,8 +14,10 @@ namespace AGAT.LocoDispatcher.Parser
 {
     public class WebApiApplication : HttpApplication
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         protected void Application_Start()
         {
+            logger.Info($"App was launched in {DateTime.Now}");
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

@@ -15,7 +15,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
         {
             if (!String.IsNullOrEmpty(code.Trim()))
             {
-                using (asusEntities context = new asusEntities())
+                using (AsusContext context = new AsusContext())
                 {
                     return context.park.Where(e => e.num_prk == code).ToList();
                 }
@@ -30,7 +30,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
         {
             try
             {
-                using (asusEntities ctx = new asusEntities())
+                using (AsusContext ctx = new AsusContext())
                 {
                     park park = await ctx.park.Where(e=>e.stanc == station && e.num_prk == code).FirstOrDefaultAsync();
                     return park;

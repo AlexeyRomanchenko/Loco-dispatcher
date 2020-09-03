@@ -13,9 +13,9 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
     public class LocoController : ApiController
     {
         private LocoManager _locoManager;
-        public LocoController()
+        public LocoController(LocoManager manager)
         {
-            _locoManager = new LocoManager();
+            _locoManager = manager;
         }
         [HttpGet]
         public async Task<IHttpActionResult> Get(string id)

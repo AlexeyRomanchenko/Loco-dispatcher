@@ -54,50 +54,120 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Assignment.cs" />
-    <Compile Include="Models\Asus.Context.cs">
+    <Compile Include="Models\AsusEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Asus.Context.tt</DependentUpon>
+      <DependentUpon>AsusEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Asus.cs">
+    <Compile Include="Models\AsusEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Asus.tt</DependentUpon>
+      <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Asus.Designer.cs">
+    <Compile Include="Models\AsusEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Asus.edmx</DependentUpon>
+      <DependentUpon>AsusEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CarriageInfo.cs" />
+    <Compile Include="Models\char_vag.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\curr_sost.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\data_sort.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LokM_operWork.cs">
-      <DependentUpon>Asus.tt</DependentUpon>
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lokomot.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lokomot_LDIS.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lokomot_ssps.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\oper_gr.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\oper_rem.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\osmotr.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\park.cs">
-      <DependentUpon>Asus.tt</DependentUpon>
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rem_brig.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rem_smen.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rem_spec_vag.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rem_vag.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rezerv.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\sostav.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spesl.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stanz.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\StationPark.cs" />
+    <Compile Include="Models\train.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\train_rem.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\vagon.cs">
-      <DependentUpon>Asus.tt</DependentUpon>
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vagon_204.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vagon_pogr_otbor.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vag_list.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vag_oper.cs">
+      <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\way.cs">
-      <DependentUpon>Asus.tt</DependentUpon>
+      <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AssignmentRepository.cs" />
     <Compile Include="Repositories\CarriageInfoRepository.cs" />
     <Compile Include="Repositories\RouteRepository.cs" />
     <Compile Include="Repositories\StationParkRepository.cs" />
+    <Compile Include="Repositories\TrainRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Models\Asus.edmx">
+    <EntityDeploy Include="Models\AsusEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Asus.Designer.cs</LastGenOutput>
+      <LastGenOutput>AsusEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Asus.edmx.diagram">
-      <DependentUpon>Asus.edmx</DependentUpon>
+    <None Include="Models\AsusEntities.edmx.diagram">
+      <DependentUpon>AsusEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -108,19 +178,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Asus.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Asus.edmx</DependentUpon>
-      <LastGenOutput>Asus.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Asus.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Asus.edmx</DependentUpon>
-      <LastGenOutput>Asus.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Models\AsusEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AsusEntities.edmx</DependentUpon>
+      <LastGenOutput>AsusEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AsusEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AsusEntities.edmx</DependentUpon>
+      <LastGenOutput>AsusEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
