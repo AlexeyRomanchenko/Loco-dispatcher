@@ -185,6 +185,7 @@
     <Compile Include="Controllers\Main\RailsController.cs" />
     <Compile Include="Controllers\Main\RoutesController.cs" />
     <Compile Include="Controllers\Main\UserCheckController.cs" />
+    <Compile Include="Controllers\Train\TrainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

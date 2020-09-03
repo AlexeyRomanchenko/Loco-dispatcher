@@ -54,6 +54,7 @@
     <Compile Include="Managers\PointManager.cs" />
     <Compile Include="Managers\RailsManager.cs" />
     <Compile Include="Managers\RoutesManager.cs" />
+    <Compile Include="Managers\TrainManager.cs" />
     <Compile Include="Mapper.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Locomotive.cs" />

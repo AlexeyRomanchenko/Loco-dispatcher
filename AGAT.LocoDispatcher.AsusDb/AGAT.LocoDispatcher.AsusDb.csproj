@@ -132,6 +132,7 @@
     <Compile Include="Models\train.cs">
       <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTO\TrainDTO.cs" />
     <Compile Include="Models\train_rem.cs">
       <DependentUpon>AsusEntities.tt</DependentUpon>
     </Compile>

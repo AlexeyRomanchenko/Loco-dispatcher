@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AGAT.LocoDispatcher.AsusDb.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,7 +20,11 @@ namespace AGAT.LocoDispather.AsusDb.UnitTests
         public async Task GetTrainsOk()
         {
             TrainRepository repository = new TrainRepository();
-            var trains = repository.GetTrains();
+            List<int> wayIdList = new List<int>
+            {
+               23,1917, 2016
+            };
+            var trains = await repository.GetTrainsInfoByWayIdsAsync(wayIdList);
             Assert.IsNotNull(trains);
         }
     }

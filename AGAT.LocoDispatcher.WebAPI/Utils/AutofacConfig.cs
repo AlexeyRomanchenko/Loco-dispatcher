@@ -25,6 +25,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Utils
             // регистрируем споставление типов
             builder.RegisterType<RoutesManager>().As<IRouteManager>();
             builder.RegisterType<RailsManager>().As<IRailManager>();
+            builder.RegisterType<TrainManager>().As<ITrainManager>();
             builder.RegisterType<LocoManager>().As<LocoManager>();
             builder.RegisterType<PointManager>().As<PointManager>();
             builder.RegisterType<CarriageManager>().As<CarriageManager>();

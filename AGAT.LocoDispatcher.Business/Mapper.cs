@@ -1,6 +1,7 @@
 ﻿using AGAT.LocoDispatcher.Business.Models;
 using AGAT.LocoDispatcher.Business.Models.RailModels;
 using AGAT.LocoDispatcher.Common.Models;
+using AGAT.LocoDispatcher.Common.Models.RailModels;
 using AutoMapper;
 using System.Linq;
 using Carriage = AGAT.LocoDispatcher.Common.Models.Carriage;
@@ -70,6 +71,14 @@ namespace AGAT.LocoDispatcher.Business
 
                 cfg.CreateMap<AsusDb.Models.Assignment, Assignment>().ReverseMap();
 
+                cfg.CreateMap<AsusDb.Models.TrainDTO, Train>()
+                .ForMember(e => e.TrainIndex, e => e.MapFrom(_e => _e.TrainIndex))
+                .ForMember(e => e.Weight, e => e.MapFrom(_e => _e.Weight))
+                .ForMember(e => e.Length, e => e.MapFrom(_e => _e.Length))
+                .ForMember(e => e.HeadNumber, e => e.MapFrom(_e => _e.HeadNumber))
+                .ForMember(e => e.TaleNumber, e => e.MapFrom(_e => _e.TaleNumber))
+                .ReverseMap();
+
 
                 //Mapping data from Business layer to DataLayer 
                 cfg.CreateMap<Common.Models.Rail, RailData.Models.Rail>()
@@ -117,6 +126,7 @@ namespace AGAT.LocoDispatcher.Business
             });
             _mapper = config.CreateMapper();
         }
+
 
         public static IMapper GetMapperInstance()
         {

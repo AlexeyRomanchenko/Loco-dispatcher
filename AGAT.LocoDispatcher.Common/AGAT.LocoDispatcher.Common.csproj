@@ -48,6 +48,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\Managers\IRailManager.cs" />
     <Compile Include="Interfaces\Managers\IRouteManager.cs" />
+    <Compile Include="Interfaces\Managers\ITrainManager.cs" />
     <Compile Include="Interfaces\Rails\ICoord.cs" />
     <Compile Include="Interfaces\Rails\IPark.cs" />
     <Compile Include="Interfaces\Rails\IRail.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Models\Rail.cs" />
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\RoutePlate.cs" />
+    <Compile Include="Models\Train.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

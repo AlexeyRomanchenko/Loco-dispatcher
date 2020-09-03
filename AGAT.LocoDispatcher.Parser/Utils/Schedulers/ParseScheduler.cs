@@ -8,7 +8,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Schedulers
 {
     public class ParseScheduler
     {
-        public static async void Start(string path)
+        public static void Start(string path)
         {
             IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
             scheduler.Start();
