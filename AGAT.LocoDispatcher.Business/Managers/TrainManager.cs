@@ -36,13 +36,7 @@ namespace AGAT.LocoDispatcher.Business.Managers
                 {
                     throw new ArgumentNullException("Парк не найден");
                 }
-                var wayIds = await _routeRepository.GetWayIdByCodeAsync(park.prk_id, parkCode);
-                if (wayIds.Count() < 1)
-                {
-                    throw new ArgumentNullException("Пути не найдены");
-                }
-                // Make JOIN
-                IList<TrainDTO> info = await _repository.GetTrainsInfoByWayIdsAsync(wayIds);
+                IList<TrainDTO> info = await _repository.GetTrainsInfoByStationAndCodeAsync(park.prk_id, parkCode);
                 return Mapper.GetMapperInstance().Map<IList<Train>>(info);
             }
             catch (Exception ex)

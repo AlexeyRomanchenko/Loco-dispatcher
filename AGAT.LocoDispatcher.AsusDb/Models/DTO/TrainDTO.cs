@@ -8,6 +8,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
 {
     public class TrainDTO
     {
+        public string RouteNumber { get; set; }
         public string TrainIndex { get; set; }
         public string HeadNumber { get; set; }
         public string TaleNumber { get; set; }

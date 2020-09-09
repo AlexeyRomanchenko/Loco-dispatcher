@@ -10,36 +10,32 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
 {
     public class TrainRepository
     {
-        public async Task<List<TrainDTO>> GetTrainsInfoByWayIdsAsync(IList<int> wayIds)
+        public async Task<List<TrainDTO>> GetTrainsInfoByStationAndCodeAsync(int parkId, string parkCode)
         {
             try
             {
-                if (wayIds.Count() > 0)
+                if (string.IsNullOrEmpty(parkCode?.Trim()))
                 {
-                    IList<int?> _ids = new List<int?>();
-                    foreach (int wayId in wayIds)
-                    {
-                        int? _wayId = (int?)wayId;
-                        _ids.Add(_wayId);
-                    }
-                    using (AsusContext context = new AsusContext())
-                    {
-                        return await context.sostav.Where(w => _ids.Contains(w.way_id)).Select(e=> new TrainDTO ()
-                        { 
-                            TrainIndex = e.ind_s,
-                            HeadNumber = e.num_vag_h,
-                            TaleNumber = e.num_vag_t,
-                            Length= e.usl_dl_s,
-                            Weight= e.ves_s 
-                        }).ToListAsync();
-                    }
+                    throw new ArgumentNullException("Код парка не валидный");
                 }
-                else 
+                using (AsusContext context = new AsusContext())
                 {
-                    throw new ArgumentNullException("Way Id не валидный. Произошла ошибка");
+                    var trains = await (from train in context.sostav
+                                        join e in context.way on train.way_id equals e.way_id
+                                        where e.prk_id == parkId && e.num_prk == parkCode
+                                        select new TrainDTO()
+                                        {
+                                            TrainIndex = train.ind_s,
+                                            HeadNumber = train.num_vag_h,
+                                            TaleNumber = train.num_vag_t,
+                                            Length = train.usl_dl_s,
+                                            Weight = train.ves_s,
+                                            RouteNumber = e.num_way
+                                        }).ToListAsync();
+                    return trains;
                 }
-                
             }
+
             catch (Exception ex)
             {
                 throw ex;

@@ -13,5 +13,6 @@ namespace AGAT.LocoDispatcher.Common.Models.RailModels
         public string Weight { get; set; }
         public string HeadNumber { get; set; }
         public string TaleNumber { get; set; }
+        public string RouteNumber { get; set; }
     }
 }

@@ -77,9 +77,10 @@ namespace AGAT.LocoDispatcher.Business
                 .ForMember(e => e.Length, e => e.MapFrom(_e => _e.Length))
                 .ForMember(e => e.HeadNumber, e => e.MapFrom(_e => _e.HeadNumber))
                 .ForMember(e => e.TaleNumber, e => e.MapFrom(_e => _e.TaleNumber))
+                .ForMember(e=>e.RouteNumber, e=>e.MapFrom(_e=>_e.RouteNumber))
                 .ReverseMap();
 
-
+                //    "pixi.js": "^5.2.0",
                 //Mapping data from Business layer to DataLayer 
                 cfg.CreateMap<Common.Models.Rail, RailData.Models.Rail>()
                 .ForMember(dto => dto.Id, _e => _e.Ignore())
