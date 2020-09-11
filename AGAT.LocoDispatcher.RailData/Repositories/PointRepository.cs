@@ -34,7 +34,7 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                 {
                     using (DataContext context = new DataContext())
                     {
-                        return context.Points.Where(e => e.ParkId == id).ToList();
+                        return context.Points.AsNoTracking().Where(e => e.ParkId == id).ToList();
                     }
                 }
                 else

@@ -16,7 +16,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
             {
                 using (AsusContext _db = new AsusContext())
                 {
-                    return _db.way.Where(e => e.num_prk == code && e.prk_id == parkId).ToList();
+                    return _db.way.AsNoTracking().Where(e => e.num_prk == code && e.prk_id == parkId).ToList();
                 }
             }
             else
@@ -35,7 +35,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
                 }
                 using (AsusContext context = new AsusContext())
                 {
-                    return await context.way.Where(e => e.num_prk == code && e.prk_id == parkId).Select(e => e.way_id).ToListAsync();
+                    return await context.way.AsNoTracking().Where(e => e.num_prk == code && e.prk_id == parkId).Select(e => e.way_id).ToListAsync();
                 }
             }
             catch (Exception ex)

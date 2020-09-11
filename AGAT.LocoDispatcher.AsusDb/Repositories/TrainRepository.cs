@@ -20,8 +20,9 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
                 }
                 using (AsusContext context = new AsusContext())
                 {
-                    var trains = await (from train in context.sostav
+                    List<TrainDTO> trains = await (from train in context.sostav
                                         join e in context.way on train.way_id equals e.way_id
+                                        join w in context.train on train.sostav_id equals w.sostav_id 
                                         where e.prk_id == parkId && e.num_prk == parkCode
                                         select new TrainDTO()
                                         {
@@ -30,7 +31,8 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
                                             TaleNumber = train.num_vag_t,
                                             Length = train.usl_dl_s,
                                             Weight = train.ves_s,
-                                            RouteNumber = e.num_way
+                                            RouteNumber = e.num_way,
+                                            Type = w.sostav_id
                                         }).ToListAsync();
                     return trains;
                 }

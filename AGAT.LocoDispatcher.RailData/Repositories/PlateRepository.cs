@@ -13,7 +13,7 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
         {
             using (DataContext db = new DataContext())
             {
-                return db.RoutePlates.Where(e => e.RailId == id).FirstOrDefault();
+                return db.RoutePlates.AsNoTracking().Where(e => e.RailId == id).FirstOrDefault();
             }
         }
     }

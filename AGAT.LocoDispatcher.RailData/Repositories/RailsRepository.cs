@@ -46,7 +46,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories.RailRepositories
                 {
                     using (DataContext db = new DataContext())
                     {
-                        var routes = db.Rails.Where(e => e.ParkId == id).Include(e=>e.Coords).ToList();
+                        var routes = db.Rails.AsNoTracking().Where(e => e.ParkId == id).Include(e=>e.Coords).ToList();
                         foreach(var route in routes)
                         {
                             route.Carriage = CarriageRepository.GetCarriageByRouteId(route.Id);

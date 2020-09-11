@@ -211,11 +211,11 @@
     <Content Include="Public\assets\test.json" />
     <Content Include="Public\favicon.ico" />
     <Content Include="Public\index.html" />
-    <Content Include="Public\main.f6f94d197e75d8dc4e65.js" />
+    <Content Include="Public\main.657dcdeb9d125b405182.js" />
     <Content Include="Public\polyfills-es5.22ce8938e7457c1e2c23.js" />
     <Content Include="Public\polyfills.e2e70d5c4b71d2668773.js" />
     <Content Include="Public\runtime.a8ef3a8272419c2e2c66.js" />
-    <Content Include="Public\styles.ce1a360586c9fe05ed05.css" />
+    <Content Include="Public\styles.5c2d9fc8f3386517b3a6.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -237,6 +237,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Public\google_material.80a1ddfd47ed037cbb97.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

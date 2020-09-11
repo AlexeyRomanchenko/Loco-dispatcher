@@ -17,7 +17,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
             {
                 using (AsusContext context = new AsusContext())
                 {
-                    return context.park.Where(e => e.num_prk == code).ToList();
+                    return context.park.AsNoTracking().Where(e => e.num_prk == code).ToList();
                 }
             }
             else
@@ -32,7 +32,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
             {
                 using (AsusContext ctx = new AsusContext())
                 {
-                    park park = await ctx.park.Where(e=>e.stanc == station && e.num_prk == code).FirstOrDefaultAsync();
+                    park park = await ctx.park.AsNoTracking().Where(e=>e.stanc == station && e.num_prk == code).FirstOrDefaultAsync();
                     return park;
                 }
             }

@@ -14,5 +14,6 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
         public string TaleNumber { get; set; }
         public string Length { get; set; }
         public string Weight { get; set; }
+        public int? Type { get; set; }
     }
 }

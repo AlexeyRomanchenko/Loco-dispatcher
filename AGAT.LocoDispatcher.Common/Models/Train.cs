@@ -14,5 +14,6 @@ namespace AGAT.LocoDispatcher.Common.Models.RailModels
         public string HeadNumber { get; set; }
         public string TaleNumber { get; set; }
         public string RouteNumber { get; set; }
+        public int? Type { get; set; }
     }
 }

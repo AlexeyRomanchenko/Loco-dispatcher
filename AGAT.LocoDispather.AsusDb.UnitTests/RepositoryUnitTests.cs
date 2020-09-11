@@ -16,16 +16,16 @@ namespace AGAT.LocoDispather.AsusDb.UnitTests
             var station = await repository.GetParkByStationAndCodeAsync("14043", "01");
         }
 
-        [TestMethod]
-        public async Task GetTrainsOk()
-        {
-            TrainRepository repository = new TrainRepository();
-            List<int> wayIdList = new List<int>
-            {
-               23,1917, 2016
-            };
-            var trains = await repository.GetTrainsInfoByWayIdsAsync(wayIdList);
-            Assert.IsNotNull(trains);
-        }
+        //[TestMethod]
+        //public async Task GetTrainsOk()
+        //{
+        //    TrainRepository repository = new TrainRepository();
+        //    List<int> wayIdList = new List<int>
+        //    {
+        //       23,1917, 2016
+        //    };
+        //    var trains = await repository.GetTrainsInfoByWayIdsAsync(wayIdList);
+        //    Assert.IsNotNull(trains);
+        //}
     }
 }

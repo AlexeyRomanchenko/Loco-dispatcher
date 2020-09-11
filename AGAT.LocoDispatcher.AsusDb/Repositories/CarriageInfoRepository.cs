@@ -13,7 +13,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
             {
                 using (AsusContext context = new AsusContext())
                 {
-                    return context.vagon.Where(e => e.way_id == routeId).ToList();
+                    return context.vagon.AsNoTracking().Where(e => e.way_id == routeId).ToList();
                 }
             }
             catch (Exception ex)

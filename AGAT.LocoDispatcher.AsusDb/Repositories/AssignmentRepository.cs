@@ -15,11 +15,11 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
         }
         public async Task<IEnumerable<LokM_operWork>> GetActiveAsync()
         {
-            return await context.LokM_operWork.Where(e => e.dt_end == null).ToListAsync();
+            return await context.LokM_operWork.AsNoTracking().Where(e => e.dt_end == null).ToListAsync();
         }
         public async Task<IEnumerable<LokM_operWork>> GetActiveByStationCodeAsync(string code)
         {
-            return await context.LokM_operWork.Where(e => e.dt_end == null && e.stanc == code).ToListAsync();
+            return await context.LokM_operWork.AsNoTracking().Where(e => e.dt_end == null && e.stanc == code).ToListAsync();
         }
     }
 }
