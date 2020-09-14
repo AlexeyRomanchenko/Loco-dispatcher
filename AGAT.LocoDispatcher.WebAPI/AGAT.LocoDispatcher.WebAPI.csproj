@@ -211,7 +211,7 @@
     <Content Include="Public\assets\test.json" />
     <Content Include="Public\favicon.ico" />
     <Content Include="Public\index.html" />
-    <Content Include="Public\main.657dcdeb9d125b405182.js" />
+    <Content Include="Public\main.38bfebaab0a236fb018a.js" />
     <Content Include="Public\polyfills-es5.22ce8938e7457c1e2c23.js" />
     <Content Include="Public\polyfills.e2e70d5c4b71d2668773.js" />
     <Content Include="Public\runtime.a8ef3a8272419c2e2c66.js" />

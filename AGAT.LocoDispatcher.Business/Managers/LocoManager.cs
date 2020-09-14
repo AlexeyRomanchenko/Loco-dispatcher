@@ -37,6 +37,7 @@ namespace AGAT.LocoDispatcher.Business.Managers
                         {
                             Id = loco.Id,
                             ESR = loco.ESR,
+                            TrainNumber = loco.TrainNumber,
                             PointId = _event.CheckPointNumber
                         };
                         //_event.CheckPointNumber
