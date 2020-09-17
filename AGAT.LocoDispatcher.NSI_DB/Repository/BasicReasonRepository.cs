@@ -22,7 +22,7 @@ namespace AGAT.LocoDispatcher.NSI_DB.Repository
                 {
                     throw new ArgumentNullException("code is not valid");
                 }
-                var text =  await _context.LokM_BasicPr.Where(e=>e.cod_W == code).Select(e=>e.basic_pr).FirstOrDefaultAsync();
+                var text =  await _context.LokM_BasicPr.AsNoTracking().Where(e=>e.cod_W == code).Select(e=>e.basic_pr).FirstOrDefaultAsync();
                 return text;
             }
             catch (Exception ex)
