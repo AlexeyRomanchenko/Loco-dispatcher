@@ -14,6 +14,8 @@ namespace AGAT.LocoDispatcher.RailData
             public DbSet<RoutePlate> RoutePlates { get; set; }
             public DbSet<Carriage> Carriages { get; set; }
             public DbSet<Point> Points { get; set; } 
+            public DbSet<Station> Stations { get; set; }
+            public DbSet<Park> Parks { get; set; }
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
             modelBuilder.Entity<Rail>().HasKey(e => e.Id);

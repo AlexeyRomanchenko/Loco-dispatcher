@@ -11,5 +11,6 @@ namespace AGAT.LocoDispatcher.RailData.Models
         public string Name { get; set; }
         public IEnumerable<Rail> Rails { get; set; }
         public int ParkId { get; set; }
+        public int StationId { get; set; }
     }
 }

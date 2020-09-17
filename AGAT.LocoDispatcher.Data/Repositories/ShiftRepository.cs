@@ -88,5 +88,18 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                 throw ex;
             }
         }
+
+        public async Task<int?> GetLocomotiveDirectionParityByShiftAsync(int id) 
+        {
+            try
+            {
+                var direction =  await context.StartEvents.AsNoTracking().Where(e=> e.ShiftId == id && e.Type == "start_move").Select(e=>e.DirectionParity).FirstOrDefaultAsync();
+                return direction;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

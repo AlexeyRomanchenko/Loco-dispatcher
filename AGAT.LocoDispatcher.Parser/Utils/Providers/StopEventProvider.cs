@@ -1,4 +1,5 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Common.Models.EventModels;
 using AGAT.LocoDispatcher.Parser.Utils.Events;
 using AGAT.LocoDispatcher.Parser.Utils.Helpers;
 using AGAT.LocoDispatcher.Parser.Utils.Managers;
@@ -35,7 +36,15 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Timestamp = stopMove.Timestamp,
                     TrackNumber = stopMove.TrackNumber
                 };
+                EventModel model = new EventModel
+                {
+                    LocoNumber = stopMove.TrainId,
+                    DateTime = ConvertHelper.TimestampToDateTime(stopMove.Timestamp),
+                    Route = stopMove.TrackNumber,
+                    Type = stopMove.Type
+                };
                 await _manager.stopEventRepository.CreatAsync(stopMoveEvent);
+                //await _helper.InvokeEventToArchieveAsync(model, stopMove.CheckPointNumber);
             }
             catch (FormatException ex)
             {

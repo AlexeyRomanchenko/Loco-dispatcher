@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ConvertHelper.cs" />
     <Compile Include="Managers\AssignmentManager.cs" />
     <Compile Include="Managers\CarriageManager.cs" />
     <Compile Include="Managers\LocoManager.cs" />
@@ -72,6 +73,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AGAT.locoDispatcher.ArchiveDB\AGAT.locoDispatcher.ArchiveDB.csproj">
+      <Project>{74f7d7a9-adaa-4dda-8bf4-f16c5728eef8}</Project>
+      <Name>AGAT.locoDispatcher.ArchiveDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AGAT.LocoDispatcher.AsusDb\AGAT.LocoDispatcher.AsusDb.csproj">
       <Project>{408fb7d4-c533-41ed-b5f8-d4157f2d3024}</Project>
       <Name>AGAT.LocoDispatcher.AsusDb</Name>
@@ -84,10 +89,15 @@
       <Project>{d82777ac-249b-4f6f-9d71-9b20f90ae69a}</Project>
       <Name>AGAT.LocoDispatcher.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.NSI_DB\AGAT.LocoDispatcher.NSI_DB.csproj">
+      <Project>{70abdddb-726f-49f7-a647-bfc792d4c2a0}</Project>
+      <Name>AGAT.LocoDispatcher.NSI_DB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AGAT.LocoDispatcher.RailData\AGAT.LocoDispatcher.RailData.csproj">
       <Project>{f76eac00-1df4-4b53-99e7-1928471efe6f}</Project>
       <Name>AGAT.LocoDispatcher.RailData</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

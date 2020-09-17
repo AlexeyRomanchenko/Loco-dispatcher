@@ -1,4 +1,5 @@
-﻿using AGAT.LocoDispatcher.Data.Events;
+﻿using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Data.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace AGAT.LocoDispatcher.Data.Models
     public class StartMoveEvent : MoveEventBase
     {
         public int Direction { get; set; }
-        public int DirectionParity { get; set; }
+        public int? DirectionParity { get; set; }
     }
 }

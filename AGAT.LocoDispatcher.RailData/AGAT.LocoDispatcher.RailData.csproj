@@ -60,6 +60,7 @@
     <Compile Include="Models\Point.cs" />
     <Compile Include="Models\Rail.cs" />
     <Compile Include="Models\RoutePlate.cs" />
+    <Compile Include="Models\Station.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CarriageRepository.cs" />
     <Compile Include="Repositories\PlateRepository.cs" />

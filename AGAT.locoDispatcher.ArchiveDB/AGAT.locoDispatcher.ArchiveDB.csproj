@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74F7D7A9-ADAA-4DDA-8BF4-F16C5728EEF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AGAT.locoDispatcher.ArchiveDB</RootNamespace>
+    <AssemblyName>AGAT.locoDispatcher.ArchiveDB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aof.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aof_cont.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArchiveContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="arenda.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ar_vag.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bal_zurn.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DO2.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dsp.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dsp_info.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtproperties.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dviz.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DWH_oper.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DWH_service.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GIR_Info.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gruz_v.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gruz_v_ish.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gy_98.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="har_s.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_DO2.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_dviz.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_gruz.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_kr12.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_kr91.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_oper.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="locomotiv.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LokM_oper.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LokM_Work.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lok_perev.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manevry.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Destination.cs" />
+    <Compile Include="nal_park.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NEISPRAV_VAG.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="neisp_pko.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NNS_act_old.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NNS_act_vag_old.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ob_train.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oper_kat_per.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oper_tr.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oper_v.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oper_v_kps.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oper_way.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="op_dop_info.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OSMOTR.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="otpravka.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADV_OTPR.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADV_VPU_AOF.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADV_VPU_AOF_CKNIS.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADV_VPU_AOF_CKNIS_LOG.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PADV_VPU_LOG.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pametka.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pam_vag.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="park_now.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pass_sostav.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PASS_TR.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="perev_SAP.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prikaz.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prikaz_vpu.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROST.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prost_for_st.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prost_vag.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prost_vag_for_st.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PTO_SAP.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PV_dviz.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PV_dvizSAP.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razl_kat.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razl_kat_per.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razl_nod.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razl_osn.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razl_pogr.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razl_rps.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rem_smena.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\OperationRepository.cs" />
+    <Compile Include="Repositories\TrackRepository.cs" />
+    <Compile Include="REZ_ZAP.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shift.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shift_employee.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMENA.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stat_info.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_Apiks_Stkass.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tr2Pr_ish.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="train1.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="train2.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vagon.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VAG_KONT.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vpu_spravka.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vu14.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vu14_vag.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VZ_S_VAG_KONT.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="way_a.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="way_vag.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZAJAVKA.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zajavka_por.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zajavka_por_vag.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZAJ_OTRAB.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZAJ_VAGON.cs">
+      <DependentUpon>ArchiveContext.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ArchiveContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ArchiveContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ArchiveContext.edmx.diagram">
+      <DependentUpon>ArchiveContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArchiveContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ArchiveContext.Context.cs</LastGenOutput>
+      <DependentUpon>ArchiveContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="ArchiveContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ArchiveContext.edmx</DependentUpon>
+      <LastGenOutput>ArchiveContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj">
+      <Project>{54FEBA75-21E8-4F43-8F5F-D260C17350BF}</Project>
+      <Name>AGAT.LocoDispatcher.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

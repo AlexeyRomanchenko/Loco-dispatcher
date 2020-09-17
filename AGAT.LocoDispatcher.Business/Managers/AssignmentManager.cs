@@ -1,5 +1,9 @@
-﻿using AGAT.LocoDispatcher.AsusDb.Repositories;
+﻿using AGAT.locoDispatcher.ArchiveDB.Models;
+using AGAT.locoDispatcher.ArchiveDB.Repositories;
+using AGAT.LocoDispatcher.AsusDb.Repositories;
+using AGAT.LocoDispatcher.Business.Helpers;
 using AGAT.LocoDispatcher.Business.Models;
+using AGAT.LocoDispatcher.NSI_DB.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +15,13 @@ namespace AGAT.LocoDispatcher.Business.Managers
     public class AssignmentManager
     {
         private AssignmentRepository repository;
+        private BasicReasonRepository _reasonRepository;
+        private OperationRepository _operationRepository;
         public AssignmentManager()
         {
+            _reasonRepository = new BasicReasonRepository();
             repository = new AssignmentRepository();
+            _operationRepository = new OperationRepository();
         }
         public async Task<IEnumerable<Assignment>> GetAsync()
         {
@@ -33,21 +41,31 @@ namespace AGAT.LocoDispatcher.Business.Managers
                 }
 
                 IEnumerable<AsusDb.Models.LokM_operWork> _assignments = await repository.GetActiveByStationCodeAsync(code);
+
                 List<AsusDb.Models.Assignment> _assignmentList = new List<AsusDb.Models.Assignment>();
                 foreach (var assignment in _assignments)
                 {
+                    string reasonName = await _reasonRepository.GetReasonNameByCodeAsync(assignment.cod_opL);
+                    Destination destination = await _operationRepository.GetOperationDestinationsByWorkIdAsync(assignment.lokm_workid, assignment.dt_beg);
+                    string[] startParkRoute= ConvertHelper.ConvertToParkAndRoute(destination.From);
+                    string[] endParkRoute = ConvertHelper.ConvertToParkAndRoute(destination.To);
                     AsusDb.Models.Assignment _assignment = new AsusDb.Models.Assignment
                     {
-                    Id = assignment.lokM_operW_id,
-                    Station  = assignment.stanc,
-                    LocomotiveNumber = assignment.num_lok,
-                    SerialNumber = assignment.ser_lok,
-                    WorkCode = assignment.cod_work,
-                    PaymentCode = assignment.cod_opL,
-                    StartDate = assignment.dt_beg,
-                    EndDate = assignment.dt_end,
-                    InsertDate = assignment.dt_ins,
-                    AppliedCode = assignment.utv
+                        Id = assignment.lokM_operW_id,
+                        Station  = assignment.stanc,
+                        LocomotiveNumber = assignment.num_lok,
+                        SerialNumber = assignment.ser_lok,
+                        WorkCode = assignment.cod_work,
+                        PaymentCode = assignment.cod_opL,
+                        StartDate = assignment.dt_beg,
+                        EndDate = assignment.dt_end,
+                        InsertDate = assignment.dt_ins,
+                        AppliedCode = assignment.utv,
+                        Reason = reasonName,
+                        StartRoute = startParkRoute[1],
+                        StartPark = startParkRoute[0],
+                        EndRoute = endParkRoute[1],
+                        EndPark = endParkRoute[0]
                     };
                     _assignmentList.Add(_assignment);
                 }

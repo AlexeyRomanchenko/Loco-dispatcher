@@ -1,4 +1,5 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Common.Models.EventModels;
 using AGAT.LocoDispatcher.Parser.Utils.Events;
 using AGAT.LocoDispatcher.Parser.Utils.Helpers;
 using AGAT.LocoDispatcher.Parser.Utils.Managers;
@@ -32,7 +33,17 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Timestamp = checkpointEvent.Timestamp,
                     TrackNumber = checkpointEvent.TrackNumber
                 };
+
+                EventModel model = new EventModel
+                {
+                    LocoNumber = checkpointEvent.TrainId,
+                    DateTime = ConvertHelper.TimestampToDateTime(checkpointEvent.Timestamp),
+                    Route = checkpointEvent.TrackNumber,
+                    Type = checkpointEvent.Type,
+                };
+
                 await _manager.checkpointEventRepository.CreatAsync(checkpoint);
+                //await helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber);
             }
             catch (FormatException ex)
             {

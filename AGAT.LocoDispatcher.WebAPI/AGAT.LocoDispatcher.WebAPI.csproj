@@ -205,13 +205,9 @@
     <Content Include="Public\assets\images\locomotive.png" />
     <Content Include="Public\assets\images\preloader.gif" />
     <Content Include="Public\assets\images\preloader.png" />
-    <Content Include="Public\assets\mainPoints.json" />
-    <Content Include="Public\assets\mainStation.json" />
-    <Content Include="Public\assets\points.json" />
-    <Content Include="Public\assets\test.json" />
     <Content Include="Public\favicon.ico" />
     <Content Include="Public\index.html" />
-    <Content Include="Public\main.38bfebaab0a236fb018a.js" />
+    <Content Include="Public\main.83dfa0148bd474d253ca.js" />
     <Content Include="Public\polyfills-es5.22ce8938e7457c1e2c23.js" />
     <Content Include="Public\polyfills.e2e70d5c4b71d2668773.js" />
     <Content Include="Public\runtime.a8ef3a8272419c2e2c66.js" />
@@ -237,6 +233,11 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Public\assets\fonts\google_material.woff2" />
+    <Content Include="Public\assets\mainPoints.json" />
+    <Content Include="Public\assets\mainStation.json" />
+    <Content Include="Public\assets\points.json" />
+    <Content Include="Public\assets\test.json" />
     <Content Include="Public\google_material.80a1ddfd47ed037cbb97.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

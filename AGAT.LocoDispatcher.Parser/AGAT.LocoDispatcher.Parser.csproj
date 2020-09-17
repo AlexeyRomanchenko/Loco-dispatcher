@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AGAT.LocoDispatcher.Parser</RootNamespace>
     <AssemblyName>AGAT.LocoDispatcher.Parser</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -81,9 +81,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -296,6 +296,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AGAT.locoDispatcher.ArchiveDB\AGAT.locoDispatcher.ArchiveDB.csproj">
+      <Project>{74f7d7a9-adaa-4dda-8bf4-f16c5728eef8}</Project>
+      <Name>AGAT.locoDispatcher.ArchiveDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj">
       <Project>{54feba75-21e8-4f43-8f5f-d260c17350bf}</Project>
       <Name>AGAT.LocoDispatcher.Common</Name>
@@ -307,6 +311,10 @@
     <ProjectReference Include="..\AGAT.LocoDispatcher.Data\AGAT.LocoDispatcher.Data.csproj">
       <Project>{d82777ac-249b-4f6f-9d71-9b20f90ae69a}</Project>
       <Name>AGAT.LocoDispatcher.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.RailData\AGAT.LocoDispatcher.RailData.csproj">
+      <Project>{F76EAC00-1DF4-4B53-99E7-1928471EFE6F}</Project>
+      <Name>AGAT.LocoDispatcher.RailData</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

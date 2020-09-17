@@ -1,10 +1,8 @@
-﻿using AGAT.LocoDispatcher.Data.Events;
+﻿using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Data.Events;
 using AGAT.LocoDispatcher.Parser.Utils.Managers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
 {
@@ -44,6 +42,11 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                 throw ex;
             }
 
+        }
+        public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode)
+        {
+            await manager.pointRepository.GetStationInfoByPointCode(pointCode);
+            await manager.trackRepository.InvokeEventAsync(model);
         }
     }
 }

@@ -30,6 +30,8 @@ namespace AGAT.LocoDispatcher.Business.Managers
                 IEnumerable<LocoShiftEvent> locoShifts = await repository.GetActiveByStationAsync(station);
                 foreach (var loco in locoShifts)
                 {
+                    int? direction = await repository.GetLocomotiveDirectionParityByShiftAsync(loco.Id);
+                    // Stopped
                     MoveEventBase _event = await GetLastEventAsync(loco.Id);
                     if (!string.IsNullOrEmpty(_event?.CheckPointNumber.Trim()))
                     {
@@ -38,7 +40,8 @@ namespace AGAT.LocoDispatcher.Business.Managers
                             Id = loco.Id,
                             ESR = loco.ESR,
                             TrainNumber = loco.TrainNumber,
-                            PointId = _event.CheckPointNumber
+                            PointId = _event.CheckPointNumber,
+                            Direction = direction
                         };
                         //_event.CheckPointNumber
                         Point point = await pointManager.GetPointByCode(_event.CheckPointNumber, parkId);
@@ -48,6 +51,20 @@ namespace AGAT.LocoDispatcher.Business.Managers
                             locomotive.Angle = point.Angle;
                             locomotives.Add(locomotive);
                         }
+                    }
+                    else
+                    {
+                        LocomotiveViewModel locomotive = new LocomotiveViewModel
+                        {
+                            Id = loco.Id,
+                            ESR = loco.ESR,
+                            TrainNumber = loco.TrainNumber,
+                            Angle = 0,
+                            Coords = null,
+                            Direction = direction
+
+                        };
+                        locomotives.Add(locomotive);
                     }
 
                 }

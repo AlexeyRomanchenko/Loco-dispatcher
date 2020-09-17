@@ -18,5 +18,10 @@ namespace AGAT.LocoDispatcher.Business.Models
         public DateTime? EndDate { get; set; }
         public DateTime? InsertDate { get; set; }
         public int? AppliedCode { get; set; }
+        public string Reason { get; set; }
+        public string StartPark { get; set; }
+        public string StartRoute { get; set; }
+        public string EndRoute { get; set; }
+        public string EndPark { get; set; }
     }
 }

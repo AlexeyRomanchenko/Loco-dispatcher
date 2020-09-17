@@ -31,5 +31,10 @@ namespace AGAT.LocoDispatcher.AsusDb.Models
         public DateTime? InsertDate { get; set; }
         [Column("utv")]
         public int? AppliedCode { get; set; }
+        public string Reason { get; set; }
+        public string StartPark { get; set; }
+        public string StartRoute { get; set; }
+        public string EndRoute { get; set; }
+        public string EndPark { get; set; }
     }
 }

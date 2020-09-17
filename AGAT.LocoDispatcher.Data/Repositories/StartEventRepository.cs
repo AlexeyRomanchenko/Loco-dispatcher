@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
             {
                 throw new ArgumentNullException("start event cant be null");
             }
+           // await BeginEventAsync(_event);
             using (DatabaseContext context = new DatabaseContext())
             {
                 _event.CreatedAt = DateTime.Now;
@@ -28,7 +30,6 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                 await context.SaveChangesAsync();
             }
         }
-
         public async Task<List<StartMoveEvent>> GetAsync()
         {
             return await _context.StartEvents.ToListAsync();

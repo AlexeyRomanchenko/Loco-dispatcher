@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="060297d90ae7429db7d08beb0ccc2d42" Name="Diagram1">
+        <EntityTypeShape EntityType="arhivModel.aof" Width="1.5" PointX="12.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.ar_vag" Width="1.5" PointX="27" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.arenda" Width="1.5" PointX="24.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.bal_zurn" Width="1.5" PointX="5.75" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.dtproperties" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.dviz" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.GIR_Info" Width="1.5" PointX="26.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.gruz_v" Width="1.5" PointX="8" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.gy_98" Width="1.5" PointX="12.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.kontr_dviz" Width="1.5" PointX="17.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.kontr_gruz" Width="1.5" PointX="17.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.kontr_kr12" Width="1.5" PointX="26.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.kontr_kr91" Width="1.5" PointX="26.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.kontr_oper" Width="1.5" PointX="20" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.locomotiv" Width="1.5" PointX="3" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.LokM_oper" Width="1.5" PointX="29" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.LokM_Work" Width="1.5" PointX="26.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.manevry" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.nal_park" Width="1.5" PointX="21.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.NNS_act_old" Width="1.5" PointX="21.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.ob_train" Width="1.5" PointX="14.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.oper_tr" Width="1.5" PointX="17" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.oper_v" Width="1.5" PointX="10.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.OSMOTR" Width="1.5" PointX="22.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.perev_SAP" Width="1.5" PointX="23.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.prikaz" Width="1.5" PointX="8" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.prikaz_vpu" Width="1.5" PointX="12.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PV_dvizSAP" Width="1.5" PointX="28.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.SMENA" Width="1.5" PointX="21.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.sysdiagrams" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.tr2Pr_ish" Width="1.5" PointX="27.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.train1" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.train2" Width="1.5" PointX="0.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.VAG_KONT" Width="1.5" PointX="14.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.vagon" Width="1.5" PointX="16.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.vpu_spravka" Width="1.5" PointX="18.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.vu14" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.way_a" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.way_vag" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.ZAJ_OTRAB" Width="1.5" PointX="19.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.ZAJ_VAGON" Width="1.5" PointX="17" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.ZAJAVKA" Width="1.5" PointX="14.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.zajavka_por" Width="1.5" PointX="10.75" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.zajavka_por_vag" Width="1.5" PointX="13" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.aof_cont" Width="1.5" PointX="28.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.DO2" Width="1.5" PointX="8" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.dsp" Width="1.5" PointX="20.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.dsp_info" Width="1.5" PointX="28.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.DWH_oper" Width="1.5" PointX="28.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.DWH_service" Width="1.5" PointX="29.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.gruz_v_ish" Width="1.5" PointX="0.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.har_s" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.kontr_DO2" Width="1.5" PointX="2.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.lok_perev" Width="1.5" PointX="29.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.neisp_pko" Width="1.5" PointX="15" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.NEISPRAV_VAG" Width="1.5" PointX="25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.NNS_act_vag_old" Width="1.5" PointX="24" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.op_dop_info" Width="1.5" PointX="19.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.oper_kat_per" Width="1.5" PointX="12.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.oper_v_kps" Width="1.5" PointX="4.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.oper_way" Width="1.5" PointX="24" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.otpravka" Width="1.5" PointX="10.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PADV_OTPR" Width="1.5" PointX="30.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PADV_VPU_AOF" Width="1.5" PointX="30.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PADV_VPU_AOF_CKNIS" Width="1.5" PointX="30.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PADV_VPU_AOF_CKNIS_LOG" Width="1.5" PointX="25.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PADV_VPU_LOG" Width="1.5" PointX="30.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.pam_vag" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.pametka" Width="1.5" PointX="32.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.park_now" Width="1.5" PointX="24" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.Pass_sostav" Width="1.5" PointX="32.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PASS_TR" Width="1.5" PointX="32.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PROST" Width="1.5" PointX="8" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.prost_for_st" Width="1.5" PointX="18.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.prost_vag" Width="1.5" PointX="20.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.prost_vag_for_st" Width="1.5" PointX="32.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PTO_SAP" Width="1.5" PointX="32.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.PV_dviz" Width="1.5" PointX="33.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.razl_kat" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.razl_kat_per" Width="1.5" PointX="27.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.razl_nod" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.razl_osn" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.razl_pogr" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.razl_rps" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.rem_smena" Width="1.5" PointX="29.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.REZ_ZAP" Width="1.5" PointX="31.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.shift" Width="1.5" PointX="33.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.shift_employee" Width="1.5" PointX="34.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.stat_info" Width="1.5" PointX="34.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.temp_Apiks_Stkass" Width="1.5" PointX="10.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.vu14_vag" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="arhivModel.VZ_S_VAG_KONT" Width="1.5" PointX="12.75" PointY="34.75" IsExpanded="true" />
+        <AssociationConnector Association="arhivModel.FK_neisp_pko_aof" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_ar_vag_arenda" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_DO2_bal_zurn" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_PROST_bal_zurn" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_gruz_v_dviz" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_oper_v_dviz" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_oper_v_gruz_v" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_otpravka_gruz_v" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_neisp_pko_gy_98" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_kontr_oper_kontr_dviz" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_kontr_oper_kontr_gruz" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_locomotiv_train2" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_LokM_oper_LokM_Work" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_park_now_nal_park" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_NNS_act_vag_NNS_act" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_oper_tr_ob_train" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_op_dop_info_oper_tr" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_oper_kat_per_oper_v" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_oper_v_prikaz" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_NEISPRAV_VAG_OSMOTR" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_OPER_WAY_SMENA" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_har_s_train1" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_razl_kat_train1" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_razl_nod_train1" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_razl_osn_train1" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_razl_pogr_train1" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_razl_rps_train1" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_vu14_vag_vu14" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_way_vag_1__17" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_ZAJ_OTRAB_ZAJ_VAGON" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_ZAJ_VAGON_ZAJAVKA" ManuallyRouted="false" />
+        <AssociationConnector Association="arhivModel.FK_zajavka_por_vag_zajavka_por" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70ABDDDB-726F-49F7-A647-BFC792D4C2A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AGAT.LocoDispatcher.NSI_DB</RootNamespace>
+    <AssemblyName>AGAT.LocoDispatcher.NSI_DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="a1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADM.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARENDA_KLIENTI.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arhiv_clean.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bankrupt.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bros_pr.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bros_pr_24_25.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cargo_vags.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CODGRPOR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COD_DOLZ.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSCM.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSCM1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSCM_25.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dscm_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSP_NAPR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSP_PRIM.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSP_PRK.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtproperties.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECP.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIO.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIO_Smena.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gir_pass_tr.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRUZ.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gruz_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOD.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformationEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformationEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformationEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformationEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformationEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="IP_ADDR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="klient.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="klient21.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="klient24.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="klient_new.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="klient_tmp.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kl_594514.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KOD_PRED.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kontr_ks.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginConversion.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOKM.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LokM_BasicPr.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LokM_BasicPr_Add.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LokM_Stanc.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LokM_Stanc_Ar.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M101.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M102.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M104.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m104_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M107.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M109.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M122.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m122_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M124.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M124_10.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M127.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M134.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M135.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M142.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m1521.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m1522.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m1523.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m1524.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m1673.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m170.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M170___.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M172_21.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M172_BEL.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m5640.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mas_index.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mkao.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mppi_stanc24.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ms1359_1388.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_NEISPRAV.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_NEISPRAV_LITLAT.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="m_neisprav_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_STATE.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_STATE_LOGs.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NAPR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NNS_strana.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NNS_USER.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NORM.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPLF.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPLF2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPLF2_24.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPLF2_KLIENT.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPLF2_KLIENT_24.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPLF2_LONG_W.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nsi_stan.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nsi_stanrem.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NSSTOT.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NSSTOT_5.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nsstot_6_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NS_KN.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NS_MESTO.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NS_OBST.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NS_OBST1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NS_ZPU.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NUM_POR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPER.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="owner.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="owner_tmp2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="park_way_VC.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PASS_TMP.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PASS_TR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pattern5676.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pattern5676_tag5676.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PEREADR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="perevoz.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="perev_ar.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="perev_lok.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="podhodIVC.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRKACHV.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ps.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pw_uchastok.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="region.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Region_stanc.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REGUL.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REGUL_25.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rem_Klient.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rem_Kod_Pred.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rem_neisprav.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rem_neisprav_pricelist.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rem_PriceList.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\BasicReasonRepository.cs" />
+    <Compile Include="ROD.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPS.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RP_RS.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RV_Posl.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RZPor.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SADER.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sad_spis.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShablonOPKIS.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shift_employee.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shift_jobtitle.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shift_type.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shortGruz.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shortGruz1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shortSort.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shortSort1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SOBSTVENNIK.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SootvPrk.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SootvPrk24.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="specvag24.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spec_nad.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spec_nad_s.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPER1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STAN.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STANC.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STANC_OBRAB.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stanc_prip.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STANC_SOBSTV.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stanc_uch.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STFORM.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STRANA.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_cfg.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_PK.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SYS_station.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TABL_KRT.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tag5676.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Time_Klient.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TXT_ERR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uchastok.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL1.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL1_21.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL2.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL2_21.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL3.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL3_21.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL4.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL4_21.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL5.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USL5_25.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uslugi.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uslug_form.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vag_LDZ.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VID_OBSL.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOHR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GR_ZAP_POGR.cs">
+      <DependentUpon>InformationEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="InformationEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InformationEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="InformationEntities.edmx.diagram">
+      <DependentUpon>InformationEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InformationEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InformationEntities.edmx</DependentUpon>
+      <LastGenOutput>InformationEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="InformationEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InformationEntities.edmx</DependentUpon>
+      <LastGenOutput>InformationEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
