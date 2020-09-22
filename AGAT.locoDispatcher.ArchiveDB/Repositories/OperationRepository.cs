@@ -19,8 +19,6 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
         {
             try
             {
-               // var res = await context.LokM_oper.Where(e => e.lokM_work_id == workId).ToListAsync();
-                // HEre we are
                 Destination destinations = await context.LokM_oper
                     .AsNoTracking()
                     .Where(e => e.lokM_work_id == workId && e.dt_beg == startDate)

@@ -13,5 +13,6 @@ namespace AGAT.LocoDispatcher.Business.Models
         public int? Direction { get; set; }
         public Coords Coords { get; set; }
         public int Angle { get; set; }
+        public bool IsStopped { get; set; }
     }
 }

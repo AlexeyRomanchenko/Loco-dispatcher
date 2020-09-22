@@ -51,6 +51,7 @@
     <Compile Include="Helpers\ConvertHelper.cs" />
     <Compile Include="Managers\AssignmentManager.cs" />
     <Compile Include="Managers\CarriageManager.cs" />
+    <Compile Include="Managers\EmergencyManager.cs" />
     <Compile Include="Managers\LocoManager.cs" />
     <Compile Include="Managers\PointManager.cs" />
     <Compile Include="Managers\RailsManager.cs" />

@@ -24,10 +24,5 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                 await context.SaveChangesAsync();
             }
         }
-
-        public async Task<List<EmergencyEvent>> GetAsync()
-        {
-            return await _context.EmergencyEvents.ToListAsync();
-        }
     }
 }

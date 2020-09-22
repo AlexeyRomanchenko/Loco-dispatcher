@@ -180,6 +180,7 @@
     <Compile Include="Controllers\Assignments\AssignmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Main\CarriageInfoController.cs" />
+    <Compile Include="Controllers\Main\EmergencyMessageController.cs" />
     <Compile Include="Controllers\Main\LocoController.cs" />
     <Compile Include="Controllers\Main\PointController.cs" />
     <Compile Include="Controllers\Main\RailsController.cs" />
@@ -194,6 +195,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="assets\images\locomotiveLeft.png" />
+    <Content Include="assets\images\locomotiveRight.png" />
+    <Content Include="assets\images\locomotiveSimple.png" />
+    <Content Include="assets\images\locomotiveStop.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -203,11 +208,15 @@
     <Content Include="Global.asax" />
     <Content Include="Public\3rdpartylicenses.txt" />
     <Content Include="Public\assets\images\locomotive.png" />
+    <Content Include="Public\assets\images\locomotiveLeft.png" />
+    <Content Include="Public\assets\images\locomotiveRight.png" />
+    <Content Include="Public\assets\images\locomotiveSimple.png" />
+    <Content Include="Public\assets\images\locomotiveStop.png" />
     <Content Include="Public\assets\images\preloader.gif" />
     <Content Include="Public\assets\images\preloader.png" />
     <Content Include="Public\favicon.ico" />
     <Content Include="Public\index.html" />
-    <Content Include="Public\main.83dfa0148bd474d253ca.js" />
+    <Content Include="Public\main.3b91d22a08c77e776cd5.js" />
     <Content Include="Public\polyfills-es5.22ce8938e7457c1e2c23.js" />
     <Content Include="Public\polyfills.e2e70d5c4b71d2668773.js" />
     <Content Include="Public\runtime.a8ef3a8272419c2e2c66.js" />
@@ -308,6 +317,10 @@
     <ProjectReference Include="..\AGAT.LocoDispatcher.Common\AGAT.LocoDispatcher.Common.csproj">
       <Project>{54FEBA75-21E8-4F43-8F5F-D260C17350BF}</Project>
       <Name>AGAT.LocoDispatcher.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.Data\AGAT.LocoDispatcher.Data.csproj">
+      <Project>{D82777AC-249B-4F6F-9D71-9B20F90AE69A}</Project>
+      <Name>AGAT.LocoDispatcher.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

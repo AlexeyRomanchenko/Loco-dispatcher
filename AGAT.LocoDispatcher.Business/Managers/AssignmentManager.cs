@@ -52,7 +52,7 @@ namespace AGAT.LocoDispatcher.Business.Managers
                     AsusDb.Models.Assignment _assignment = new AsusDb.Models.Assignment
                     {
                         Id = assignment.lokM_operW_id,
-                        Station  = assignment.stanc,
+                        Station = assignment.stanc,
                         LocomotiveNumber = assignment.num_lok,
                         SerialNumber = assignment.ser_lok,
                         WorkCode = assignment.cod_work,
@@ -62,10 +62,10 @@ namespace AGAT.LocoDispatcher.Business.Managers
                         InsertDate = assignment.dt_ins,
                         AppliedCode = assignment.utv,
                         Reason = reasonName,
-                        StartRoute = startParkRoute[1],
-                        StartPark = startParkRoute[0],
-                        EndRoute = endParkRoute[1],
-                        EndPark = endParkRoute[0]
+                        StartRoute = startParkRoute.Length > 0 ? startParkRoute[1] : "-",
+                        StartPark = startParkRoute.Length > 0 ? startParkRoute[0]: " - ",
+                        EndRoute = endParkRoute.Length > 0 ? endParkRoute[1] : "-",
+                        EndPark = endParkRoute.Length > 0 ? endParkRoute[0] : "-",
                     };
                     _assignmentList.Add(_assignment);
                 }

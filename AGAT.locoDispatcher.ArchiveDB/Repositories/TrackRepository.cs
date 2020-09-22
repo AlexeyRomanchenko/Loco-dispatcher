@@ -23,8 +23,19 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
         {
             try
             {
+                if (model.Route.Length < 2) 
+                {
+                    model.Route = $"0{model.Route}";
+                }
+                if (model.Route == "20УП")
+                {
+                    model.Park = "ТЗ";
+                    model.Route = "02";
+                }
+                
+
                 var timestamp = new SqlParameter("@timestamp", SqlDbType.DateTime);
-                timestamp.Value = DateTime.Now;
+                timestamp.Value = model.EventDateTime;
                 var stationCode = new SqlParameter("@stanc", SqlDbType.NVarChar);
                 stationCode.Value = model.StationCode;
                 var locomotiveNumber = new SqlParameter("@num_lkmt", SqlDbType.NVarChar);
@@ -35,7 +46,9 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
                 route.Value = model.Route;
                 var type = new SqlParameter("@rele", SqlDbType.NVarChar);
                 type.Value = model.Type;
-                var res = await context.Database.ExecuteSqlCommandAsync("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele", stationCode,timestamp, locomotiveNumber, park, route, type);
+                var distance = new SqlParameter("@km", SqlDbType.Int);
+                distance.Value = model.Distance;
+                var res = await context.Database.ExecuteSqlCommandAsync("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km", stationCode,timestamp, locomotiveNumber, park, route, type, distance);
             }
             catch (Exception ex)
             {

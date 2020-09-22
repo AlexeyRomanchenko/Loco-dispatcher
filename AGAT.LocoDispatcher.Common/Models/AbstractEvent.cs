@@ -14,6 +14,8 @@ namespace AGAT.LocoDispatcher.Common.Models
         public string Route { get; set ; }
         public string Type { get ; set; }
         public string LocoNumber { get; set; }
+        public int Distance { get; set; }
         public int Timestamp { get; set; }
+        public DateTime EventDateTime { get; set; }
     }
 }

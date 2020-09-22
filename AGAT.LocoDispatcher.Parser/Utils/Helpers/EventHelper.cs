@@ -45,7 +45,12 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
         }
         public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode)
         {
-            await manager.pointRepository.GetStationInfoByPointCode(pointCode);
+            IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
+            model.Park = stationInfo.Park;
+            model.StationCode = stationInfo.StationCode;
+           
+            Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            model.EventDateTime = ConvertHelper.TimestampToDateTime(unixTimestamp);
             await manager.trackRepository.InvokeEventAsync(model);
         }
     }

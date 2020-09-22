@@ -20,7 +20,7 @@ namespace AGAT.LocoDispatcher.AsusDb.Repositories
         public async Task<IEnumerable<LokM_operWork>> GetActiveByStationCodeAsync(string code)
         {
             return await context.LokM_operWork.AsNoTracking()
-                .Where(e => e.dt_end == null && e.stanc == code && e.cod_work != "24" && e.cod_work != "25")
+                .Where(e => e.dt_end == null && e.stanc == code && e.cod_opL != "24" && e.cod_opL != "25")
                 .ToListAsync();
         }
     }

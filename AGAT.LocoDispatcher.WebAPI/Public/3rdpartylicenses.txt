@@ -97,6 +97,8 @@ THE SOFTWARE.
 
 @angular/material/select
 
+@angular/material/snack-bar
+
 @angular/material/table
 
 @angular/material/toolbar

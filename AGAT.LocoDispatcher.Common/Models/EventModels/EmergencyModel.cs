@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.Common.Models.EventModels
 {
-    public class EventModel : AbstractEvent
+    public class EmergencyModel
     {
-       
+        public int Timestamp { get; set; }
+        public string TrainNumber { get; set; }
+        public string Type { get; set; }
     }
 }

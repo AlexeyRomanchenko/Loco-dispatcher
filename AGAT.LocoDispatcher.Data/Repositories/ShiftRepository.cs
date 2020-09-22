@@ -93,7 +93,11 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             try
             {
-                var direction =  await context.StartEvents.AsNoTracking().Where(e=> e.ShiftId == id && e.Type == "start_move").Select(e=>e.DirectionParity).FirstOrDefaultAsync();
+                var direction =  await context.StartEvents.AsNoTracking()
+                    .Where(e=> e.ShiftId == id && e.Type == "start_move")
+                    .OrderByDescending(e=>e.Timestamp)
+                    .Select(e=>e.DirectionParity)
+                    .FirstOrDefaultAsync();
                 return direction;
             }
             catch (Exception ex)

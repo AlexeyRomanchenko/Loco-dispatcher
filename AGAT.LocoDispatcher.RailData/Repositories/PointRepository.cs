@@ -1,4 +1,5 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Common.Models.EventModels;
 using AGAT.LocoDispatcher.RailData.Models;
 using System;
 using System.Collections.Generic;
@@ -56,7 +57,7 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                 {
                     using (DataContext context = new DataContext())
                     {
-                        return await context.Points.AsNoTracking().Where(e => e.Code == checkpoint && e.ParkId == parkId).SingleOrDefaultAsync();
+                        return await context.Points.AsNoTracking().Where(e => e.Code == checkpoint && e.ParkId == parkId).FirstOrDefaultAsync();
                     }
                 }
                 else
@@ -69,7 +70,7 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                 throw ex;
             }
         }
-        public async Task GetStationInfoByPointCode(string code)
+        public async Task<StationInfo> GetStationInfoByPointCode(string code)
         {
             try
             {
@@ -79,23 +80,23 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                 }
                 using (DataContext context = new DataContext())
                 {
-                    var res = await context.Parks.Join(
-                        context.Points,
-                        park => park.ParkId,
+                    return await context.Parks.Join(
+                        context.Points.Where(w=>w.Code == code),
+                        park => park.Id,
                         point => point.ParkId,
                         (_park, _point) => new
                         {
                             StationId = _park.StationId,
-                            Name = _park.Name,
+                            Name = _park.Code,                      
                             ParkId = _park.ParkId
                         })
                         .Join(context.Stations,
                         park => park.StationId,
                         st => st.Id,
-                        (park, st) => new 
+                        (park, st) => new  StationInfo
                         {
-                            stationCode = st.StationCode,
-                            park = park.Name
+                            StationCode = st.StationCode,
+                            Park = park.Name
                         }
                         )
                         .FirstOrDefaultAsync();

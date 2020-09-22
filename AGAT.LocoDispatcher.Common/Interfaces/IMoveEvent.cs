@@ -9,5 +9,7 @@ namespace AGAT.LocoDispatcher.Common.Interfaces
     public interface IMoveEvent : IEvent, IStationInfo
     {
         string LocoNumber { get; set; }
+        int Distance{get;set;}
+        DateTime EventDateTime { get; set; }
     }
 }
