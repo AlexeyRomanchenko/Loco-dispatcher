@@ -10,7 +10,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
         public StopMoveEvent(
             string type,
             int timestamp,
-            int distance,
+            double distance,
             string checkpointNumber,
             string trackNumber,
             string message,
@@ -18,7 +18,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
         {
             this.Type = type;
             this.Timestamp = timestamp;
-            this.Distance = distance;
+            this.Distance = (int)distance;
             this.CheckPointNumber = checkpointNumber;
             this.TrackNumber = trackNumber;
             this.Message = message;

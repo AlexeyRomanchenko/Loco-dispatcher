@@ -1,0 +1,6 @@
+2020-09-22 14:13:59.0567 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParseAsync Error: 22.09.2020 14:13:59 | ERROR | Значение не может быть неопределенным.
+Имя параметра: code  is not valid  Task.Execute => ContinuationTaskFromResultTask`1.InnerInvoke => <>c__DisplayClass59_0.<SaveChangesAsync>b__0
+2020-09-22 14:13:59.0867 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParseAsync Error: 22.09.2020 14:13:59 | ERROR | Значение не может быть неопределенным.
+Имя параметра: code  is not valid  Task.Execute => ContinuationTaskFromResultTask`1.InnerInvoke => <>c__DisplayClass59_0.<SaveChangesAsync>b__0
+2020-09-22 14:13:59.1367 AGAT.LocoDispatcher.Parser.Jobs.ParseJob.Execute Error: 22.09.2020 14:13:59 | ERROR | Значение не может быть неопределенным.
+Имя параметра: code  is not valid  WorkerThread.Run => JobRunShell.Run => ParseJob.Execute

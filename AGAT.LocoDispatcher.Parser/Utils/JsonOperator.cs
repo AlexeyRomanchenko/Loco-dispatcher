@@ -18,7 +18,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
             _jsonFactory = new JsonFactory();
             _providerFactory = new ProviderFactory();
         }
-        public async Task ParseToJson(string jsonData)
+        public void ParseToJson(string jsonData)
         {
             if (string.IsNullOrEmpty(jsonData?.Trim()))
             {
@@ -43,9 +43,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 {
                     throw new ArgumentException("provider is not valid");
                 }
-                await provider.Create(_event);
-
-                Console.WriteLine(_event.Type);
+                provider.Create(_event).GetAwaiter().GetResult();
             }
         }
     }

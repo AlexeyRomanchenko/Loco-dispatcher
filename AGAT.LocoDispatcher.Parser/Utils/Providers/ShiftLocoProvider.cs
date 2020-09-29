@@ -24,9 +24,10 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                 ShiftLocomotiveEvent shiftLocomotive = (ShiftLocomotiveEvent)_event;
                 foreach (var train in shiftLocomotive.Trains)
                 {
+                    string _trainNumber = LocoShiftHelper.TransformTrainNumber(train);
                     LocoShiftEvent locoShift = new LocoShiftEvent
                     {
-                        TrainNumber = train,
+                        TrainNumber = _trainNumber,
                         ESR = shiftLocomotive.ESR,
                     };
                     await helper.AddLocoShiftAsync(locoShift, shiftLocomotive.Timestamp);

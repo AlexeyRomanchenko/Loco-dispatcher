@@ -18,11 +18,15 @@ namespace AGAT.LocoDispatcher.RailData
             public DbSet<Park> Parks { get; set; }
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
+            //modelBuilder.Entity<Point>().HasMany(e => e.Rails);
+            //modelBuilder.Entity<Rail>().HasMany(e=>e.Points);
+
             modelBuilder.Entity<Rail>().HasKey(e => e.Id);
             modelBuilder.Entity<Rail>().HasRequired(e => e.Carriage).WithRequiredPrincipal(e => e.Rail);
             modelBuilder.Entity<Rail>().HasRequired(e => e.RoutePlate).WithRequiredPrincipal(e => e.Rail);
             modelBuilder.Entity<Carriage>().HasKey(e=>e.Id);
                 base.OnModelCreating(modelBuilder);
             }
+        
     }
 }

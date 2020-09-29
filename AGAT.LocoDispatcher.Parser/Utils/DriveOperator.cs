@@ -13,7 +13,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
         {
             _json = new JsonOperator();
         }
-        public string GetJSONFromFileAsync(string pathToFile)
+        public string GetJSONFromFile(string pathToFile)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
             }
         }
 
-        public async Task GetFilesFromDirectoryAndParseAsync(string path)
+        public void GetFilesFromDirectoryAndParse(string path)
         {
             try
             {
@@ -50,8 +50,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                         try
                         {
                             FileInfo file = new FileInfo(filePath);
-                            string json = GetJSONFromFileAsync(filePath);
-                            await _json.ParseToJson(json);
+                            string json = GetJSONFromFile(filePath);
+                            _json.ParseToJson(json);
                             file.Delete();
                         }
                         catch (Exception ex)

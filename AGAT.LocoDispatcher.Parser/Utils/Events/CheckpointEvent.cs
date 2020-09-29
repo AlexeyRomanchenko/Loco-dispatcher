@@ -10,7 +10,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
         public CheckpointEvent(string type,
             int timestamp,
             string trainId,
-            int speed,
+            double speed,
             string checkpointNumber,
             string trackNumber,
             string message
@@ -19,7 +19,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
             this.Type = type;
             this.Timestamp = timestamp;
             this.TrainId = trainId;
-            this.Speed = speed;
+            this.Speed = (int)speed;
             this.CheckPointNumber = checkpointNumber;
             this.TrackNumber = trackNumber;
             this.Message = message;

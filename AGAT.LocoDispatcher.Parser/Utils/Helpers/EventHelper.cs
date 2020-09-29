@@ -24,7 +24,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                     LocoShiftEvent newShiftEvent = new LocoShiftEvent
                     {
                         CreatedAt = DateTime.Now,
-                        ESR = "",
+                        ESR = "14043",
                         IsValid = false,
                         StartShift = DateTime.Now,
                         TrainNumber = locoNumber
@@ -45,13 +45,27 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
         }
         public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode)
         {
-            IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
-            model.Park = stationInfo.Park;
-            model.StationCode = stationInfo.StationCode;
-           
-            Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-            model.EventDateTime = ConvertHelper.TimestampToDateTime(unixTimestamp);
-            await manager.trackRepository.InvokeEventAsync(model);
+            try
+            {
+                if (string.IsNullOrEmpty(pointCode?.Trim()))
+                {
+                    pointCode = await manager.checkpointEventRepository.GetLastCheckpointByTrainIdAsync(model.LocoNumber);
+                }
+                IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
+                model.Park = stationInfo?.Park;
+                model.StationCode = stationInfo?.StationCode;
+                model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
+                if (string.IsNullOrEmpty(model.Park?.Trim()))
+                {
+                    return;
+                }
+                await manager.trackRepository.InvokeEventAsync(model);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
     }
 }

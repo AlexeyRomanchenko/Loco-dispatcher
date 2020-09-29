@@ -45,10 +45,16 @@ namespace AGAT.LocoDispatcher.Business.Managers
                 List<AsusDb.Models.Assignment> _assignmentList = new List<AsusDb.Models.Assignment>();
                 foreach (var assignment in _assignments)
                 {
+                    (string, string) startParkRoute = ("-", "-");
+                    (string, string) endParkRoute = ("-", "-");
                     string reasonName = await _reasonRepository.GetReasonNameByCodeAsync(assignment.cod_opL);
                     Destination destination = await _operationRepository.GetOperationDestinationsByWorkIdAsync(assignment.lokm_workid, assignment.dt_beg);
-                    string[] startParkRoute= ConvertHelper.ConvertToParkAndRoute(destination.From);
-                    string[] endParkRoute = ConvertHelper.ConvertToParkAndRoute(destination.To);
+                    if (destination != null)
+                    {
+                        startParkRoute = ConvertHelper.ConvertToParkAndRoute(destination.From);
+                        endParkRoute = ConvertHelper.ConvertToParkAndRoute(destination.To);
+                    }
+                    
                     AsusDb.Models.Assignment _assignment = new AsusDb.Models.Assignment
                     {
                         Id = assignment.lokM_operW_id,
@@ -62,10 +68,10 @@ namespace AGAT.LocoDispatcher.Business.Managers
                         InsertDate = assignment.dt_ins,
                         AppliedCode = assignment.utv,
                         Reason = reasonName,
-                        StartRoute = startParkRoute.Length > 0 ? startParkRoute[1] : "-",
-                        StartPark = startParkRoute.Length > 0 ? startParkRoute[0]: " - ",
-                        EndRoute = endParkRoute.Length > 0 ? endParkRoute[1] : "-",
-                        EndPark = endParkRoute.Length > 0 ? endParkRoute[0] : "-",
+                        StartRoute = startParkRoute.Item2,
+                        StartPark = startParkRoute.Item1,
+                        EndRoute = endParkRoute.Item2,
+                        EndPark = endParkRoute.Item1,
                     };
                     _assignmentList.Add(_assignment);
                 }

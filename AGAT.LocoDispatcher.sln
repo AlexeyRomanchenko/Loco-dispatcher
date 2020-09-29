@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.NSI_DB"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.locoDispatcher.ArchiveDB", "AGAT.locoDispatcher.ArchiveDB\AGAT.locoDispatcher.ArchiveDB.csproj", "{74F7D7A9-ADAA-4DDA-8BF4-F16C5728EEF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Data.UnitTests", "AGAT.LocoDispatcher.Data.UnitTests\AGAT.LocoDispatcher.Data.UnitTests.csproj", "{50AD6C19-5071-4311-9E54-B747301FCD0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Parser.UnitTests", "AGAT.LocoDispatcher.Parser.UnitTests\AGAT.LocoDispatcher.Parser.UnitTests.csproj", "{4E8606B8-4B53-4CD9-BC2D-81B785F96176}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{74F7D7A9-ADAA-4DDA-8BF4-F16C5728EEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74F7D7A9-ADAA-4DDA-8BF4-F16C5728EEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74F7D7A9-ADAA-4DDA-8BF4-F16C5728EEF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50AD6C19-5071-4311-9E54-B747301FCD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AD6C19-5071-4311-9E54-B747301FCD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AD6C19-5071-4311-9E54-B747301FCD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AD6C19-5071-4311-9E54-B747301FCD0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

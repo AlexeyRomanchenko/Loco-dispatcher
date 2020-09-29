@@ -22,6 +22,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             try
             {
                 CheckpointEvent checkpointEvent = (CheckpointEvent)_event;
+                checkpointEvent.TrainId = LocoShiftHelper.TransformTrainNumber(checkpointEvent.TrainId);
                 int shiftId = await helper.GetLocoShiftIdByLocoNumber(checkpointEvent.TrainId);
                 Data.Models.CheckpointEvent checkpoint = new Data.Models.CheckpointEvent
                 {
@@ -43,7 +44,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                 };
 
                 await _manager.checkpointEventRepository.CreatAsync(checkpoint);
-                await helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber);
+               // await helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber);
             }
             catch (FormatException ex)
             {

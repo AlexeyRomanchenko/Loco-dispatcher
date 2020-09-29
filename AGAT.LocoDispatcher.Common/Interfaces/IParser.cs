@@ -4,6 +4,6 @@ namespace AGAT.LocoDispatcher.Common.Interfaces
 {
     public interface IParser
     {
-        Task ParseToJson(string jsonString);
+        void ParseToJson(string jsonString);
     }
 }

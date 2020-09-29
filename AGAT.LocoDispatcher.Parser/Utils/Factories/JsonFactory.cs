@@ -1,8 +1,10 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
 using AGAT.LocoDispatcher.Constants;
 using AGAT.LocoDispatcher.Parser.Utils.Events;
+using AGAT.LocoDispatcher.Parser.Utils.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -20,7 +22,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         StartMoveEvent startEvent = new StartMoveEvent(
                             jsonObject.type.ToString(),
                             (int)jsonObject.timestamp,
-                            (int)jsonObject.direction,
+                            ConvertHelper.DynamicToDouble(jsonObject.direction),
                             (int)jsonObject.direction_parity,
                             jsonObject.message.ToString(),
                             jsonObject.train_id.ToString(),
@@ -39,7 +41,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         StopMoveEvent stopEvent = new StopMoveEvent(
                             jsonObject.type.ToString(),
                             (int)jsonObject.timestamp,
-                            (int)jsonObject.distance,
+                            ConvertHelper.DynamicToDouble(jsonObject.distance),
                             jsonObject.checkpoint_number.ToString(),
                             jsonObject.track_number.ToString(),
                             jsonObject.message.ToString(),
@@ -58,7 +60,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                             jsonObject.type.ToString(),
                             (int)jsonObject.timestamp,
                             jsonObject.train_id.ToString(),
-                            (int)jsonObject.speed,
+                            ConvertHelper.DynamicToDouble(jsonObject.speed),
                             jsonObject.checkpoint_number.ToString(),
                             jsonObject.track_number.ToString(),
                             jsonObject.message.ToString()
@@ -75,7 +77,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         StopMoveEvent stopEvent = new StopMoveEvent(
                                 jsonObject.type.ToString(),
                                 (int)jsonObject.timestamp,
-                                (int)jsonObject.distance,
+                                ConvertHelper.DynamicToDouble(jsonObject.distance),
                                 jsonObject.checkpoint_number.ToString(),
                                 jsonObject.track_number.ToString(),
                                 jsonObject.message.ToString(),

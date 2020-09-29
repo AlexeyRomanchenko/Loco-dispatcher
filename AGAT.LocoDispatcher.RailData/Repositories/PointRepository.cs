@@ -98,7 +98,7 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                             StationCode = st.StationCode,
                             Park = park.Name
                         }
-                        )
+                        ).AsNoTracking()
                         .FirstOrDefaultAsync();
 
                 }
@@ -106,6 +106,25 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public async Task<Point> GetPointByCodeAsync(string code)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(code?.Trim()))
+                {
+                    throw new ArgumentNullException("Point code is not valid");
+                }
+                using (DataContext context = new DataContext())
+                {
+                    return await context.Points.AsNoTracking().Where(e => e.Code == code).FirstOrDefaultAsync();
+                }
+            }
+            catch 
+            {
+                throw;
             }
         }
     }

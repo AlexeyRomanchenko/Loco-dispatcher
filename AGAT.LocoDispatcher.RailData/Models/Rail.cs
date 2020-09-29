@@ -13,6 +13,7 @@ namespace AGAT.LocoDispatcher.RailData.Models
         public Rail()
         {
             this.Coords = new HashSet<Coord>();
+            //Points = new List<Point>();
         }
         [Key]
         public int Id { get; set; }
@@ -22,5 +23,6 @@ namespace AGAT.LocoDispatcher.RailData.Models
         public Park Park { get; set; }
         public Carriage Carriage { get; set; }
         public RoutePlate RoutePlate { get; set; }
+        //public ICollection<Point> Points { get; set; }
     }
 }

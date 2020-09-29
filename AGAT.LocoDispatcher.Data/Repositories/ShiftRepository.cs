@@ -32,7 +32,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             try
             {
-                return await context.LocoShiftEvents.Where(e => e.EndShift == null && e.TrainNumber == locoNumber).SingleOrDefaultAsync();
+                return await context.LocoShiftEvents.Where(e => e.EndShift == null && e.TrainNumber == locoNumber).FirstOrDefaultAsync();
             }
             catch (Exception ex)
             {

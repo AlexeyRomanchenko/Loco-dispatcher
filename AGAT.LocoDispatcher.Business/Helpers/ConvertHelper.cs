@@ -8,7 +8,7 @@ namespace AGAT.LocoDispatcher.Business.Helpers
 {
     public class ConvertHelper
     {
-        public static string[] ConvertToParkAndRoute(string parkRoute)
+        public static (string, string) ConvertToParkAndRoute(string parkRoute)
         {
             try
             {
@@ -18,7 +18,7 @@ namespace AGAT.LocoDispatcher.Business.Helpers
                 }
                 string park = parkRoute.Substring(0, parkRoute.Length - 2);
                 string route = parkRoute.Substring(parkRoute.Length - 2, 2);
-                return new string[] { park, route };
+                return (park, route);
             }
             catch (Exception ex)
             {

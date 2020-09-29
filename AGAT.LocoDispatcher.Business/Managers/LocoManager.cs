@@ -51,8 +51,8 @@ namespace AGAT.LocoDispatcher.Business.Managers
                         {
                             locomotive.Coords = point.Coord;
                             locomotive.Angle = point.Angle;
-                            locomotives.Add(locomotive);
                         }
+                        locomotives.Add(locomotive);
                     }
                     else
                     {

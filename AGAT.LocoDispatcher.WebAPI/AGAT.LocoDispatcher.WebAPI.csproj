@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Main\CarriageInfoController.cs" />
     <Compile Include="Controllers\Main\EmergencyMessageController.cs" />
+    <Compile Include="Controllers\Main\FailedEventController.cs" />
     <Compile Include="Controllers\Main\LocoController.cs" />
     <Compile Include="Controllers\Main\PointController.cs" />
     <Compile Include="Controllers\Main\RailsController.cs" />
@@ -216,11 +217,11 @@
     <Content Include="Public\assets\images\preloader.png" />
     <Content Include="Public\favicon.ico" />
     <Content Include="Public\index.html" />
-    <Content Include="Public\main.3b91d22a08c77e776cd5.js" />
+    <Content Include="Public\main.1659b3fba0e270966492.js" />
     <Content Include="Public\polyfills-es5.22ce8938e7457c1e2c23.js" />
     <Content Include="Public\polyfills.e2e70d5c4b71d2668773.js" />
     <Content Include="Public\runtime.a8ef3a8272419c2e2c66.js" />
-    <Content Include="Public\styles.5c2d9fc8f3386517b3a6.css" />
+    <Content Include="Public\styles.8d07911d0e88cb7da06b.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

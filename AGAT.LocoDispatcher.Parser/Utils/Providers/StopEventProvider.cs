@@ -25,6 +25,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             try
             {
                 StopMoveEvent stopMove = (StopMoveEvent)_event;
+                stopMove.TrainId = LocoShiftHelper.TransformTrainNumber(stopMove.TrainId);
                 int shiftId = await _helper.GetLocoShiftIdByLocoNumber(stopMove.TrainId);
                 Data.Models.StopMoveEvent stopMoveEvent = new Data.Models.StopMoveEvent
                 {

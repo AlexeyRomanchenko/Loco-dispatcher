@@ -26,6 +26,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             try
             {
                 StartMoveEvent startMove = (StartMoveEvent)_event;
+                startMove.TrainId = LocoShiftHelper.TransformTrainNumber(startMove.TrainId);
                 int shiftId = await _helper.GetLocoShiftIdByLocoNumber(startMove.TrainId);
                 Data.Models.StartMoveEvent moveEvent = new Data.Models.StartMoveEvent
                 {

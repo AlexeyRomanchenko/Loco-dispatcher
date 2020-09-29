@@ -25,6 +25,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             {
 
                 EmergencyEvent emergencyEvent = (EmergencyEvent)_event;
+                emergencyEvent.TrainId = LocoShiftHelper.TransformTrainNumber(emergencyEvent.TrainId);
                 int shiftId = await helper.GetLocoShiftIdByLocoNumber(emergencyEvent.TrainId);
                 Data.Models.EmergencyEvent emergency = new Data.Models.EmergencyEvent
                 {

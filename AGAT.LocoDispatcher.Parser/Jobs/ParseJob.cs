@@ -1,6 +1,7 @@
 ﻿using AGAT.LocoDispatcher.Parser.Utils;
 using Quartz;
 using System;
+using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.Parser.Jobs
 {
@@ -22,12 +23,11 @@ namespace AGAT.LocoDispatcher.Parser.Jobs
                 {
                     throw new ArgumentNullException("PATH IS NOT VALID");
                 }
-                _drive.GetFilesFromDirectoryAndParseAsync(path).GetAwaiter().GetResult();
+                _drive.GetFilesFromDirectoryAndParse(path);
             }
             catch (Exception ex)
             {
                 logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
-                throw ex;
             }
         }
     }

@@ -60,5 +60,19 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             }
 
         }
+
+        public static string TransformTrainNumber(string trainNumber)
+        {
+            if (string.IsNullOrEmpty(trainNumber?.Trim()))
+            {
+                throw new ArgumentException("train number is not valid");
+            }
+            int counter = 4 - trainNumber.Length;
+            for (int i = 0; i < counter; i++)
+            {
+                trainNumber = $"0{trainNumber}";
+            };
+            return trainNumber;
+        }
     }
 }
