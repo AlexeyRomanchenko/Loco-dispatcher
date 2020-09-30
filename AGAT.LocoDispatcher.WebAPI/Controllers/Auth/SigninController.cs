@@ -32,7 +32,11 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
             {
                 if (model.Username == "admin" && model.Password == "admin")
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, TokenManager.GenerateToken(model.Username));
+                    return Request.CreateResponse(HttpStatusCode.OK, new 
+                    {
+                        username =  model.Username,
+                        token = TokenManager.GenerateToken(model.Username)
+                    });
                 }
                 else
                 {
