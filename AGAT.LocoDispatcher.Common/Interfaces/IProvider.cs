@@ -8,6 +8,6 @@ namespace AGAT.LocoDispatcher.Common.Interfaces
 {
     public interface IProvider
     {
-        Task Create(IEvent _event);
+        void Create(IEvent _event);
     }
 }

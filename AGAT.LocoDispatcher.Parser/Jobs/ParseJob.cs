@@ -27,6 +27,9 @@ namespace AGAT.LocoDispatcher.Parser.Jobs
             }
             catch (Exception ex)
             {
+                logger.Error($"ERROR {ex.InnerException?.Message}");
+                logger.Error($"{DateTime.Now} | ERROR SOURCE | {ex.Source}");
+                logger.Error($"{DateTime.Now} | ERROR METHOD | {ex.TargetSite}");
                 logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
             }
         }

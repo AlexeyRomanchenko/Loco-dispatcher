@@ -1,17 +1,18 @@
 ﻿using System;
 using System.IO;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.Parser.Utils
 {
     public class DriveOperator
     {
-        private JsonOperator _json;
+        private JsonOperator _operator;
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         public DriveOperator()
         {
-            _json = new JsonOperator();
+            _operator = new JsonOperator();
         }
         public string GetJSONFromFile(string pathToFile)
         {
@@ -28,8 +29,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 }
             }
             catch (FileNotFoundException ex)
-            {
-                
+            {              
                 throw ex;
             }
             catch (Exception ex)
@@ -51,13 +51,31 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                         {
                             FileInfo file = new FileInfo(filePath);
                             string json = GetJSONFromFile(filePath);
-                            _json.ParseToJson(json);
+                            logger.Info($"{DateTime.Now} | GETTING FILE | {filePath}");
+                            _operator.ParseToJson(json);
                             file.Delete();
                         }
                         catch (Exception ex)
                         {
-                            logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
-                            throw ex;
+                            try
+                            {
+                                FileInfo file = new FileInfo(filePath);
+                                if (!file.Exists)
+                                {
+                                    file.MoveTo("C:/inetpub/wwwroot/Errors");
+                                }
+                                //file.Delete();
+
+                            }
+                            catch (Exception _ex)
+                            {
+                                throw;                           
+                            }
+
+
+                            logger.Error($"{DateTime.Now} | ERROR SOURCE {filePath} | {ex.Source}");
+                            logger.Error($"{DateTime.Now} | ERROR METHOD | {ex.TargetSite}");
+                            logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");   
                         }
 
                     }
@@ -68,10 +86,12 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                     throw new ArgumentNullException("directory doesn't exist");
                 }
             }
+
             catch (Exception ex)
             {
-                logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
-                throw ex;
+                logger.Error($"{DateTime.Now} | LAST ERROR SOURCE | {ex.Source}");
+                logger.Error($"{DateTime.Now} | LAST ERROR METHOD | {ex.TargetSite}");
+                logger.Error($"{DateTime.Now} | LAST ERROR | {ex.Message}");
             }
 
         }

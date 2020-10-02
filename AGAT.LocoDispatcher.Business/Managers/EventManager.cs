@@ -1,4 +1,5 @@
-﻿using AGAT.LocoDispatcher.Data.Models;
+﻿using AGAT.LocoDispatcher.Data;
+using AGAT.LocoDispatcher.Data.Models;
 using AGAT.LocoDispatcher.Data.Repositories;
 using AGAT.LocoDispatcher.RailData.Models;
 using AGAT.LocoDispatcher.RailData.Repositories;
@@ -16,7 +17,8 @@ namespace AGAT.LocoDispatcher.Business.Managers
         private PointRepository pointRepository;
         public EventManager()
         {
-            eventRepository = new CheckpointEventRepository();
+            DatabaseContext context = new DatabaseContext();
+            eventRepository = new CheckpointEventRepository(context);
             pointRepository = new PointRepository();
         }
 

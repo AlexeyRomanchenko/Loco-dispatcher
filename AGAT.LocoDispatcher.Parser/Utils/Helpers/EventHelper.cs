@@ -59,7 +59,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                 {
                     return;
                 }
-                await manager.trackRepository.InvokeEventAsync(model);
+                manager.trackRepository.InvokeEventAsync(model);
             }
             catch (Exception ex)
             {

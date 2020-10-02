@@ -11,15 +11,22 @@ namespace AGAT.LocoDispatcher.Data.Repositories
     public class CheckpointEventRepository
     {
         private DatabaseContext _context;
-        public CheckpointEventRepository()
+        public CheckpointEventRepository(DatabaseContext context)
         {
-            _context = new DatabaseContext();
+            _context = context;
         }
-        public async Task CreatAsync(CheckpointEvent _event)
+        public void CreatAsync(CheckpointEvent _event)
         {
-            _event.CreatedAt = DateTime.Now;
-            _context.CheckpointEvents.Add(_event);
-            await _context.SaveChangesAsync();
+                try
+                {
+                    _event.CreatedAt = DateTime.Now;
+                    _context.CheckpointEvents.Add(_event);
+                    _context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
         }
 
         public async Task<List<CheckpointEvent>> GetAsync()

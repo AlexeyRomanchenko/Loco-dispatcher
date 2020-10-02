@@ -12,18 +12,22 @@ namespace AGAT.LocoDispatcher.Data.Repositories
     public class StopEventRepository
     {
         private DatabaseContext _context;
-        public StopEventRepository()
+        public StopEventRepository(DatabaseContext context)
         {
-            _context = new DatabaseContext();
+            _context = context;
         }
-        public async Task CreatAsync(StopMoveEvent _event)
+        public void CreatAsync(StopMoveEvent _event)
         {
-            using (DatabaseContext context = new DatabaseContext())
-            {
-                _event.CreatedAt = DateTime.Now;
-                context.StopEvents.Add(_event);
-                await context.SaveChangesAsync();
-            }
+              try
+              {
+                        _event.CreatedAt = DateTime.Now;
+                        _context.StopEvents.Add(_event);
+                        _context.SaveChanges();
+              }
+              catch (Exception ex)
+              {
+                        throw;
+              }
         }
 
         public async Task<List<StopMoveEvent>> GetStopAsync()

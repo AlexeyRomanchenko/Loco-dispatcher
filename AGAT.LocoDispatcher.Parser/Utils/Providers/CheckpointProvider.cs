@@ -12,18 +12,18 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
     {
         private DataManager _manager;
         private EventHelper helper;
-        public CheckpointProvider()
+        public CheckpointProvider(DataManager dataManager)
         {
-            _manager = new DataManager();
+            _manager = dataManager;
             helper = new EventHelper();
         }
-        public async Task Create(IEvent _event)
+        public void Create(IEvent _event)
         {
             try
             {
                 CheckpointEvent checkpointEvent = (CheckpointEvent)_event;
                 checkpointEvent.TrainId = LocoShiftHelper.TransformTrainNumber(checkpointEvent.TrainId);
-                int shiftId = await helper.GetLocoShiftIdByLocoNumber(checkpointEvent.TrainId);
+                int shiftId = helper.GetLocoShiftIdByLocoNumber(checkpointEvent.TrainId).GetAwaiter().GetResult();
                 Data.Models.CheckpointEvent checkpoint = new Data.Models.CheckpointEvent
                 {
                     Type = checkpointEvent.Type,
@@ -43,7 +43,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Timestamp = checkpoint.Timestamp
                 };
 
-                await _manager.checkpointEventRepository.CreatAsync(checkpoint);
+                _manager.checkpointEventRepository.CreatAsync(checkpoint);
                // await helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber);
             }
             catch (FormatException ex)

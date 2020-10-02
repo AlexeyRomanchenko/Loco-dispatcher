@@ -19,7 +19,7 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
             context = new arhieveEntities();
         }
 
-        public async Task InvokeEventAsync(IMoveEvent model)
+        public void InvokeEventAsync(IMoveEvent model)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
                 type.Value = model.Type;
                 var distance = new SqlParameter("@km", SqlDbType.Int);
                 distance.Value = model.Distance;
-                await context.Database.ExecuteSqlCommandAsync("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km", stationCode,timestamp, locomotiveNumber, park, route, type, distance);
+                context.Database.ExecuteSqlCommand("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km", stationCode,timestamp, locomotiveNumber, park, route, type, distance);
             }
             catch(Exception ex)
             {

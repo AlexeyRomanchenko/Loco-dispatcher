@@ -17,7 +17,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
         {
             helper = new LocoShiftHelper();
         }
-        public async Task Create(IEvent _event)
+        public void Create(IEvent _event)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                         TrainNumber = _trainNumber,
                         ESR = shiftLocomotive.ESR,
                     };
-                    await helper.AddLocoShiftAsync(locoShift, shiftLocomotive.Timestamp);
+                    helper.AddLocoShiftAsync(locoShift, shiftLocomotive.Timestamp).GetAwaiter().GetResult();
                 }
             }
             catch (FormatException ex)

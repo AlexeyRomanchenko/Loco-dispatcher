@@ -16,18 +16,18 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
     {
         private DataManager _manager;
         private EventHelper _helper;
-        public StartEventProvider()
+        public StartEventProvider(DataManager dataManager)
         {
-            _manager = new DataManager();
+            _manager = dataManager;
             _helper = new EventHelper();
         }
-        public async Task Create(IEvent _event)
+        public void Create(IEvent _event)
         {
             try
             {
                 StartMoveEvent startMove = (StartMoveEvent)_event;
                 startMove.TrainId = LocoShiftHelper.TransformTrainNumber(startMove.TrainId);
-                int shiftId = await _helper.GetLocoShiftIdByLocoNumber(startMove.TrainId);
+                int shiftId = _helper.GetLocoShiftIdByLocoNumber(startMove.TrainId).GetAwaiter().GetResult();
                 Data.Models.StartMoveEvent moveEvent = new Data.Models.StartMoveEvent
                 {
                     Type = startMove.Type,
@@ -46,8 +46,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Type = startMove.Type,
                     Timestamp = startMove.Timestamp
                 };
-                await _manager.startEventRepository.CreatAsync(moveEvent);
-                await _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber);
+                _manager.startEventRepository.CreatAsync(moveEvent);
+                _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber).GetAwaiter().GetResult();
             }
             catch (FormatException ex)
             {

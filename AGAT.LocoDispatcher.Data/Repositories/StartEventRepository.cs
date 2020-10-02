@@ -11,28 +11,42 @@ namespace AGAT.LocoDispatcher.Data.Repositories
 {
     public class StartEventRepository
     {
-        private DatabaseContext _context;
-        public StartEventRepository()
+        private DatabaseContext context;
+        public StartEventRepository(DatabaseContext _context)
         {
-            _context = new DatabaseContext();
+            context = _context;
         }
-        public async Task CreatAsync(StartMoveEvent _event)
+        public void CreatAsync(StartMoveEvent _event)
         {
             if (_event == null)
             {
                 throw new ArgumentNullException("start event cant be null");
             }
-           // await BeginEventAsync(_event);
-            using (DatabaseContext context = new DatabaseContext())
-            {
+            try
+             {
                 _event.CreatedAt = DateTime.Now;
                 context.StartEvents.Add(_event);
-                await context.SaveChangesAsync();
-            }
+                context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
         }
         public async Task<List<StartMoveEvent>> GetAsync()
         {
-            return await _context.StartEvents.ToListAsync();
+            try
+            {
+                using (DatabaseContext context = new DatabaseContext())
+                {
+                    return await context.StartEvents.ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
     }
 }

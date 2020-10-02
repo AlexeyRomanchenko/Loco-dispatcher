@@ -1,4 +1,5 @@
 ﻿using AGAT.locoDispatcher.ArchiveDB.Repositories;
+using AGAT.LocoDispatcher.Data;
 using AGAT.LocoDispatcher.Data.Repositories;
 using AGAT.LocoDispatcher.RailData.Repositories;
 using System;
@@ -12,10 +13,11 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Managers
     {
         public DataManager()
         {
-            startEventRepository = new StartEventRepository();
-            stopEventRepository = new StopEventRepository();
-            checkpointEventRepository = new CheckpointEventRepository();
-            emergencyRepository = new EmergencyRepository();
+            DatabaseContext context = new DatabaseContext();
+            startEventRepository = new StartEventRepository(context);
+            stopEventRepository = new StopEventRepository(context);
+            checkpointEventRepository = new CheckpointEventRepository(context);
+            emergencyRepository = new EmergencyRepository(context);
             shiftRepository = new ShiftRepository();
             trackRepository = new TrackRepository();
             pointRepository = new PointRepository();

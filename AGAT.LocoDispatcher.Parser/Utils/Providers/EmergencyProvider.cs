@@ -14,19 +14,19 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
     {
         private DataManager _manager;
         private EventHelper helper;
-        public EmergencyProvider()
+        public EmergencyProvider(DataManager dataManager)
         {
-            _manager = new DataManager();
+            _manager = dataManager;
             helper = new EventHelper();
         }
-        public async Task Create(IEvent _event)
+        public void Create(IEvent _event)
         {
             try
             {
 
                 EmergencyEvent emergencyEvent = (EmergencyEvent)_event;
                 emergencyEvent.TrainId = LocoShiftHelper.TransformTrainNumber(emergencyEvent.TrainId);
-                int shiftId = await helper.GetLocoShiftIdByLocoNumber(emergencyEvent.TrainId);
+                int shiftId = helper.GetLocoShiftIdByLocoNumber(emergencyEvent.TrainId).GetAwaiter().GetResult();
                 Data.Models.EmergencyEvent emergency = new Data.Models.EmergencyEvent
                 {
                     Type = emergencyEvent.Type,
@@ -38,7 +38,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Timestamp = emergencyEvent.Timestamp,
                     TrackNumber = emergencyEvent.TrackNumber
                 };
-                await _manager.emergencyRepository.CreateAsync(emergency);
+                _manager.emergencyRepository.CreateAsync(emergency).GetAwaiter().GetResult();
             }
             catch (FormatException ex)
             {

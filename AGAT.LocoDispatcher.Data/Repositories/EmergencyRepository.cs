@@ -11,9 +11,9 @@ namespace AGAT.LocoDispatcher.Data.Repositories
     public class EmergencyRepository
     {
         private DatabaseContext _context;
-        public EmergencyRepository()
+        public EmergencyRepository(DatabaseContext context)
         {
-            _context = new DatabaseContext();
+            _context = context;
         }
         public async Task CreateAsync(EmergencyEvent _event)
         {
