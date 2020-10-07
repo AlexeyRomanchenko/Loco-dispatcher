@@ -1,1 +1,0 @@
-2020-10-01 08:22:40.6739 AGAT.LocoDispatcher.Parser.WebApiApplication.Application_Start Info: App was launched in 01.10.2020 8:22:40  RuntimeMethodInfo.UnsafeInvokeInternal => RuntimeMethodHandle.InvokeMethod => WebApiApplication.Application_Start

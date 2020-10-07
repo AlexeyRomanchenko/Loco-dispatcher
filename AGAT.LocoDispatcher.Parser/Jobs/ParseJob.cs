@@ -19,11 +19,12 @@ namespace AGAT.LocoDispatcher.Parser.Jobs
             {
                 JobDataMap dataMap = context.JobDetail.JobDataMap;
                 string path = dataMap.GetString("path");
+                string errorPath = dataMap.GetString("errorPath");
                 if (string.IsNullOrEmpty(path?.Trim()))
                 {
                     throw new ArgumentNullException("PATH IS NOT VALID");
                 }
-                _drive.GetFilesFromDirectoryAndParse(path);
+                _drive.GetFilesFromDirectoryAndParse(path, errorPath);
             }
             catch (Exception ex)
             {

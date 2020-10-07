@@ -12,6 +12,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
     {
         private DataManager _manager;
         private EventHelper helper;
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public CheckpointProvider(DataManager dataManager)
         {
             _manager = dataManager;
@@ -42,7 +44,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Type = checkpointEvent.Type,
                     Timestamp = checkpoint.Timestamp
                 };
-
+                logger.Info("CheckpointEvent invoke");
                 _manager.checkpointEventRepository.CreatAsync(checkpoint);
                // await helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber);
             }

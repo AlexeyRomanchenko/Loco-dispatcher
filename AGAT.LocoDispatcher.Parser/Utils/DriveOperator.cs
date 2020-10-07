@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Security.AccessControl;
 using System.Threading.Tasks;
 
@@ -22,10 +23,9 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 {
                     throw new ArgumentNullException("Path is not valid");
                 }
-                using (StreamReader reader = new StreamReader(pathToFile))
+                using (StreamReader reader = new StreamReader(pathToFile, System.Text.Encoding.Unicode))
                 {
-                    string json = reader.ReadToEnd();
-                    return json;
+                    return reader.ReadToEnd();
                 }
             }
             catch (FileNotFoundException ex)
@@ -38,21 +38,22 @@ namespace AGAT.LocoDispatcher.Parser.Utils
             }
         }
 
-        public void GetFilesFromDirectoryAndParse(string path)
+        public void GetFilesFromDirectoryAndParse(string path, string errorPath)
         {
             try
             {
                 if (Directory.Exists(path))
                 {
-                    string[] files = Directory.GetFiles(path);
-                    foreach (var filePath in files)
+                    string filePath = Directory.GetFiles(path).FirstOrDefault(name => name != "Thumbs.db"); ;
+                    if (filePath != null)
                     {
                         try
                         {
                             FileInfo file = new FileInfo(filePath);
-                            string json = GetJSONFromFile(filePath);
-                            logger.Info($"{DateTime.Now} | GETTING FILE | {filePath}");
-                            _operator.ParseToJson(json);
+                            string jsonData = GetJSONFromFile(filePath);
+                            logger.Info($"{DateTime.Now} | GETTING FILE | {filePath} ");
+                            _operator.ParseToJson(jsonData);
+                            logger.Info($"{DateTime.Now} | AFTER INSERTING FILE | {filePath} ");
                             file.Delete();
                         }
                         catch (Exception ex)
@@ -60,25 +61,27 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                             try
                             {
                                 FileInfo file = new FileInfo(filePath);
-                                if (!file.Exists)
+                                if (file.Exists)
                                 {
-                                    file.MoveTo("C:/inetpub/wwwroot/Errors");
+                                    file.MoveTo($"{errorPath}{file.Name}");
                                 }
                                 //file.Delete();
 
                             }
-                            catch (Exception _ex)
+                            catch (Exception)
                             {
-                                throw;                           
+                                throw;
                             }
 
 
                             logger.Error($"{DateTime.Now} | ERROR SOURCE {filePath} | {ex.Source}");
                             logger.Error($"{DateTime.Now} | ERROR METHOD | {ex.TargetSite}");
-                            logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");   
+                            logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
                         }
 
                     }
+
+                    //}
                 }
                 else
                 {

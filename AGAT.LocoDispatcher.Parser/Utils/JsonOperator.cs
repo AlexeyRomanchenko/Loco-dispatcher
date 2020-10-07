@@ -12,6 +12,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
 {
     public class JsonOperator : IParser
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private JsonFactory _jsonFactory;
         private ProviderFactory _providerFactory;
         public JsonOperator()
@@ -31,12 +32,14 @@ namespace AGAT.LocoDispatcher.Parser.Utils
 
                 dynamic json = JsonConvert.DeserializeObject<dynamic>(jsonData);
                 dynamic jsonArray = json?.response?.events;
+                logger.Info($"{DateTime.Now} | DESERIALIZED JSON");
                 if (jsonArray == null)
                 {
                     throw new ArithmeticException("json couldn't be handled");
                 }
                 foreach (var jsonObject in jsonArray)
                 {
+                    logger.Info($"{DateTime.Now} | foreach statement JSON");
                     IEvent _event = _jsonFactory.GetEventFactory(jsonObject);
                     if (_event == null)
                     {
@@ -50,7 +53,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                     provider.Create(_event);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

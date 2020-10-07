@@ -27,11 +27,11 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                 _event.CreatedAt = DateTime.Now;
                 context.StartEvents.Add(_event);
                 context.SaveChanges();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw;
-                    }
+            }
+            catch (Exception)
+            {
+                throw;
+               }
         }
         public async Task<List<StartMoveEvent>> GetAsync()
         {
@@ -42,7 +42,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                     return await context.StartEvents.ToListAsync();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

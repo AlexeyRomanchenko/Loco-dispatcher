@@ -24,7 +24,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                         _context.StopEvents.Add(_event);
                         _context.SaveChanges();
               }
-              catch (Exception ex)
+              catch (Exception)
               {
                         throw;
               }

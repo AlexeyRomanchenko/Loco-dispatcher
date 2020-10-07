@@ -23,7 +23,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                     _context.CheckpointEvents.Add(_event);
                     _context.SaveChanges();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw;
                 }
@@ -33,26 +33,64 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             return await _context.CheckpointEvents.ToListAsync();
         }
-        public async Task<string> GetLastCheckpointByTrainIdAsync(string trainId)
+        public async Task<string> GetLastCheckpointByShiftIdAsync(int shiftId)
         {
             try
             {
-                if (string.IsNullOrEmpty(trainId?.Trim()))
+                if (shiftId < 1)
                 {
                     throw new ArgumentException("train id is not valid");
                 }
-                string lastCheckpoint = await _context.CheckpointEvents
-                    .OrderByDescending(e => e.Timestamp)
-                    .Join(_context.LocoShiftEvents
-                    .Where(e => e.TrainNumber == trainId),
-                    events => events.ShiftId,
-                    loco => loco.Id,
-                    (checkpoint, loco) => checkpoint.CheckPointNumber)
-                    .AsNoTracking()
-                    .FirstOrDefaultAsync();
-                return lastCheckpoint;
+                //System.Diagnostics.Debug.WriteLine(shiftId);
+                // _context.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+
+                return await _context.CheckpointEvents.OrderByDescending(e => e.Timestamp)
+                    .Where(e => e.ShiftId == shiftId).Select(e=>e.CheckPointNumber).FirstOrDefaultAsync();
+
+                    //return await _context.CheckpointEvents
+                    //    .OrderByDescending(e => e.Timestamp)
+                    //     .Where(e => e.CheckPointNumber != null)
+                    //    .Join(_context.LocoShiftEvents.Where(w => w.TrainNumber == trainId && w.EndShift == null), 
+                    //    ch => ch.ShiftId, tr => tr.Id, 
+                    //    (ch, tr) => ch.CheckPointNumber)
+                    //    .FirstOrDefaultAsync();
+                //System.Diagnostics.Debug.WriteLine($"LAST CHECKPOINT LINQ {lastCheckpoint?.ToString()}");
+
+                //IQueryable<string> lastCheckpointQuery = from chechpoint in _context.CheckpointEvents
+                //                             join shift in _context.LocoShiftEvents on chechpoint.ShiftId equals shift.Id
+                //                             where shift.TrainNumber == trainId && shift.EndShift == null
+                //                             orderby chechpoint.Timestamp descending
+                //                             select chechpoint.CheckPointNumber;
+                //    string lastCheckpoint_q = lastCheckpointQuery.FirstOrDefault();
+                //System.Diagnostics.Debug.WriteLine($"LAST CHECKPOINT LINQTOSQL {lastCheckpoint_q?.ToString()}");
+                //return lastCheckpoint_q;
             }
             catch
+            {
+                throw;
+            }
+        }
+
+        public async Task<string> GetLastCheckpointByLocoIdAsync(string locoId)
+        {
+            try
+            {
+                return await _context.CheckpointEvents.Where(e => e.CheckPointNumber != "")
+                            .Join(_context.LocoShiftEvents.Where(w => w.TrainNumber == locoId && w.EndShift == null),
+                            ch => ch.ShiftId,
+                            tr => tr.Id,
+                            (ch, tr) =>
+                            new {
+                                ch.CheckPointNumber,
+                                ch.Timestamp,
+                                ch.CreatedAt
+                            })
+                            .AsNoTracking()
+                            .OrderByDescending(e => e.Timestamp).ThenByDescending(e => e.CreatedAt)
+                            .Select(e=>e.CheckPointNumber)
+                            .FirstOrDefaultAsync();
+            }
+            catch (Exception)
             {
                 throw;
             }
@@ -64,7 +102,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
             {
                 if (count > 0)
                 {
-                    return await _context.CheckpointEvents.AsNoTracking().OrderByDescending(e=>e.CreatedAt).Take(count).ToListAsync();
+                    return await _context.CheckpointEvents.AsNoTracking().OrderByDescending(e=>e.Timestamp).Take(count).ToListAsync();
                 }
                 else
                 {

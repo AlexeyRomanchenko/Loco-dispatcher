@@ -23,7 +23,7 @@ namespace AGAT.LocoDispatcher.Parser
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ParseScheduler.Start(ConfigurationManager.AppSettings["path"]);
+            ParseScheduler.Start(ConfigurationManager.AppSettings["path"], ConfigurationManager.AppSettings["error_path"]);
         }
     }
 }

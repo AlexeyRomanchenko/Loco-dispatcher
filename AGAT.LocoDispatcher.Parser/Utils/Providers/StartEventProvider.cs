@@ -16,6 +16,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
     {
         private DataManager _manager;
         private EventHelper _helper;
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public StartEventProvider(DataManager dataManager)
         {
             _manager = dataManager;
@@ -46,6 +48,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Type = startMove.Type,
                     Timestamp = startMove.Timestamp
                 };
+                logger.Info($"{DateTime.Now} | Start event Invoking ");
                 _manager.startEventRepository.CreatAsync(moveEvent);
                 _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber).GetAwaiter().GetResult();
             }

@@ -49,7 +49,11 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             {
                 if (string.IsNullOrEmpty(pointCode?.Trim()))
                 {
-                    pointCode = await manager.checkpointEventRepository.GetLastCheckpointByTrainIdAsync(model.LocoNumber);
+                    pointCode = await manager.checkpointEventRepository.GetLastCheckpointByLocoIdAsync(model.LocoNumber);
+                }
+                if (pointCode is null)
+                {
+                    return;
                 }
                 IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
                 model.Park = stationInfo?.Park;

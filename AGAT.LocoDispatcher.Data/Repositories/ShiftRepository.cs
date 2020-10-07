@@ -28,6 +28,31 @@ namespace AGAT.LocoDispatcher.Data.Repositories
             }
         }
 
+        public async Task GetActiveLocomotivesWithLastEventsAsync(string station)
+        {
+            try
+            {
+                var res =  await context.LocoShiftEvents
+                    .Where(e => e.EndShift == null && e.ESR == station)
+                    .Join(context.Events,
+                    shift => shift.Id,
+                    ev => ev.ShiftId,
+                    (shift, ev) => new
+                    {
+                        shift.TrainNumber,
+                        ev.Type,
+                        ev.CheckPointNumber,
+                        ev.Timestamp
+                    })
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<LocoShiftEvent> GetActiveByNameAsync(string locoNumber)
         {
             try

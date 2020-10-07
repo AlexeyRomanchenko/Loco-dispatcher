@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{50AD6C19-5071-4311-9E54-B747301FCD0C}</ProjectGuid>
+    <ProjectGuid>{EFBB199C-92C5-462B-88E7-6210887F5621}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AGAT.LocoDispatcher.Data.UnitTests</RootNamespace>
-    <AssemblyName>AGAT.LocoDispatcher.Data.UnitTests</AssemblyName>
+    <RootNamespace>AGAT.LocoDispatcher.Business.UnitTests</RootNamespace>
+    <AssemblyName>AGAT.LocoDispatcher.Business.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,8 +57,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LocoUnitTests.cs" />
-    <Compile Include="CheckpointUnitTests.cs" />
+    <Compile Include="LocoManagerUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AGAT.LocoDispatcher.Data\AGAT.LocoDispatcher.Data.csproj">
-      <Project>{d82777ac-249b-4f6f-9d71-9b20f90ae69a}</Project>
-      <Name>AGAT.LocoDispatcher.Data</Name>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.Business\AGAT.LocoDispatcher.Business.csproj">
+      <Project>{1d1acbe1-22ec-492c-922e-ee39b0241ecf}</Project>
+      <Name>AGAT.LocoDispatcher.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

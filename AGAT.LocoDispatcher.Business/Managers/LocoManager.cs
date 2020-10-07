@@ -1,5 +1,6 @@
 ﻿using AGAT.LocoDispatcher.Business.Models;
 using AGAT.LocoDispatcher.Business.Models.RailModels;
+using AGAT.LocoDispatcher.Data;
 using AGAT.LocoDispatcher.Data.Events;
 using AGAT.LocoDispatcher.Data.Repositories;
 using System;
@@ -15,11 +16,14 @@ namespace AGAT.LocoDispatcher.Business.Managers
         private ShiftRepository repository;
         private BaseEventRepository baseEventRepository;
         private PointManager pointManager;
+        private CheckpointEventRepository checkpointRepository;
         public LocoManager()
         {
+            DatabaseContext context = new DatabaseContext();
             repository = new ShiftRepository();
             baseEventRepository = new BaseEventRepository();
             pointManager = new PointManager();
+            checkpointRepository = new CheckpointEventRepository(context);
         }
 
         public async Task<IEnumerable<LocomotiveViewModel>> GetActiveByStationAsync(string station, int parkId)
@@ -56,6 +60,8 @@ namespace AGAT.LocoDispatcher.Business.Managers
                     }
                     else
                     {
+                        string lastCheckpoint = await checkpointRepository.GetLastCheckpointByShiftIdAsync(loco.Id);
+                       
                         LocomotiveViewModel locomotive = new LocomotiveViewModel
                         {
                             Id = loco.Id,
@@ -66,6 +72,16 @@ namespace AGAT.LocoDispatcher.Business.Managers
                             Direction = direction
 
                         };
+                        if (!string.IsNullOrEmpty(lastCheckpoint?.Trim()))
+                        {
+                            Point point = await pointManager.GetPointByCode(lastCheckpoint, parkId);
+                            if (point != null)
+                            {
+                                locomotive.Coords = point.Coord;
+                                locomotive.Angle = point.Angle;
+                            }
+                        }
+
                         locomotive.IsStopped = _event?.Type == "stop_move" ? true : false;
                         locomotives.Add(locomotive);
                     }

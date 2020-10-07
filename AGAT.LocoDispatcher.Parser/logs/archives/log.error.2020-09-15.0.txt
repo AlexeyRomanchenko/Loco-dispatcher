@@ -1,3 +1,0 @@
-2020-09-14 16:32:18.3226 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParseAsync Error: 14.09.2020 16:32:18 | ERROR | Файл 'C:\json\00414043.sth' не найден.  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParseAsync
-2020-09-14 16:32:18.3316 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParseAsync Error: 14.09.2020 16:32:18 | ERROR | Файл 'C:\json\00414043.sth' не найден.  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParseAsync
-2020-09-14 16:32:18.3516 AGAT.LocoDispatcher.Parser.Jobs.ParseJob.Execute Error: 14.09.2020 16:32:18 | ERROR | Файл 'C:\json\00414043.sth' не найден.  WorkerThread.Run => JobRunShell.Run => ParseJob.Execute

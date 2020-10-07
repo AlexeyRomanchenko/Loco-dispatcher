@@ -13,6 +13,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
 {
     public class StopEventProvider : IProvider
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private DataManager _manager;
         private EventHelper _helper;
         public StopEventProvider(DataManager dataManager)
@@ -45,6 +46,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     Distance = stopMove.Distance,
                     Timestamp = stopMove.Timestamp
                 };
+                logger.Info("StopEvent Invoked");
                 _manager.stopEventRepository.CreatAsync(stopMoveEvent);
                 _helper.InvokeEventToArchieveAsync(model, stopMove.CheckPointNumber).GetAwaiter().GetResult();
             }

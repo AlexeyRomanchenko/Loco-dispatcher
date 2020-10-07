@@ -11,13 +11,22 @@ namespace AGAT.LocoDispatcher.Data.UnitTests
         private CheckpointEventRepository repository;
         public CheckpointUnitTests()
         {
-            repository = new CheckpointEventRepository();
+            DatabaseContext context = new DatabaseContext();
+            repository = new CheckpointEventRepository(context);
         }
-        [TestMethod]
-        public async Task GetLastCheckpointEventOk()
+        [DataTestMethod]
+        [DataRow(70)]
+        public async Task GetLastCheckpointEventOk(int shiftId)
         {
-            string trainId = "615";
-            string checkpoint = await repository.GetLastCheckpointByTrainIdAsync(trainId);
+            string checkpoint = await repository.GetLastCheckpointByShiftIdAsync(shiftId);
+            Assert.IsNotNull(checkpoint);
+        }
+
+        [DataTestMethod]
+        [DataRow("0014")]
+        public async Task GetLastCheckpointEventByTrainIdOk(string trainId)
+        {
+            string checkpoint = await repository.GetLastCheckpointByLocoIdAsync(trainId);
             Assert.IsNotNull(checkpoint);
         }
     }
