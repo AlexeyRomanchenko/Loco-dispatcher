@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AGAT.LocoDispatcher.Common.Interfaces
+namespace AGAT.LocoDispatcher.AuthDB
 {
-    public interface IProvider
+    interface IHashProducer
     {
-        void Create(IEnumerable<IEvent> _event);
+       // bool CompareWithHash(string entire, string hashed);
     }
 }

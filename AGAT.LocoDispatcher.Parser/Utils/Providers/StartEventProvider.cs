@@ -23,34 +23,41 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             _manager = dataManager;
             _helper = new EventHelper();
         }
-        public void Create(IEvent _event)
+        public void Create(IEnumerable<IEvent> events)
         {
             try
             {
-                StartMoveEvent startMove = (StartMoveEvent)_event;
-                startMove.TrainId = LocoShiftHelper.TransformTrainNumber(startMove.TrainId);
-                int shiftId = _helper.GetLocoShiftIdByLocoNumber(startMove.TrainId).GetAwaiter().GetResult();
-                Data.Models.StartMoveEvent moveEvent = new Data.Models.StartMoveEvent
-                {
-                    Type = startMove.Type,
-                    CheckPointNumber = startMove.CheckPointNumber,
-                    Direction = startMove.Direction,
-                    DirectionParity = startMove.DirectionParity,
-                    Timestamp = startMove.Timestamp,
-                    ShiftId = shiftId,
-                    TrackNumber = startMove.TrackNumber,
-                    Message = startMove.Message
-                };
-                EventModel model = new EventModel
-                {
-                    LocoNumber = startMove.TrainId,
-                    Route = startMove.TrackNumber,
-                    Type = startMove.Type,
-                    Timestamp = startMove.Timestamp
-                };
                 logger.Info($"{DateTime.Now} | Start event Invoking ");
-                _manager.startEventRepository.CreatAsync(moveEvent);
-                _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber).GetAwaiter().GetResult();
+                foreach (IEvent startEvent in events)
+                {
+                    StartMoveEvent startMove = (StartMoveEvent)startEvent;
+                    startMove.TrainId = LocoShiftHelper.TransformTrainNumber(startMove.TrainId);
+                    int shiftId = _helper.GetLocoShiftIdByLocoNumber(startMove.TrainId).GetAwaiter().GetResult();
+                    Data.Models.StartMoveEvent moveEvent = new Data.Models.StartMoveEvent
+                    {
+                        Type = startMove.Type,
+                        CheckPointNumber = startMove.CheckPointNumber,
+                        Direction = startMove.Direction,
+                        DirectionParity = startMove.DirectionParity,
+                        Timestamp = startMove.Timestamp,
+                        ShiftId = shiftId,
+                        TrackNumber = startMove.TrackNumber,
+                        Message = startMove.Message
+                    };
+                    _manager.startEventRepository.CreatAsync(moveEvent);
+
+                    EventModel model = new EventModel
+                    {
+                        LocoNumber = startMove.TrainId,
+                        Route = startMove.TrackNumber,
+                        Type = startMove.Type,
+                        Timestamp = startMove.Timestamp
+                    };
+                    _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber).GetAwaiter().GetResult();
+                }
+                _manager.startEventRepository.Save();
+                logger.Info($"{DateTime.Now} | Start event finish invoke");
+
             }
             catch (FormatException ex)
             {

@@ -16,6 +16,10 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             context = _context;
         }
+        public void Save()
+        {
+            context.SaveChanges();
+        }
         public void CreatAsync(StartMoveEvent _event)
         {
             if (_event == null)
@@ -26,7 +30,6 @@ namespace AGAT.LocoDispatcher.Data.Repositories
              {
                 _event.CreatedAt = DateTime.Now;
                 context.StartEvents.Add(_event);
-                context.SaveChanges();
             }
             catch (Exception)
             {

@@ -29,9 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Data.Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Parser.UnitTests", "AGAT.LocoDispatcher.Parser.UnitTests\AGAT.LocoDispatcher.Parser.UnitTests.csproj", "{4E8606B8-4B53-4CD9-BC2D-81B785F96176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.AuthData", "AGAT.LocoDispatcher.AuthData\AGAT.LocoDispatcher.AuthData.csproj", "{57468989-5195-4C32-A3F9-A3070190253F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Business.UnitTests", "AGAT.LocoDispatcher.Business.UnitTests\AGAT.LocoDispatcher.Business.UnitTests.csproj", "{EFBB199C-92C5-462B-88E7-6210887F5621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.AuthDB", "AGAT.LocoDispatcher.AuthDB\AGAT.LocoDispatcher.AuthDB.csproj", "{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,14 +91,14 @@ Global
 		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E8606B8-4B53-4CD9-BC2D-81B785F96176}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57468989-5195-4C32-A3F9-A3070190253F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57468989-5195-4C32-A3F9-A3070190253F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57468989-5195-4C32-A3F9-A3070190253F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57468989-5195-4C32-A3F9-A3070190253F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EFBB199C-92C5-462B-88E7-6210887F5621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EFBB199C-92C5-462B-88E7-6210887F5621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFBB199C-92C5-462B-88E7-6210887F5621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFBB199C-92C5-462B-88E7-6210887F5621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

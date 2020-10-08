@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AGAT.LocoDispatcher.AuthData")]
+[assembly: AssemblyTitle("AGAT.LocoDispatcher.AuthDB")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("AGAT.LocoDispatcher.AuthData")]
+[assembly: AssemblyProduct("AGAT.LocoDispatcher.AuthDB")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("57468989-5195-4c32-a3f9-a3070190253f")]
+[assembly: Guid("f5ec2dcf-4262-4c89-9c9e-08575fb224b2")]
 
 // Version information for an assembly consists of the following four values:
 //

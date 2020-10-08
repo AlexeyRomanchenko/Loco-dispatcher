@@ -1,11 +1,10 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
 using AGAT.LocoDispatcher.Constants;
+using AGAT.LocoDispatcher.Parser.Models;
 using AGAT.LocoDispatcher.Parser.Utils.Managers;
 using AGAT.LocoDispatcher.Parser.Utils.Providers;
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace AGAT.LocoDispatcher.Parser.Utils.Factories
 {
@@ -16,22 +15,39 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
         {
             dataManager = _dataManager;
         }
-        public IProvider GetProviderFactory(IEvent _event)
+        public IProvider GetProviderFactory(string type)
         {
-            switch (_event.Type)
+            switch (type)
             {
-                case EventConstants.StartMoveEvent:
+                case "StartEvent":
                     return new StartEventProvider(dataManager);
-                case EventConstants.StopMoveEvent:
+                case "StopEvent":
                     return new StopEventProvider(dataManager);
-                case EventConstants.StopOutsideStation:
-                    return new StopEventProvider(dataManager);
-                case EventConstants.PassCheckpoint:
+                case "CheckpointEvent":
                     return new CheckpointProvider(dataManager);
-                case EventConstants.Emergency:
+                case "EmergencyEvent":
                     return new EmergencyProvider(dataManager);
-                case EventConstants.StartShiftLocomotives:
+                case "LocoShiftEvent":
                     return new ShiftLocoProvider();
+                default:
+                    return null;
+            }
+        }
+
+        public IEnumerable<IEvent> GetEventsFactory(string type, EventManager manager)
+        {
+            switch (type)
+            {
+                case "StartEvent":
+                    return manager.StartEvent;
+                case "StopEvent":
+                    return manager.StopEvent;
+                case "CheckpointEvent":
+                    return manager.CheckpointEvent;
+                case "EmergencyEvent":
+                    return manager.EmergencyEvent;
+                case "LocoShiftEvent":
+                    return manager.LocoShiftEvent;
                 default:
                     return null;
             }

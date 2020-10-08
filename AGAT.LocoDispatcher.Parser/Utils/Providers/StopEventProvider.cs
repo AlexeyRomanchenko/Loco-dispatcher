@@ -21,34 +21,41 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             _manager = dataManager;
             _helper = new EventHelper();
         }
-        public void Create(IEvent _event)
+        public void Create(IEnumerable<IEvent> events)
         {
             try
             {
-                StopMoveEvent stopMove = (StopMoveEvent)_event;
-                stopMove.TrainId = LocoShiftHelper.TransformTrainNumber(stopMove.TrainId);
-                int shiftId = _helper.GetLocoShiftIdByLocoNumber(stopMove.TrainId).GetAwaiter().GetResult();
-                Data.Models.StopMoveEvent stopMoveEvent = new Data.Models.StopMoveEvent
+                logger.Info($"StopEvent Invoked start {DateTime.Now}");
+                foreach (var stopEvent in events)
                 {
-                    Type = stopMove.Type,
-                    CheckPointNumber = stopMove.CheckPointNumber,
-                    Distance = stopMove.Distance,
-                    ShiftId = shiftId,
-                    Message = stopMove.Message,
-                    Timestamp = stopMove.Timestamp,
-                    TrackNumber = stopMove.TrackNumber
-                };
-                EventModel model = new EventModel
-                {
-                    LocoNumber = stopMove.TrainId,
-                    Route = stopMove.TrackNumber,
-                    Type = stopMove.Type,
-                    Distance = stopMove.Distance,
-                    Timestamp = stopMove.Timestamp
-                };
-                logger.Info("StopEvent Invoked");
-                _manager.stopEventRepository.CreatAsync(stopMoveEvent);
-                _helper.InvokeEventToArchieveAsync(model, stopMove.CheckPointNumber).GetAwaiter().GetResult();
+                    StopMoveEvent stopMove = (StopMoveEvent)stopEvent;
+                    stopMove.TrainId = LocoShiftHelper.TransformTrainNumber(stopMove.TrainId);
+                    int shiftId = _helper.GetLocoShiftIdByLocoNumber(stopMove.TrainId).GetAwaiter().GetResult();
+                    Data.Models.StopMoveEvent stopMoveEvent = new Data.Models.StopMoveEvent
+                    {
+                        Type = stopMove.Type,
+                        CheckPointNumber = stopMove.CheckPointNumber,
+                        Distance = stopMove.Distance,
+                        ShiftId = shiftId,
+                        Message = stopMove.Message,
+                        Timestamp = stopMove.Timestamp,
+                        TrackNumber = stopMove.TrackNumber
+                    };
+                    EventModel model = new EventModel
+                    {
+                        LocoNumber = stopMove.TrainId,
+                        Route = stopMove.TrackNumber,
+                        Type = stopMove.Type,
+                        Distance = stopMove.Distance,
+                        Timestamp = stopMove.Timestamp
+                    };
+
+                    _manager.stopEventRepository.CreatAsync(stopMoveEvent);
+                    _helper.InvokeEventToArchieveAsync(model, stopMove.CheckPointNumber).GetAwaiter().GetResult();
+                }
+                _manager.stopEventRepository.Save();
+                logger.Info($"StopEvent Invoked  {DateTime.Now}");
+               
             }
             catch (FormatException ex)
             {

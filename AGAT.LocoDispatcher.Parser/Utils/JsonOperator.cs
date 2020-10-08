@@ -1,10 +1,12 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
+using AGAT.LocoDispatcher.Parser.Models;
 using AGAT.LocoDispatcher.Parser.Utils.Factories;
 using AGAT.LocoDispatcher.Parser.Utils.Managers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -35,23 +37,44 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 logger.Info($"{DateTime.Now} | DESERIALIZED JSON");
                 if (jsonArray == null)
                 {
-                    throw new ArithmeticException("json couldn't be handled");
+                    throw new ArithmeticException($"json couldn't be handled {json?.response}");
                 }
-                foreach (var jsonObject in jsonArray)
+                
+                try
                 {
-                    logger.Info($"{DateTime.Now} | foreach statement JSON");
-                    IEvent _event = _jsonFactory.GetEventFactory(jsonObject);
-                    if (_event == null)
+                    
+                    foreach (var jsonEvent in jsonArray)
                     {
-                        throw new ArgumentException("event is not valid");
+                        IEvent locoEvent = _jsonFactory.GetEventFactory(jsonEvent);
+                        _jsonFactory.SetEventManagerFactory(locoEvent);
                     }
-                    IProvider provider = _providerFactory.GetProviderFactory(_event);
-                    if (provider == null)
+                    EventManager events = _jsonFactory.GetEvents();
+                    foreach (PropertyInfo prop in typeof(EventManager).GetProperties())
                     {
-                        throw new ArgumentException("provider is not valid");
+                        IProvider provider = _providerFactory.GetProviderFactory(prop.Name);
+                        IEnumerable<IEvent> _event = _providerFactory.GetEventsFactory(prop.Name, events);
+                        provider.Create(_event);
                     }
-                    provider.Create(_event);
                 }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                //foreach (var jsonObject in jsonArray)
+                //{
+                //    logger.Info($"{DateTime.Now} | foreach statement JSON");
+                //    IEvent _event = _jsonFactory.GetEventFactory(jsonObject);
+                //    if (_event == null)
+                //    {
+                //        throw new ArgumentException("event is not valid");
+                //    }
+                //    IProvider provider = _providerFactory.GetProviderFactory(_event);
+                //    if (provider == null)
+                //    {
+                //        throw new ArgumentException("provider is not valid");
+                //    }
+                //    provider.Create(_event);
+                //}
             }
             catch (Exception)
             {

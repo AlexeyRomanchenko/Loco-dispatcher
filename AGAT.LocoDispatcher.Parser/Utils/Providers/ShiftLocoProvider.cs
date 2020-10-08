@@ -17,21 +17,25 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
         {
             helper = new LocoShiftHelper();
         }
-        public void Create(IEvent _event)
+        public void Create(IEnumerable<IEvent> events)
         {
             try
             {
-                ShiftLocomotiveEvent shiftLocomotive = (ShiftLocomotiveEvent)_event;
-                foreach (var train in shiftLocomotive.Trains)
+                foreach (var shiftEvent in events)
                 {
-                    string _trainNumber = LocoShiftHelper.TransformTrainNumber(train);
-                    LocoShiftEvent locoShift = new LocoShiftEvent
+                    ShiftLocomotiveEvent shiftLocomotive = (ShiftLocomotiveEvent)shiftEvent;
+                    foreach (var train in shiftLocomotive.Trains)
                     {
-                        TrainNumber = _trainNumber,
-                        ESR = shiftLocomotive.ESR,
-                    };
-                    helper.AddLocoShiftAsync(locoShift, shiftLocomotive.Timestamp).GetAwaiter().GetResult();
+                        string _trainNumber = LocoShiftHelper.TransformTrainNumber(train);
+                        LocoShiftEvent locoShift = new LocoShiftEvent
+                        {
+                            TrainNumber = _trainNumber,
+                            ESR = shiftLocomotive.ESR,
+                        };
+                        helper.AddLocoShiftAsync(locoShift, shiftLocomotive.Timestamp).GetAwaiter().GetResult();
+                    }
                 }
+
             }
             catch (FormatException ex)
             {

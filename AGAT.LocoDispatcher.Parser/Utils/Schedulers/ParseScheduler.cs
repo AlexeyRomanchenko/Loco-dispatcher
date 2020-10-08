@@ -19,10 +19,9 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Schedulers
                 .WithIdentity("trigger1", "group1")     // идентифицируем триггер с именем и группой
                 
                 .StartNow()                            // запуск сразу после начала выполнения
-                .WithSimpleSchedule(x => x            // настраиваем выполнение действия
-                    .WithIntervalInMinutes(4)          // через 30 сек
-                    .RepeatForever()
-                    //.WithRepeatCount(0)
+                .WithSimpleSchedule(x => x
+                .WithIntervalInSeconds(60)
+                .RepeatForever()
                     )                   // бесконечное повторение
                 .Build();                               // создаем триггер
 

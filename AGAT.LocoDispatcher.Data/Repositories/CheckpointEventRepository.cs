@@ -15,13 +15,16 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             _context = context;
         }
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
         public void CreatAsync(CheckpointEvent _event)
         {
                 try
                 {
                     _event.CreatedAt = DateTime.Now;
                     _context.CheckpointEvents.Add(_event);
-                    _context.SaveChanges();
                 }
                 catch (Exception)
                 {

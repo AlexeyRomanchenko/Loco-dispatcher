@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AGAT.LocoDispatcher.Common.Interfaces
+namespace AGAT.LocoDispatcher.AuthDB.Interfaces
 {
-    public interface IProvider
+    interface IComparator
     {
-        void Create(IEnumerable<IEvent> _event);
+        bool Compare(string income, string hash);
     }
 }

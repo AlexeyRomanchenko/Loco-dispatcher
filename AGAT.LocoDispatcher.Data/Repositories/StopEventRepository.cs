@@ -16,13 +16,16 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             _context = context;
         }
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
         public void CreatAsync(StopMoveEvent _event)
         {
               try
               {
                         _event.CreatedAt = DateTime.Now;
                         _context.StopEvents.Add(_event);
-                        _context.SaveChanges();
               }
               catch (Exception)
               {

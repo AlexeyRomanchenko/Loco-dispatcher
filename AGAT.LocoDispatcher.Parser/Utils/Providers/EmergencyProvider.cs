@@ -19,26 +19,28 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
             _manager = dataManager;
             helper = new EventHelper();
         }
-        public void Create(IEvent _event)
+        public void Create(IEnumerable<IEvent> events)
         {
             try
             {
-
-                EmergencyEvent emergencyEvent = (EmergencyEvent)_event;
-                emergencyEvent.TrainId = LocoShiftHelper.TransformTrainNumber(emergencyEvent.TrainId);
-                int shiftId = helper.GetLocoShiftIdByLocoNumber(emergencyEvent.TrainId).GetAwaiter().GetResult();
-                Data.Models.EmergencyEvent emergency = new Data.Models.EmergencyEvent
+                foreach (var _event in events)
                 {
-                    Type = emergencyEvent.Type,
-                    CheckPointNumber = emergencyEvent.CheckPointNumber,
-                    ShiftId = shiftId,
-                    EmergencyStatus = emergencyEvent.EmergencyStatus,
-                    EmergencyType = emergencyEvent.EmergencyType,
-                    Message = emergencyEvent.Message,
-                    Timestamp = emergencyEvent.Timestamp,
-                    TrackNumber = emergencyEvent.TrackNumber
-                };
-                _manager.emergencyRepository.CreateAsync(emergency).GetAwaiter().GetResult();
+                    EmergencyEvent emergencyEvent = (EmergencyEvent)_event;
+                    emergencyEvent.TrainId = LocoShiftHelper.TransformTrainNumber(emergencyEvent.TrainId);
+                    int shiftId = helper.GetLocoShiftIdByLocoNumber(emergencyEvent.TrainId).GetAwaiter().GetResult();
+                    Data.Models.EmergencyEvent emergency = new Data.Models.EmergencyEvent
+                    {
+                        Type = emergencyEvent.Type,
+                        CheckPointNumber = emergencyEvent.CheckPointNumber,
+                        ShiftId = shiftId,
+                        EmergencyStatus = emergencyEvent.EmergencyStatus,
+                        EmergencyType = emergencyEvent.EmergencyType,
+                        Message = emergencyEvent.Message,
+                        Timestamp = emergencyEvent.Timestamp,
+                        TrackNumber = emergencyEvent.TrackNumber
+                    };
+                    _manager.emergencyRepository.CreateAsync(emergency).GetAwaiter().GetResult();
+                }             
             }
             catch (FormatException ex)
             {

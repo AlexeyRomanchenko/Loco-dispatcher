@@ -1,17 +1,21 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
 using AGAT.LocoDispatcher.Constants;
+using AGAT.LocoDispatcher.Parser.Models;
 using AGAT.LocoDispatcher.Parser.Utils.Events;
 using AGAT.LocoDispatcher.Parser.Utils.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Web;
 
 namespace AGAT.LocoDispatcher.Parser.Utils.Factories
 {
     public class JsonFactory
     {
+        private EventManager _eventManager = new EventManager();
+        public EventManager GetEvents()
+        {
+            return this._eventManager;
+        }
         public IEvent GetEventFactory(dynamic jsonObject)
         {
             switch (jsonObject.type.ToString())
@@ -133,5 +137,43 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                     return null;
             }
         }
+
+        public void SetEventManagerFactory(IEvent jsonEvent)
+        {
+            try
+            {
+                switch (jsonEvent.Type)
+                {
+                    case EventConstants.StartMoveEvent:
+                        _eventManager.StartEvent.Add((StartMoveEvent)jsonEvent);
+                        break;
+                    case EventConstants.PassCheckpoint:
+                        _eventManager.CheckpointEvent.Add((CheckpointEvent)jsonEvent);
+                        break;
+                    case EventConstants.StopMoveEvent:
+                        _eventManager.StopEvent.Add((StopMoveEvent)jsonEvent);
+                        break;
+                    case EventConstants.Emergency:
+                        _eventManager.EmergencyEvent.Add((EmergencyEvent)jsonEvent);
+                        break;
+                    case EventConstants.StopOutsideStation:
+                        _eventManager.StopEvent.Add((StopMoveEvent)jsonEvent);
+                        break;
+                    case EventConstants.StartShiftLocomotives:
+                        _eventManager.LocoShiftEvent.Add((ShiftLocomotiveEvent)jsonEvent);
+                        break;
+                    default:
+                        Console.WriteLine($"Couldnt find event {jsonEvent.Type}");
+                        break;
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+        }
+
     }
 }
