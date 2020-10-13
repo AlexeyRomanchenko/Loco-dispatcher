@@ -1,4 +1,5 @@
 ﻿using AGAT.LocoDispatcher.AuthDB.Models;
+using AGAT.LocoDispatcher.AuthDB.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,10 +16,9 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
         {
             context = new AuthContext();
         }
-        public async Task Create(User user)
+        public void Create(User user)
         {
             context.Users.Add(user);
-            await SaveAsync();
         }
 
         public async Task SaveAsync()
@@ -26,15 +26,18 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
             await context.SaveChangesAsync();
         }
 
-        public async Task<User> Login(User user)
+        public async Task<User> GetAsync(User user)
         {
             try
             {
-                return await context.Users.AsNoTracking()
-                    .Where(e => e.Username == user.Username && e.Password == user.Password)
-                    .SingleAsync();
+                string passwordHash = HashProducer.HashPassword(user.Password);
+                var loggedUser =  await context.Users.AsNoTracking()
+                    .Where(e => e.Username == user.Username && e.Password == passwordHash)
+                    .Include(e=>e.Role)
+                    .SingleOrDefaultAsync();
+                return loggedUser;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

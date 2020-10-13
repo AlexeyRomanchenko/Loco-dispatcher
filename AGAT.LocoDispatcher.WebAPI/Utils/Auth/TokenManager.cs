@@ -14,11 +14,14 @@ namespace AGAT.LocoDispatcher.WebAPI.Utils.Auth
     {
         private static string Secret = Guid.NewGuid().ToString();
         
-        public static string GenerateToken(string username)
+        public static string GenerateToken(string username, string role = "User")
         {
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Secret));
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor{
-                Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, username) }),
+                Subject = new ClaimsIdentity(new[] { 
+                    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.Role, role)
+                }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature)              
             };

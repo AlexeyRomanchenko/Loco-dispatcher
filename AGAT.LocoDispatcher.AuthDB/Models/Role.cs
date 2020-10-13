@@ -11,6 +11,7 @@ namespace AGAT.LocoDispatcher.AuthDB.Models
     {
         [Key]
         public int RoleId { get; set; }
+        [MaxLength(20)]
         public string Name { get; set; }
         public ICollection<User> Users { get; set; }
     }

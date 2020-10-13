@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.AuthDB.Models
 {
@@ -12,8 +7,13 @@ namespace AGAT.LocoDispatcher.AuthDB.Models
     {
         [Key]
         public int Id { get; set; }
+        [MaxLength(30)]
         public string Username { get; set; }
+        [MinLength(5)]
+        [MaxLength(30)]
         public string Password { get; set; }
-
+        [Required]
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
     }
 }

@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.Busines
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.AuthDB", "AGAT.LocoDispatcher.AuthDB\AGAT.LocoDispatcher.AuthDB.csproj", "{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGAT.LocoDispatcher.AuthDB.UnitTests", "AGAT.LocoDispatcher.AuthDB.UnitTests\AGAT.LocoDispatcher.AuthDB.UnitTests.csproj", "{D1F3508B-ECCF-4111-A473-1FC2F3B88BE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5EC2DCF-4262-4C89-9C9E-08575FB224B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1F3508B-ECCF-4111-A473-1FC2F3B88BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F3508B-ECCF-4111-A473-1FC2F3B88BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F3508B-ECCF-4111-A473-1FC2F3B88BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F3508B-ECCF-4111-A473-1FC2F3B88BE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -327,6 +327,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AGAT.LocoDispatcher.AuthDB\AGAT.LocoDispatcher.AuthDB.csproj">
+      <Project>{f5ec2dcf-4262-4c89-9c9e-08575fb224b2}</Project>
+      <Name>AGAT.LocoDispatcher.AuthDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AGAT.LocoDispatcher.Business\AGAT.LocoDispatcher.Business.csproj">
       <Project>{1d1acbe1-22ec-492c-922e-ee39b0241ecf}</Project>
       <Name>AGAT.LocoDispatcher.Business</Name>

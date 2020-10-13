@@ -19,5 +19,9 @@ namespace AGAT.LocoDispatcher.AuthDB
         {
             databaseString = $"name={connection}";
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasRequired<Role>(e => e.Role).WithMany(e => e.Users).HasForeignKey<int>(e => e.RoleId);
+        }
     }
 }

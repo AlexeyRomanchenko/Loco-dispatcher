@@ -1,4 +1,6 @@
-﻿using AGAT.LocoDispatcher.WebAPI.Filters;
+﻿using AGAT.LocoDispatcher.AuthDB.Models;
+using AGAT.LocoDispatcher.AuthDB.Repositories;
+using AGAT.LocoDispatcher.WebAPI.Filters;
 using AGAT.LocoDispatcher.WebAPI.Models.ViewModels;
 using AGAT.LocoDispatcher.WebAPI.Utils.Auth;
 using System;
@@ -14,6 +16,11 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
 {
     public class SigninController : ApiController
     {
+        private UserRepository repository;
+        public SigninController()
+        {
+            repository = new UserRepository();
+        }
         // GET: api/Signin
         [JwtAuthenticationFilter]
         public IEnumerable<string> Get()
@@ -29,23 +36,28 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
         }
 
         // POST: api/Signin
-        public async Task<HttpResponseMessage> Post([FromBody] UserViewModel model)
+        public async Task<HttpResponseMessage> Post(UserViewModel model)
         {
             if (ModelState.IsValid)
             {
-                if (model.Username == "admin" && model.Password == "admin0505")
+                User user = new User
                 {
-                    
-                    return await Task.FromResult(Request.CreateResponse(HttpStatusCode.OK, new 
+                    Username = model.Username,
+                    Password = model.Password
+                };
+                User loggedUser = await repository.GetAsync(user);
+                if (loggedUser != null)
+                {
+                    return await Task.FromResult(Request.CreateResponse(HttpStatusCode.OK, new
                     {
-                        username =  model.Username,
-                        token = TokenManager.GenerateToken(model.Username)
+                        username = loggedUser.Username,
+                        token = TokenManager.GenerateToken(loggedUser.Username, loggedUser.Role?.Name)
                     }));
                 }
                 else
                 {
                     return Request.CreateResponse(HttpStatusCode.Unauthorized);
-                }               
+                }                         
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Model is not valid");
         }

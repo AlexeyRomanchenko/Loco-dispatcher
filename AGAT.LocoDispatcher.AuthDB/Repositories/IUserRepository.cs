@@ -5,7 +5,7 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
 {
     interface IUserRepository
     {
-        Task Create(User user);
-        Task<User> Login(User user);
+        void Create(User user);
+        Task<User> GetAsync(User user);
     }
 }

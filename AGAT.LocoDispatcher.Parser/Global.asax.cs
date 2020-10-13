@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Http;
@@ -24,6 +25,12 @@ namespace AGAT.LocoDispatcher.Parser
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ParseScheduler.Start(ConfigurationManager.AppSettings["path"], ConfigurationManager.AppSettings["error_path"]);
+        }
+        protected void Application_End()
+        {
+            logger.Info($"App was stopped in {DateTime.Now}");
+            WebRequest request = WebRequest.Create("http://localhost:8080");
+            WebResponse responce = request.GetResponse();
         }
     }
 }

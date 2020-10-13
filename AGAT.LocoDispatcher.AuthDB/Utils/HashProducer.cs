@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AGAT.LocoDispatcher.AuthDB.Utils
 {
-    internal class HashProducer: IHashProducer, IComparator
+    public class HashProducer: IComparator
     {
         public bool Compare(string incomeString, string hashedString)
         {
@@ -12,9 +12,9 @@ namespace AGAT.LocoDispatcher.AuthDB.Utils
             return hashed == incomeString;
         }
 
-        static string HashPassword( string parrword)
+        public static string HashPassword( string password)
         {
-            return "";
+            return $"hashed{password}";
         }
 
     }
