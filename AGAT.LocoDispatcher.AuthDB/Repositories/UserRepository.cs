@@ -30,9 +30,8 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
         {
             try
             {
-                string passwordHash = HashProducer.HashPassword(user.Password);
                 var loggedUser =  await context.Users.AsNoTracking()
-                    .Where(e => e.Username == user.Username && e.Password == passwordHash)
+                    .Where(e => e.Username == user.Username)
                     .Include(e=>e.Role)
                     .SingleOrDefaultAsync();
                 return loggedUser;

@@ -1,20 +1,22 @@
 ﻿using AGAT.LocoDispatcher.AuthDB.Interfaces;
-using System;
-using System.Collections.Generic;
 
 namespace AGAT.LocoDispatcher.AuthDB.Utils
 {
     public class HashProducer: IComparator
     {
-        public bool Compare(string incomeString, string hashedString)
+        private static string GetRandomSalt()
         {
-            string hashed = HashPassword(incomeString);
-            return hashed == incomeString;
+            return BCrypt.Net.BCrypt.GenerateSalt(12);
+        }
+
+        public bool Compare(string password, string hashedString)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedString);
         }
 
         public static string HashPassword( string password)
         {
-            return $"hashed{password}";
+            return BCrypt.Net.BCrypt.HashPassword(password, GetRandomSalt());
         }
 
     }

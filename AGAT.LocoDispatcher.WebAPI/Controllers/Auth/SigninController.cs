@@ -1,6 +1,8 @@
 ﻿using AGAT.LocoDispatcher.AuthDB.Models;
 using AGAT.LocoDispatcher.AuthDB.Repositories;
+using AGAT.LocoDispatcher.AuthDB.Utils;
 using AGAT.LocoDispatcher.WebAPI.Filters;
+using AGAT.LocoDispatcher.WebAPI.Handlers;
 using AGAT.LocoDispatcher.WebAPI.Models.ViewModels;
 using AGAT.LocoDispatcher.WebAPI.Utils.Auth;
 using System;
@@ -17,9 +19,11 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
     public class SigninController : ApiController
     {
         private UserRepository repository;
+        private HashProducer hasher;
         public SigninController()
         {
             repository = new UserRepository();
+            hasher = new HashProducer();
         }
         // GET: api/Signin
         [JwtAuthenticationFilter]
@@ -38,28 +42,48 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
         // POST: api/Signin
         public async Task<HttpResponseMessage> Post(UserViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                User user = new User
+                if (model is null)
                 {
-                    Username = model.Username,
-                    Password = model.Password
-                };
-                User loggedUser = await repository.GetAsync(user);
-                if (loggedUser != null)
-                {
-                    return await Task.FromResult(Request.CreateResponse(HttpStatusCode.OK, new
-                    {
-                        username = loggedUser.Username,
-                        token = TokenManager.GenerateToken(loggedUser.Username, loggedUser.Role?.Name)
-                    }));
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Данные не валидны");
                 }
-                else
+                if (ModelState.IsValid)
                 {
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized);
-                }                         
+                    User user = new User
+                    {
+                        Username = model.Username,
+                        Password = model.Password
+                    };
+                    User loggedUser = await repository.GetAsync(user);
+                    if (loggedUser != null)
+                    {
+                        var isAuthenticated = hasher.Compare(model.Password, loggedUser.Password);
+                        if (isAuthenticated)
+                        {
+                            return await Task.FromResult(Request.CreateResponse(HttpStatusCode.OK, new
+                            {
+                                username = loggedUser.Username,
+                                token = TokenManager.GenerateToken(loggedUser.Username, loggedUser.Role?.Name)
+                            }));
+                        }
+                        else
+                        {
+                            return Request.CreateResponse(HttpStatusCode.Unauthorized);
+                        }                     
+                    }
+                    else
+                    {
+                        return Request.CreateResponse(HttpStatusCode.Unauthorized);
+                    }
+                }
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorHandler.HandleErrors(ModelState));
             }
-            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Model is not valid");
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+           
         }
 
         // PUT: api/Signin/5

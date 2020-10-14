@@ -11,9 +11,11 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
     public class UserRepositoryUnitTests
     {
         private UserRepository repository;
+        private HashProducer hasher;
         public UserRepositoryUnitTests()
         {
             repository = new UserRepository();
+            hasher = new HashProducer();
         }
         [DataTestMethod]
         [DataRow("Alex", "010101")]
@@ -24,12 +26,13 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
                 User user = new User
                 {
                     Username = username,
-                    Password = HashProducer.HashPassword(password)
+                    Password = HashProducer.HashPassword(password),
+                    RoleId = 1
                 };
                 repository.Create(user);
                 await repository.SaveAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
