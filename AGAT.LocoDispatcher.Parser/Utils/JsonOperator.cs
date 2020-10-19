@@ -47,19 +47,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                         _jsonFactory.SetEventManagerFactory(locoEvent);
                     }
                     EventManager events = _jsonFactory.GetEvents();
-                    try
-                    {
-                        Assembly asm = Assembly.Load("NLog");
-                        var types = asm.GetTypes();
-                        var res = types.Where(t => t.Name == "LogEventInfo").FirstOrDefault().GetCustomAttributes();
-                        object logEventInfo = Activator.CreateInstance(types.Where(e=>e.Name == "LogEventInfo").FirstOrDefault());
-                        MethodInfo mInfo = types.Where(e => e.Name == "LogEventInfo").FirstOrDefault().GetMethod("get_Message");
-                        var re = mInfo.Invoke(logEventInfo,null);
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Diagnostics.Debug.WriteLine(ex.Message);
-                    }
+                   
                     foreach (PropertyInfo prop in typeof(EventManager).GetProperties())
                     {
                         IProvider provider = _providerFactory.GetProviderFactory(prop.Name);
@@ -87,7 +75,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 //    provider.Create(_event);
                 //}
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

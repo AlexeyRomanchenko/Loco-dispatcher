@@ -86,9 +86,9 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                         point => point.ParkId,
                         (_park, _point) => new
                         {
-                            StationId = _park.StationId,
+                            _park.StationId,
                             Name = _park.Code,                      
-                            ParkId = _park.ParkId
+                            _park.ParkId
                         })
                         .Join(context.Stations,
                         park => park.StationId,

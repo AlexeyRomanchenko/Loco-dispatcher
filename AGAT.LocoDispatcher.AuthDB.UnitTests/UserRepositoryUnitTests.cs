@@ -18,14 +18,14 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
             hasher = new HashProducer();
         }
         [DataTestMethod]
-        [DataRow("Alex", "010101")]
+        [DataRow("TestUser", "010101")]
         public async Task CreateUserOk(string username,string password)
         {
             try
             {
                 User user = new User
                 {
-                    Username = username,
+                    Username = username + ((int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds).ToString(),
                     Password = HashProducer.HashPassword(password),
                     RoleId = 1
                 };
@@ -57,9 +57,6 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
             {
                 throw;
             }
-
         }
-
-
     }
 }

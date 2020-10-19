@@ -26,13 +26,7 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
                 if (model.Route.Length < 2) 
                 {
                     model.Route = $"0{model.Route}";
-                }
-                if (model.Route == "20УП")
-                {
-                    model.Park = "ТЗ";
-                    model.Route = "02";
-                }
-                
+                }         
 
                 var timestamp = new SqlParameter("@timestamp", SqlDbType.DateTime);
                 timestamp.Value = model.EventDateTime;
@@ -48,7 +42,8 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
                 type.Value = model.Type;
                 var distance = new SqlParameter("@km", SqlDbType.Int);
                 distance.Value = model.Distance;
-                context.Database.ExecuteSqlCommand("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km", stationCode,timestamp, locomotiveNumber, park, route, type, distance);
+                context.Database.ExecuteSqlCommand("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km", 
+                    stationCode,timestamp, locomotiveNumber, park, route, type, distance);
             }
             catch(Exception ex)
             {

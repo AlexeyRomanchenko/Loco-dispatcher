@@ -11,6 +11,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
 {
     public class JsonFactory
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private EventManager _eventManager = new EventManager();
         public EventManager GetEvents()
         {
@@ -23,6 +24,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                 case EventConstants.StartMoveEvent:
                     try
                     {
+                        logger.Info("START MOVE INVOKED");
                         StartMoveEvent startEvent = new StartMoveEvent(
                             jsonObject.type.ToString(),
                             (int)jsonObject.timestamp,
@@ -42,6 +44,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                 case EventConstants.StopMoveEvent:
                     try
                     {
+                        logger.Info("STOP MOVE INVOKED");
                         StopMoveEvent stopEvent = new StopMoveEvent(
                             jsonObject.type.ToString(),
                             (int)jsonObject.timestamp,
@@ -60,6 +63,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                 case EventConstants.PassCheckpoint:
                     try
                     {
+                        logger.Info("PASS CHECKPOINT INVOKED");
                         CheckpointEvent checkpointEvent = new CheckpointEvent(
                             jsonObject.type.ToString(),
                             (int)jsonObject.timestamp,
@@ -78,6 +82,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                 case EventConstants.StopOutsideStation:
                     try
                     {
+                        logger.Info("STOP OUTSIDE INVOKED");
                         StopMoveEvent stopEvent = new StopMoveEvent(
                                 jsonObject.type.ToString(),
                                 (int)jsonObject.timestamp,
@@ -96,6 +101,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                 case EventConstants.Emergency:
                     try
                     {
+                        logger.Info("EMERGENCY INVOKED");
                         EmergencyEvent emergencyEvent = new EmergencyEvent(
                               jsonObject.type.ToString(),
                                 (int)jsonObject.timestamp,
@@ -112,6 +118,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                 case EventConstants.StartShiftLocomotives:
                     try
                     {
+                        logger.Info("LOCOMOTIVE SHIFTS INVOKED");
                         List<string> _trains = new List<string>();
                         dynamic trains = jsonObject.trains;
                         foreach (var train in trains)
@@ -121,9 +128,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
 
                         ShiftLocomotiveEvent shiftLocomotive = new ShiftLocomotiveEvent(
                              jsonObject.type.ToString(),
-                                (int)jsonObject.timestamp,
-                                jsonObject.esr.ToString(),
-                                jsonObject.message.ToString(),
+                                (int)jsonObject?.timestamp,
+                                jsonObject?.esr.ToString(),
                                 _trains
                             );
                         return shiftLocomotive;
@@ -132,8 +138,12 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                     {
                         throw ex;
                     }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
                 default:
-                    Console.WriteLine($"Entered DEFAULT{ jsonObject.type.ToString()} ");
+                    logger.Info($"!!! DEFAULT INVOKED, TYPE IS {jsonObject.type.ToString()}");
                     return null;
             }
         }

@@ -7,12 +7,11 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
 {
     public class ShiftLocomotiveEvent : MoveEventBase
     {
-        public ShiftLocomotiveEvent(string type, int timestamp, string esr, string message, List<string> trains)
+        public ShiftLocomotiveEvent(string type, int timestamp, string esr, List<string> trains)
         {
             this.Type = type;
             this.Timestamp = timestamp;
             this.ESR = esr;
-            this.Message = message;
             this.Trains = trains;
         }
         public string ESR { get; set; }

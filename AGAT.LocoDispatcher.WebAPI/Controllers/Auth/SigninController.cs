@@ -40,13 +40,14 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
         }
 
         // POST: api/Signin
+        [HttpPost]
         public async Task<HttpResponseMessage> Post(UserViewModel model)
         {
             try
             {
                 if (model is null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Данные не валидны");
+                    throw new ArgumentNullException("Данные не валидны");
                 }
                 if (ModelState.IsValid)
                 {
@@ -81,7 +82,8 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+                string[] errorMessage = new[] { ex.Message }; 
+                return Request.CreateResponse(HttpStatusCode.BadRequest, errorMessage);
             }
            
         }

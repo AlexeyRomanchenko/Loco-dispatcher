@@ -16,7 +16,7 @@ namespace AGAT.LocoDispatcher.WebAPI
             config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data"));
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

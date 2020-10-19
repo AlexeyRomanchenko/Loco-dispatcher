@@ -8,6 +8,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
 {
     public class EventHelper
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private DataManager manager;
         public EventHelper()
         {
@@ -51,7 +52,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                 {
                     pointCode = await manager.checkpointEventRepository.GetLastCheckpointByLocoIdAsync(model.LocoNumber);
                 }
-                if (pointCode is null)
+                logger.Info($"Start SP invoking with pointCode {pointCode}, event {model.Type}");
+                if (string.IsNullOrEmpty(pointCode?.Trim()))
                 {
                     return;
                 }
@@ -59,11 +61,13 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                 model.Park = stationInfo?.Park;
                 model.StationCode = stationInfo?.StationCode;
                 model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
+                logger.Info($"SP invoking with park {model.Park}, station code {model.StationCode},route {model.Park} , event dateTime {model.EventDateTime} ");
                 if (string.IsNullOrEmpty(model.Park?.Trim()))
                 {
                     return;
                 }
                 manager.trackRepository.InvokeEventAsync(model);
+                logger.Info($"SP was invoked successfully");
             }
             catch (Exception ex)
             {

@@ -67,10 +67,10 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             {
                 throw new ArgumentException("train number is not valid");
             }
-            int counter = 4 - trainNumber.Length;
+            int counter = 4 - trainNumber.Trim().Length;
             for (int i = 0; i < counter; i++)
             {
-                trainNumber = $"0{trainNumber}";
+                trainNumber = $"0{trainNumber.Trim()}";
             };
             return trainNumber;
         }

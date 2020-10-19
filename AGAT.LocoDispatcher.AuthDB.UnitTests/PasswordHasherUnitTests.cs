@@ -1,5 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AGAT.LocoDispatcher.AuthDB.Utils;
+using AGAT.LocoDispatcher.AuthDB.Repositories;
+using System.Threading.Tasks;
+using System;
+using AGAT.LocoDispatcher.AuthDB.Models;
 
 namespace AGAT.LocoDispatcher.AuthDB.UnitTests
 {
@@ -26,6 +30,28 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
             string hash = HashProducer.HashPassword(password);
             var isEqual = producer.Compare(password, hash);
             Assert.IsTrue(isEqual);
+        }
+
+        [DataTestMethod]
+        [DataRow("010101")]
+        public async Task CompareUserPswdHashOk(string password)
+        {
+            try
+            {
+                User usr = new User
+                {
+                Username = "Alex"
+                };
+                var repository = new UserRepository();
+                var user = await repository.GetAsync(usr);
+                bool isEqual = producer.Compare(password, user.Password);
+                Assert.IsTrue(isEqual);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
 
         [DataTestMethod]
