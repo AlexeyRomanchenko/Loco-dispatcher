@@ -47,9 +47,10 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                     string filePath = Directory.GetFiles(path).FirstOrDefault(name => name != "Thumbs.db"); ;
                     if (filePath != null)
                     {
+                        FileInfo file = new FileInfo(filePath);
                         try
                         {
-                            FileInfo file = new FileInfo(filePath);
+
                             string jsonData = GetJSONFromFile(filePath);
                             logger.Info($"{DateTime.Now} | GETTING FILE | {filePath} ");
                             _operator.ParseToJson(jsonData);
@@ -60,28 +61,25 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                         {
                             try
                             {
-                                FileInfo file = new FileInfo(filePath);
                                 if (file.Exists)
                                 {
-                                    file.MoveTo($"{errorPath}{file.Name}");
+                                    File.Move(filePath, $"{errorPath}{file.Name}{(Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds}");
                                 }
-                                //file.Delete();
-
                             }
-                            catch (Exception)
-                            {
+                            catch (DirectoryNotFoundException _ex)
+                            {                               
+                                logger.Error($"{DateTime.Now} | DIRECTORY NOT FOUND EXCEPTION | {_ex.Message} | WHILE MOVING FILE| {filePath}");
+                                File.Delete(filePath);
                                 throw;
                             }
-
-
-                            logger.Error($"{DateTime.Now} | ERROR SOURCE {filePath} | {ex.Source}");
-                            logger.Error($"{DateTime.Now} | ERROR METHOD | {ex.TargetSite}");
-                            logger.Error($"{DateTime.Now} | ERROR | {ex.Message}");
+                            catch (Exception _ex)
+                            {
+                                logger.Error($"{DateTime.Now} | ERROR| {_ex.Message} | WHILE MOVING FILE| {filePath}");
+                                throw;
+                            }
+                            logger.Error($"{DateTime.Now} | FILE WAS MOVED {filePath} | ERROR | {ex.Message}");
                         }
-
                     }
-
-                    //}
                 }
                 else
                 {

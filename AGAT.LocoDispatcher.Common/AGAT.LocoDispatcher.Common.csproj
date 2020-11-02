@@ -64,6 +64,8 @@
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\RoutePlate.cs" />
     <Compile Include="Models\Train.cs" />
+    <Compile Include="Models\ViewModels\RoleViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

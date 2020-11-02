@@ -45,6 +45,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Helpers\AggregateHelper.cs" />
+    <Compile Include="Interfaces\IGenerateStationId.cs" />
+    <Compile Include="Interfaces\IStationRepository.cs" />
     <Compile Include="Models\Carriage.cs" />
     <Compile Include="Models\Coord.cs" />
     <Compile Include="Models\Park.cs" />
@@ -66,6 +72,7 @@
     <Compile Include="Repositories\PlateRepository.cs" />
     <Compile Include="Repositories\PointRepository.cs" />
     <Compile Include="Repositories\RailsRepository.cs" />
+    <Compile Include="Repositories\StationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

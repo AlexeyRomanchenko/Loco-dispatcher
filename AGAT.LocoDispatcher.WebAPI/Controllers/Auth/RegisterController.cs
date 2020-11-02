@@ -32,11 +32,14 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
                     User user = new User
                     {
                         Username = model.Username,
-                        Password = HashProducer.HashPassword(model.Password)
+                        Password = HashProducer.HashPassword(model.Password),
+                        RoleId = model.RoleId,
+                        StationId = 1
                     };
                     repository.Create(user);
                     await repository.SaveAsync();
-                    return Request.CreateResponse(HttpStatusCode.OK);
+                    var newUser = await repository.GetByIdAsync(user.Id);
+                    return Request.CreateResponse(HttpStatusCode.OK, newUser);
                 }
                 else
                 {

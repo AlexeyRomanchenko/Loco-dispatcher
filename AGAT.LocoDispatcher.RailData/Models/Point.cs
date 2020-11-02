@@ -9,10 +9,6 @@ namespace AGAT.LocoDispatcher.RailData.Models
 {
     public class Point
     {
-        //public Point()
-        //{
-        //    Rails = new List<Rail>();
-        //}
         [Key]
         public int Id { get; set; }
         public string Code { get; set; }
@@ -21,6 +17,6 @@ namespace AGAT.LocoDispatcher.RailData.Models
         public int Angle { get; set; }
         public int ParkId { get; set; }
         public Park Park { get; set; }
-       // public List<Rail>  Rails { get; set; }
+        public string RouteCode { get; set; }
     }
 }

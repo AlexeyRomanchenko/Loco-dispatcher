@@ -1,12 +1,12 @@
-﻿using AGAT.LocoDispatcher.RailData.Models;
+﻿using AGAT.LocoDispatcher.RailData.Interfaces;
+using AGAT.LocoDispatcher.RailData.Models;
 using System.Data.Entity;
 
 namespace AGAT.LocoDispatcher.RailData
 {
         public class DataContext : DbContext
         {
-            public DataContext() :
-                base("DatabaseContext")
+            public DataContext() :base("DatabaseContext")
             { }
 
             public DbSet<Rail> Rails { get; set; }
@@ -18,8 +18,6 @@ namespace AGAT.LocoDispatcher.RailData
             public DbSet<Park> Parks { get; set; }
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
-            //modelBuilder.Entity<Point>().HasMany(e => e.Rails);
-            //modelBuilder.Entity<Rail>().HasMany(e=>e.Points);
 
             modelBuilder.Entity<Rail>().HasKey(e => e.Id);
             modelBuilder.Entity<Rail>().HasRequired(e => e.Carriage).WithRequiredPrincipal(e => e.Rail);

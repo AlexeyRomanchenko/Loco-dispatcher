@@ -1,3 +1,3 @@
-2020-10-19 08:23:35.8656 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 19.10.2020 8:23:35 | ERROR SOURCE C://json\005913857.1k5 | Anonymously Hosted DynamicMethods Assembly  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
-2020-10-19 08:23:35.8766 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 19.10.2020 8:23:35 | ERROR METHOD | System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object)  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
-2020-10-19 08:23:35.8766 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 19.10.2020 8:23:35 | ERROR | Не удается выполнить привязки исполняющей среды по нулевой ссылке  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-28 13:59:51.0810 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 28.10.2020 13:59:51 | FILE WAS MOVED D:\SAMPLES\2210\005913857.1xv1603265594 | ERROR | json couldn't be handled {
+  "events": null
+}  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse

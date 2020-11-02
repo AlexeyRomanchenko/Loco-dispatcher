@@ -11,7 +11,11 @@ namespace AGAT.LocoDispatcher.WebAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+            EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:4200," +
+                "http://10.19.4.17," +
+                "http://10.1.3.230:81," +
+                "http://10.1.3.230:82," +
+                "http://10.1.3.230:83", "*", "*");
             cors.SupportsCredentials = true;
             config.EnableCors(cors);
             // Web API routes

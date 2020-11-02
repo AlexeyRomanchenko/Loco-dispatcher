@@ -21,7 +21,8 @@ namespace AGAT.LocoDispatcher.AuthDB
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasRequired<Role>(e => e.Role).WithMany(e => e.Users).HasForeignKey<int>(e => e.RoleId);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>().HasRequired<Role>(e => e.Role).WithMany(e => e.Users).HasForeignKey(e => e.RoleId);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using AGAT.LocoDispatcher.AuthDB.Models;
 using AGAT.LocoDispatcher.AuthDB.Repositories;
@@ -31,6 +32,7 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
                 };
                 repository.Create(user);
                 await repository.SaveAsync();
+                
             }
             catch (Exception ex)
             {
@@ -52,6 +54,30 @@ namespace AGAT.LocoDispatcher.AuthDB.UnitTests
                 };
                 User loggerUser = await repository.GetAsync(user);
                 Assert.IsNotNull(loggerUser);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow("Test", "Test")]
+        public async Task CreateAndRemoveUserOk(string username, string password)
+        {
+            try
+            {
+                User user = new User
+                {
+                    Username = username,
+                    Password = HashProducer.HashPassword(password),
+                    RoleId = 2
+                };
+                repository.Create(user);
+                await repository.SaveAsync();
+                var userToDelete = await repository.GetByIdAsync(user.Id);
+                repository.Remove(userToDelete);
+                await repository.SaveAsync();
             }
             catch (Exception)
             {

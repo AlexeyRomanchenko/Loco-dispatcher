@@ -1,0 +1,31 @@
+2020-10-21 08:17:29.4140 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 8:17:29 | ERROR SOURCE C://json\005913857.1xv | AGAT.LocoDispatcher.Parser  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 08:17:29.6572 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 8:17:29 | ERROR METHOD | Void ParseToJson(System.String)  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 08:17:29.8794 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 8:17:29 | ERROR | json couldn't be handled {
+  "events": null
+}  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:02:19.0458 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:02:19 | ERROR| Файл существует.
+ | WHILE MOVING FILE| \\10.1.3.106\mail\111\005913857.1xv  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:02:19.2189 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:02:19 | LAST ERROR SOURCE | mscorlib  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:02:19.2189 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:02:19 | LAST ERROR METHOD | Void WinIOError(Int32, System.String)  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:02:19.2189 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:02:19 | LAST ERROR | Файл существует.
+  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:02:51.1941 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:02:51 | FILE WAS MOVED \\10.1.3.106\mail\111\005913857.1xv | ERROR | json couldn't be handled {
+  "events": null
+}  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:07:05.2945 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:07:05 | ERROR| Файл существует.
+ | WHILE MOVING FILE| \\10.1.3.106\mail\JSON\005913857.1xv  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:10:13.9383 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:10:13 | FILE WAS MOVED \\10.1.3.106\mail\JSON\005913857.1xv | ERROR | json couldn't be handled {
+  "events": null
+}  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:15:27.0636 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:15:27 | ERROR| Файл существует.
+ | WHILE MOVING FILE| \\10.1.3.106\mail\111\005913857.1xv  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:15:27.0756 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:15:27 | LAST ERROR SOURCE | mscorlib  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:15:27.0756 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:15:27 | LAST ERROR METHOD | Void WinIOError(Int32, System.String)  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:15:27.0756 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:15:27 | LAST ERROR | Файл существует.
+  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:17:46.8396 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:17:46 | FILE WAS MOVED \\10.1.3.106\mail\111\005913857.1xv | ERROR | json couldn't be handled {
+  "events": null
+}  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse
+2020-10-21 09:19:16.6876 AGAT.LocoDispatcher.Parser.Utils.DriveOperator.GetFilesFromDirectoryAndParse Error: 21.10.2020 9:19:16 | FILE WAS MOVED \\10.1.3.106\mail\111\005913857.1xv | ERROR | json couldn't be handled {
+  "events": null
+}  JobRunShell.Run => ParseJob.Execute => DriveOperator.GetFilesFromDirectoryAndParse

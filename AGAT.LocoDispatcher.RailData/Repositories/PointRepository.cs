@@ -1,10 +1,13 @@
 ﻿using AGAT.LocoDispatcher.Common.Interfaces;
 using AGAT.LocoDispatcher.Common.Models.EventModels;
+using AGAT.LocoDispatcher.RailData.Helpers;
 using AGAT.LocoDispatcher.RailData.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.RailData.Repositories
@@ -80,27 +83,20 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                 }
                 using (DataContext context = new DataContext())
                 {
-                    return await context.Parks.Join(
-                        context.Points.Where(w=>w.Code == code),
-                        park => park.Id,
-                        point => point.ParkId,
-                        (_park, _point) => new
-                        {
-                            _park.StationId,
-                            Name = _park.Code,                      
-                            _park.ParkId
-                        })
+                    context.Database.Log = e => Debug.WriteLine(e);
+                    var stationInfo =  await context.Points.Where(p => p.Code == code)
+                        .Include(e=>e.Park)
                         .Join(context.Stations,
-                        park => park.StationId,
-                        st => st.Id,
-                        (park, st) => new  StationInfo
-                        {
-                            StationCode = st.StationCode,
-                            Park = park.Name
-                        }
-                        ).AsNoTracking()
-                        .FirstOrDefaultAsync();
-
+                        prk=> prk.Park.StationId,
+                        station=>station.Id,
+                        (_point, _st) => new StationInfo{
+                            StationCode = _st.StationCode,
+                            Route = _point.RouteCode
+                        })
+                        .AsNoTracking().FirstOrDefaultAsync();
+                    stationInfo.Park = AggregateHelper.GetParkdCodeAndRoute(stationInfo.Route).Item1;
+                    stationInfo.Route = AggregateHelper.GetParkdCodeAndRoute(stationInfo.Route).Item2;
+                    return stationInfo;
                 }
             }
             catch (Exception ex)

@@ -55,12 +55,11 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                 logger.Info($"Start SP invoking with pointCode {pointCode}, event {model.Type}");
                 if (string.IsNullOrEmpty(pointCode?.Trim()))
                 {
-                    return;
+                    IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
+                    model.Park = stationInfo?.Park;
+                    model.StationCode = stationInfo?.StationCode;
+                    model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
                 }
-                IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
-                model.Park = stationInfo?.Park;
-                model.StationCode = stationInfo?.StationCode;
-                model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
                 logger.Info($"SP invoking with park {model.Park}, station code {model.StationCode},route {model.Park} , event dateTime {model.EventDateTime} ");
                 if (string.IsNullOrEmpty(model.Park?.Trim()))
                 {

@@ -59,21 +59,6 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                 {
                     throw;
                 }
-                //foreach (var jsonObject in jsonArray)
-                //{
-                //    logger.Info($"{DateTime.Now} | foreach statement JSON");
-                //    IEvent _event = _jsonFactory.GetEventFactory(jsonObject);
-                //    if (_event == null)
-                //    {
-                //        throw new ArgumentException("event is not valid");
-                //    }
-                //    IProvider provider = _providerFactory.GetProviderFactory(_event);
-                //    if (provider == null)
-                //    {
-                //        throw new ArgumentException("provider is not valid");
-                //    }
-                //    provider.Create(_event);
-                //}
             }
             catch (Exception ex)
             {
