@@ -6,6 +6,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Models.ViewModels
     {
         [Required(ErrorMessage = "Пользователь неопределен")]
         public int Id { get; set; }
+        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         public string ConfirmPassword { get; set; }
         public new string Password { get; set; }
         public int RoleId { get; set; }

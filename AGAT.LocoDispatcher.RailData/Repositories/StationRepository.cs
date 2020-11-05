@@ -20,5 +20,12 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
         {
             return await _context.Stations.ToListAsync();
         }
+        public async Task<Station> GetByCodeAsync(string code)
+        {
+            return await _context.Stations
+                .Where(s => s.StationCode == code)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
     }
 }

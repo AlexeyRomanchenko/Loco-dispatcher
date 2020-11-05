@@ -36,7 +36,7 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
 
         public void Remove(User user)
         {
-            context.Users.Remove(user);
+            context.Entry(user).State = EntityState.Deleted;
         }
 
         public async Task<User> GetAsync(User user)
@@ -84,7 +84,23 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
         {
             try
             {       
-                return await context.Users.Include(u=>u.Role).Where(e => e.Id == id).SingleOrDefaultAsync();
+                return await context.Users
+                    .Include(u=>u.Role)
+                    .Include(e=>e.Station)
+                    .AsNoTracking()
+                    .Where(e => e.Id == id).SingleOrDefaultAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void Update(User user)
+        {
+            try
+            {
+                context.Entry(user).State = EntityState.Modified;
             }
             catch (Exception)
             {

@@ -23,6 +23,17 @@ namespace AGAT.LocoDispatcher.Data.Repositories
             }
         }
 
+        public async Task<List<MoveEventBase>> GetLastNEventsAsync(int amount)
+        {
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                return await context.Events
+                    .AsNoTracking()
+                    .Take(amount)
+                    .OrderByDescending(e => e.Timestamp).ToListAsync();
+            }
+        }
+
         public async Task<List<EmergencyModel>> GetLastEmergencyEventAsync()
         {
             List<EmergencyModel> emergencyEvents = new List<EmergencyModel>();

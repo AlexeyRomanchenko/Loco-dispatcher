@@ -214,6 +214,7 @@
     <Compile Include="Controllers\Main\CarriageInfoController.cs" />
     <Compile Include="Controllers\Main\EmergencyMessageController.cs" />
     <Compile Include="Controllers\Main\FailedEventController.cs" />
+    <Compile Include="Controllers\Main\LastEventsController.cs" />
     <Compile Include="Controllers\Main\LocoController.cs" />
     <Compile Include="Controllers\Main\PointController.cs" />
     <Compile Include="Controllers\Main\RailsController.cs" />

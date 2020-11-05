@@ -10,6 +10,7 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
         void Create(User user);
         Task<User> GetAsync(User user);
         Task<User> GetByIdAsync(int id);
+        void Update(User user); 
         void Remove(User user);
         Task<IEnumerable<UserRole>> GetAllAsync();
     }

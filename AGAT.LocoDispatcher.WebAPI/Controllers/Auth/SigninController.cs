@@ -53,13 +53,12 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
                 {
                     User user = new User
                     {
-                        Username = model.Username,
-                        Password = model.Password
+                        Username = model.Username
                     };
                     User loggedUser = await repository.GetAsync(user);
                     if (loggedUser != null)
                     {
-                        var isAuthenticated = hasher.Compare(model.Password, loggedUser.Password);
+                        var isAuthenticated = hasher.Compare(model.Password.Trim(), loggedUser.Password);
                         if (isAuthenticated)
                         {
                             return await Task.FromResult(Request.CreateResponse(HttpStatusCode.OK, new

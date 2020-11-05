@@ -39,6 +39,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
                     repository.Create(user);
                     await repository.SaveAsync();
                     var newUser = await repository.GetByIdAsync(user.Id);
+                    newUser.Password = null;
                     return Request.CreateResponse(HttpStatusCode.OK, newUser);
                 }
                 else

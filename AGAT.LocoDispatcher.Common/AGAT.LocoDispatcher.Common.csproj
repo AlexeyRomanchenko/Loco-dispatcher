@@ -57,6 +57,7 @@
     <Compile Include="Models\AbstractEvent.cs" />
     <Compile Include="Models\Carriage.cs" />
     <Compile Include="Models\Coords.cs" />
+    <Compile Include="Models\EventModels\BasicEventModel.cs" />
     <Compile Include="Models\EventModels\EmergencyModel.cs" />
     <Compile Include="Models\EventModels\EventModel.cs" />
     <Compile Include="Models\EventModels\StationInfo.cs" />

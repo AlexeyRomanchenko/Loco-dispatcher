@@ -1,5 +1,6 @@
 ﻿using AGAT.LocoDispatcher.Business.Models;
 using AGAT.LocoDispatcher.Business.Models.RailModels;
+using AGAT.LocoDispatcher.Common.Models.EventModels;
 using AGAT.LocoDispatcher.Data;
 using AGAT.LocoDispatcher.Data.Events;
 using AGAT.LocoDispatcher.Data.Repositories;
@@ -100,6 +101,26 @@ namespace AGAT.LocoDispatcher.Business.Managers
         private async Task<MoveEventBase> GetLastEventAsync(int locoShiftId)
         {
             return await baseEventRepository.GetLastEventByShiftIdAsync(locoShiftId);
+        }
+
+        public async Task<IEnumerable<BasicEventModel>> GetLastNEventsAsync(int amount)
+        {
+            var lastEvents = await baseEventRepository.GetLastNEventsAsync(amount);
+            List<BasicEventModel> _lastEvents = new List<BasicEventModel>();
+            foreach (var _event in lastEvents)
+            {
+                BasicEventModel basicEvent = new BasicEventModel
+                {
+                 Type = _event.Type,
+                 CheckPointNumber = _event.CheckPointNumber,
+                 CreatedAt = _event.CreatedAt,
+                 Message = _event.Message,
+                 Timestamp = _event.Timestamp,
+                 TrackNumber = _event.TrackNumber
+                };
+                _lastEvents.Add(basicEvent);
+            }
+            return _lastEvents;
         }
 
     }
