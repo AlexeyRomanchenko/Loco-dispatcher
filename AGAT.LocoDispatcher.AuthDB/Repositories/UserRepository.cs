@@ -68,7 +68,7 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
                   new UserRole
                   {
                       Id = u.Id,
-                      Station = u.Station.Name +"("+ u.Station.StationCode+")",
+                      Station = u.Station.StationCode +"("+ u.Station.Name+")",
                       Username = u.Username,
                       Role = u.Role.Name
                   }).ToListAsync();

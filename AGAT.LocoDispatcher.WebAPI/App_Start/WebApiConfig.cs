@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace AGAT.LocoDispatcher.WebAPI
@@ -13,9 +10,9 @@ namespace AGAT.LocoDispatcher.WebAPI
             // Web API configuration and services
             EnableCorsAttribute cors = new EnableCorsAttribute("http://localhost:4200," +
                 "http://10.19.4.17," +
-                "http://10.1.3.230:81," +
-                "http://10.1.3.230:82," +
-                "http://10.1.3.230:83", "*", "*");
+                "http://10.19.4.17:81," +
+                "http://10.19.4.17:82," +
+                "http://10.19.4.17:83", "*", "*");
             cors.SupportsCredentials = true;
             config.EnableCors(cors);
             // Web API routes

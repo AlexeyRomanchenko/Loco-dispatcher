@@ -64,7 +64,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Admin
                     {
                         throw new ArgumentException("Пользователь идентифицирован некорректно");
                     }
-                    if (model.Password.Trim().Length > 0)
+                    if (model.Password.Trim().Length > 0 || model.Password != "null")
                     {
                         user.Password = HashProducer.HashPassword(model.Password.Trim());
                     }

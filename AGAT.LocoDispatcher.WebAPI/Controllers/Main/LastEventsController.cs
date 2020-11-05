@@ -17,7 +17,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Main
         [HttpGet]
         public async Task<HttpResponseMessage> Get()
         {
-            var lastEvents = await _locoManager.GetLastNEventsAsync(5);
+            var lastEvents = await _locoManager.GetLastNEventsAsync(10);
             return Request.CreateResponse(HttpStatusCode.OK, lastEvents);
         }
     }

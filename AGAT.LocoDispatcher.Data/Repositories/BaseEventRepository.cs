@@ -30,7 +30,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
                 return await context.Events
                     .AsNoTracking()
                     .Take(amount)
-                    .OrderByDescending(e => e.Timestamp).ToListAsync();
+                    .OrderByDescending(e => e.Timestamp).ThenByDescending(e=>e.CreatedAt).ToListAsync();
             }
         }
 
