@@ -14,7 +14,7 @@ namespace AGAT.LocoDispatcher.Business.Helpers
             {
                 if (string.IsNullOrEmpty(parkRoute?.Trim()))
                 {
-                    throw new ArgumentNullException("Парк-путь не валидные");
+                    return ("-", "-");
                 }
                 string park = parkRoute.Substring(0, parkRoute.Length - 2);
                 string route = parkRoute.Substring(parkRoute.Length - 2, 2);

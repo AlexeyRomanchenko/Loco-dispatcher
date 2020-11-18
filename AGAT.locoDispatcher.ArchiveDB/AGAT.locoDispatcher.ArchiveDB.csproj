@@ -101,6 +101,7 @@
     <Compile Include="DWH_service.cs">
       <DependentUpon>ArchiveContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\PointCodeExtensions.cs" />
     <Compile Include="GIR_Info.cs">
       <DependentUpon>ArchiveContext.tt</DependentUpon>
     </Compile>

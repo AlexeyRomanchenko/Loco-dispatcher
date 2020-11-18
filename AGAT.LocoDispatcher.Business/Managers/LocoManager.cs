@@ -39,19 +39,19 @@ namespace AGAT.LocoDispatcher.Business.Managers
                     int? direction = await repository.GetLocomotiveDirectionParityByShiftAsync(loco.Id);
                     MoveEventBase _event = await GetLastEventAsync(loco.Id);
                    
-                    if (!string.IsNullOrEmpty(_event?.CheckPointNumber.Trim()))
+                    if (!string.IsNullOrEmpty(_event?.CheckPointNumber?.Trim()))
                     {
                         LocomotiveViewModel locomotive = new LocomotiveViewModel
                         {
                             Id = loco.Id,
                             ESR = loco.ESR,
                             TrainNumber = loco.TrainNumber,
-                            PointId = _event.CheckPointNumber,
+                            PointId = _event?.CheckPointNumber,
                             Direction = direction,
                         };
                         locomotive.IsStopped = _event?.Type == "stop_move" ? true : false;
                         //_event.CheckPointNumber
-                        Point point = await pointManager.GetPointByCode(_event.CheckPointNumber, parkId);
+                        Point point = await pointManager.GetPointByCode(_event?.CheckPointNumber, parkId);
                         if (point != null)
                         {
                             locomotive.Coords = point.Coord;

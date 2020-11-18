@@ -15,7 +15,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
             string message,
             string trainId,
             string trackNumber,
-            string checkpointNumber)
+            string checkpointNumber
+            )
         {
             this.Type = type;
             this.Direction = (int)direction;

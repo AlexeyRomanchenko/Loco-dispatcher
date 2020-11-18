@@ -18,7 +18,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
             return this._eventManager;
         }
         public IEvent GetEventFactory(dynamic jsonObject)
-        {
+         {
             switch (jsonObject.type.ToString())
             {
                 case EventConstants.StartMoveEvent:
@@ -27,13 +27,14 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         logger.Info("START MOVE INVOKED");
                         StartMoveEvent startEvent = new StartMoveEvent(
                             jsonObject.type.ToString(),
-                            (int)jsonObject.timestamp,
-                            ConvertHelper.DynamicToDouble(jsonObject.direction),
-                            (int)jsonObject.direction_parity,
-                            jsonObject.message.ToString(),
-                            jsonObject.train_id.ToString(),
-                            jsonObject.track_number.ToString(),
-                            jsonObject.checkpoint_number.ToString());
+                            (int)jsonObject?.timestamp,
+                            ConvertHelper.DynamicToDouble(jsonObject?.direction),
+                            (int)jsonObject?.direction_parity,
+                            jsonObject?.message?.ToString(),
+                            jsonObject?.train_id?.ToString(),
+                            jsonObject?.track_number?.ToString(),
+                            jsonObject?.checkpoint_number?.ToString()
+                            );
                         return startEvent;
                     }
 
@@ -47,12 +48,12 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         logger.Info("STOP MOVE INVOKED");
                         StopMoveEvent stopEvent = new StopMoveEvent(
                             jsonObject.type.ToString(),
-                            (int)jsonObject.timestamp,
-                            ConvertHelper.DynamicToDouble(jsonObject.distance),
-                            jsonObject.checkpoint_number.ToString(),
-                            jsonObject.track_number.ToString(),
-                            jsonObject.message.ToString(),
-                            jsonObject.train_id.ToString()
+                            (int)jsonObject?.timestamp,
+                            ConvertHelper.DynamicToDouble(jsonObject?.distance),
+                            jsonObject?.checkpoint_number?.ToString(),
+                            jsonObject?.track_number?.ToString(),
+                            jsonObject?.message?.ToString(),
+                            jsonObject?.train_id?.ToString()
                             );
                         return stopEvent;
                     }
@@ -66,12 +67,12 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         logger.Info("PASS CHECKPOINT INVOKED");
                         CheckpointEvent checkpointEvent = new CheckpointEvent(
                             jsonObject.type.ToString(),
-                            (int)jsonObject.timestamp,
-                            jsonObject.train_id.ToString(),
-                            ConvertHelper.DynamicToDouble(jsonObject.speed),
-                            jsonObject.checkpoint_number.ToString(),
-                            jsonObject.track_number.ToString(),
-                            jsonObject.message.ToString()
+                            (int)jsonObject?.timestamp,
+                            jsonObject?.train_id?.ToString(),
+                            ConvertHelper.DynamicToDouble(jsonObject?.speed),
+                            jsonObject?.checkpoint_number?.ToString(),
+                            jsonObject?.track_number?.ToString(),
+                            jsonObject?.message?.ToString()
                             );
                         return checkpointEvent;
                     }
@@ -85,12 +86,12 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         logger.Info("STOP OUTSIDE INVOKED");
                         StopMoveEvent stopEvent = new StopMoveEvent(
                                 jsonObject.type.ToString(),
-                                (int)jsonObject.timestamp,
-                                ConvertHelper.DynamicToDouble(jsonObject.distance),
-                                jsonObject.checkpoint_number.ToString(),
-                                jsonObject.track_number.ToString(),
-                                jsonObject.message.ToString(),
-                                jsonObject.train_id.ToString()
+                                (int)jsonObject?.timestamp,
+                                ConvertHelper.DynamicToDouble(jsonObject?.distance),
+                                jsonObject?.checkpoint_number?.ToString(),
+                                jsonObject?.track_number?.ToString(),
+                                jsonObject?.message?.ToString(),
+                                jsonObject?.train_id?.ToString()
                                 );
                         return stopEvent;
                     }
@@ -105,10 +106,10 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         EmergencyEvent emergencyEvent = new EmergencyEvent(
                               jsonObject.type.ToString(),
                                 (int)jsonObject.timestamp,
-                                jsonObject.train_id.ToString(),
-                                jsonObject.emergency_type.ToString(),
-                                (int)jsonObject.emergency_status,
-                                jsonObject.message.ToString());
+                                jsonObject?.train_id.ToString(),
+                                jsonObject?.emergency_type.ToString(),
+                                (int)jsonObject?.emergency_status,
+                                jsonObject?.message?.ToString());
                         return emergencyEvent;
                     }
                     catch (FormatException ex)
@@ -129,7 +130,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                         ShiftLocomotiveEvent shiftLocomotive = new ShiftLocomotiveEvent(
                              jsonObject.type.ToString(),
                                 (int)jsonObject?.timestamp,
-                                jsonObject?.esr.ToString(),
+                                jsonObject?.esr?.ToString(),
                                 _trains
                             );
                         return shiftLocomotive;

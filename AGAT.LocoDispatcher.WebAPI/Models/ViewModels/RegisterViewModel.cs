@@ -2,7 +2,7 @@
 
 namespace AGAT.LocoDispatcher.WebAPI.Models.ViewModels
 {
-    public class RegisterViewModel: UserViewModel
+    public class RegisterViewModel: LoginViewModel
     {
         [Compare("Password", ErrorMessage ="Пароли не совпадают")]
         public string ConfirmPassword { get; set; }

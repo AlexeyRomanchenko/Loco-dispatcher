@@ -49,7 +49,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Catched" + ex.Message);
             }
            
         }

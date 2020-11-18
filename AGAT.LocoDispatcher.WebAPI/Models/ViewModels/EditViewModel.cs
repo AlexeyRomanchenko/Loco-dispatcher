@@ -8,7 +8,6 @@ namespace AGAT.LocoDispatcher.WebAPI.Models.ViewModels
         public int Id { get; set; }
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         public string ConfirmPassword { get; set; }
-        public new string Password { get; set; }
         public int RoleId { get; set; }
         public string StationCode {get;set;}
     }

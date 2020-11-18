@@ -7,16 +7,18 @@ using AGAT.LocoDispatcher.WebAPI.Filters;
 using AGAT.LocoDispatcher.WebAPI.Handlers;
 using AGAT.LocoDispatcher.WebAPI.Models.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace AGAT.LocoDispatcher.WebAPI.Controllers.Admin
 {
+    [EnableCors(origins: "*", headers: "*",
+    methods: "*", SupportsCredentials = true)]
     public class UserController : ApiController
     {
         private UserRepository userRepository;
@@ -64,7 +66,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Admin
                     {
                         throw new ArgumentException("Пользователь идентифицирован некорректно");
                     }
-                    if (model.Password.Trim().Length > 0 || model.Password != "null")
+                    if (model.Password?.Trim().Length > 0)
                     {
                         user.Password = HashProducer.HashPassword(model.Password.Trim());
                     }
@@ -78,7 +80,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Admin
                     userRepository.Update(user);
                     await userRepository.SaveAsync();
                     var editedUser = await userRepository.GetByIdAsync(model.Id);
-                    editedUser.Password = null;
+                    editedUser.Password = model.Password;
                     return Request.CreateResponse(HttpStatusCode.OK, editedUser);
                 }
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ErrorHandler.HandleErrors(ModelState));

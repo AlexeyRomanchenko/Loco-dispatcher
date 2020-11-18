@@ -12,6 +12,9 @@ namespace AGAT.LocoDispatcher.WebAPI
                 "http://10.19.4.17," +
                 "http://10.19.4.17:81," +
                 "http://10.19.4.17:82," +
+                "http://10.1.3.230," +
+                "http://10.1.3.230:81," +
+                "http://10.1.3.230:82," +
                 "http://10.19.4.17:83", "*", "*");
             cors.SupportsCredentials = true;
             config.EnableCors(cors);

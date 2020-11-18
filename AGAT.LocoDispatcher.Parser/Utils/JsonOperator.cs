@@ -43,7 +43,13 @@ namespace AGAT.LocoDispatcher.Parser.Utils
                     
                     foreach (var jsonEvent in jsonArray)
                     {
+                        // Create event class by type using factory pattern
                         IEvent locoEvent = _jsonFactory.GetEventFactory(jsonEvent);
+                        if (locoEvent is null)
+                        {
+                            throw new ArgumentException($"COULD NOT HANDLE EVENT {jsonEvent?.type.ToString()}");
+                        }
+                        // 
                         _jsonFactory.SetEventManagerFactory(locoEvent);
                     }
                     EventManager events = _jsonFactory.GetEvents();

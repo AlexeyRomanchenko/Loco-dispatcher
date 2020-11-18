@@ -41,7 +41,7 @@ namespace AGAT.LocoDispatcher.WebAPI.Controllers.Auth
 
         // POST: api/Signin
         [HttpPost]
-        public async Task<HttpResponseMessage> Post(UserViewModel model)
+        public async Task<HttpResponseMessage> Post(LoginViewModel model)
         {
             try
             {

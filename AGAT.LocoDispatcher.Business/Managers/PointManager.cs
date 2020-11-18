@@ -21,6 +21,7 @@ namespace AGAT.LocoDispatcher.Business.Managers
             {
                 IEnumerable<RailData.Models.Point> _points = _repository.GetById(parkId);
                 IEnumerable<Point> points = Mapper.GetMapperInstance().Map<IEnumerable<Point>>(_points);
+                var _p = points.Where(e => e.Angle > 0).ToList();
                 return points;
             }
             catch (Exception ex)

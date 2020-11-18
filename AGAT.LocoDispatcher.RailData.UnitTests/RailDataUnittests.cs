@@ -9,8 +9,7 @@ namespace AGAT.LocoDispatcher.RailData.UnitTests
     public class RailDataUnittests
     {
         [DataTestMethod]
-        [DataRow("OOP008003007")]
-        [DataRow("OOP008003011")]
+        [DataRow("623")]
         public async Task GetInfoByPointCodeOk(string pointCode)
         {
             PointRepository repository = new PointRepository();

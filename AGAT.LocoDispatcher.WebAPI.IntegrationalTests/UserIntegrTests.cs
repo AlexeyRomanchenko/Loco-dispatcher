@@ -40,7 +40,7 @@ namespace AGAT.LocoDispatcher.WebAPI.IntegrationalTests
                 {
                     client.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-                    UserViewModel user = new UserViewModel
+                    LoginViewModel user = new LoginViewModel
                     {
                         Username = "Alex",
                         Password = "010101"

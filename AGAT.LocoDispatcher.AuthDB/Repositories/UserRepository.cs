@@ -19,7 +19,14 @@ namespace AGAT.LocoDispatcher.AuthDB.Repositories
         }
         public void Create(User user)
         {
-            context.Users.Add(user);
+            try
+            {
+                context.Users.Add(user);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public async Task SaveAsync()

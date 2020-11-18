@@ -1,7 +1,10 @@
-﻿using AGAT.LocoDispatcher.Common.Interfaces;
+﻿using AGAT.locoDispatcher.ArchiveDB.Extensions;
+using AGAT.LocoDispatcher.Common.Interfaces;
 using AGAT.LocoDispatcher.Data.Events;
 using AGAT.LocoDispatcher.Parser.Utils.Managers;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
@@ -50,6 +53,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             {
                 if (string.IsNullOrEmpty(pointCode?.Trim()))
                 {
+                    // if we dont have a checkpoint number - we are trying to find last known point by this loco number
                     pointCode = await manager.checkpointEventRepository.GetLastCheckpointByLocoIdAsync(model.LocoNumber);
                 }
                 logger.Info($"Start SP invoking with pointCode {pointCode}, event {model.Type}");
@@ -62,10 +66,9 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                     model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
                 }
                 logger.Info($"SP invoking with park {model.Park}, station code {model.StationCode},route {model.Route} , event dateTime {model.EventDateTime} ");
-                if (string.IsNullOrEmpty(model.Park?.Trim()))
-                {
-                    return;
-                }
+                // Если крайняя точка, то меняем событие для передачи в процедуру
+                pointCode.CheckEdgeCheckpoint(model);
+                // Здесь вызываем процедуру для передачи в задания
                 manager.trackRepository.InvokeEventAsync(model);
                 logger.Info($"SP was invoked successfully");
             }
@@ -75,5 +78,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             }
             
         }
+
+       
+
     }
 }

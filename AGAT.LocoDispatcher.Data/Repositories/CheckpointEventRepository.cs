@@ -78,19 +78,21 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             try
             {
-                return await _context.CheckpointEvents.Where(e => e.CheckPointNumber != "")
+
+                return await _context.Events.Where(e => e.CheckPointNumber != "")
                             .Join(_context.LocoShiftEvents.Where(w => w.TrainNumber == locoId && w.EndShift == null),
                             ch => ch.ShiftId,
                             tr => tr.Id,
                             (ch, tr) =>
-                            new {
+                            new
+                            {
                                 ch.CheckPointNumber,
                                 ch.Timestamp,
                                 ch.CreatedAt
                             })
                             .AsNoTracking()
                             .OrderByDescending(e => e.Timestamp).ThenByDescending(e => e.CreatedAt)
-                            .Select(e=>e.CheckPointNumber)
+                            .Select(e => e.CheckPointNumber)
                             .FirstOrDefaultAsync();
             }
             catch (Exception)
