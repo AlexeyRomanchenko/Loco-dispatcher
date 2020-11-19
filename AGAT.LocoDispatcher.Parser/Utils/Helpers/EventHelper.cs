@@ -69,7 +69,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                 // Если крайняя точка, то меняем событие для передачи в процедуру
                 pointCode.CheckEdgeCheckpoint(model);
                 // Здесь вызываем процедуру для передачи в задания
-                manager.trackRepository.InvokeEventAsync(model);
+                manager.trackRepository.InvokeEventAsync(model, trackerId);
                 logger.Info($"SP was invoked successfully");
             }
             catch (Exception ex)

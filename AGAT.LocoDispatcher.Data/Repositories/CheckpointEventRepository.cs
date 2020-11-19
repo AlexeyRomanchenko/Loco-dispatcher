@@ -49,24 +49,6 @@ namespace AGAT.LocoDispatcher.Data.Repositories
 
                 return await _context.CheckpointEvents.OrderByDescending(e => e.Timestamp)
                     .Where(e => e.ShiftId == shiftId).Select(e=>e.CheckPointNumber).FirstOrDefaultAsync();
-
-                    //return await _context.CheckpointEvents
-                    //    .OrderByDescending(e => e.Timestamp)
-                    //     .Where(e => e.CheckPointNumber != null)
-                    //    .Join(_context.LocoShiftEvents.Where(w => w.TrainNumber == trainId && w.EndShift == null), 
-                    //    ch => ch.ShiftId, tr => tr.Id, 
-                    //    (ch, tr) => ch.CheckPointNumber)
-                    //    .FirstOrDefaultAsync();
-                //System.Diagnostics.Debug.WriteLine($"LAST CHECKPOINT LINQ {lastCheckpoint?.ToString()}");
-
-                //IQueryable<string> lastCheckpointQuery = from chechpoint in _context.CheckpointEvents
-                //                             join shift in _context.LocoShiftEvents on chechpoint.ShiftId equals shift.Id
-                //                             where shift.TrainNumber == trainId && shift.EndShift == null
-                //                             orderby chechpoint.Timestamp descending
-                //                             select chechpoint.CheckPointNumber;
-                //    string lastCheckpoint_q = lastCheckpointQuery.FirstOrDefault();
-                //System.Diagnostics.Debug.WriteLine($"LAST CHECKPOINT LINQTOSQL {lastCheckpoint_q?.ToString()}");
-                //return lastCheckpoint_q;
             }
             catch
             {
@@ -78,8 +60,7 @@ namespace AGAT.LocoDispatcher.Data.Repositories
         {
             try
             {
-
-                return await _context.Events.Where(e => e.CheckPointNumber != "")
+               return await _context.Events.Where(e => e.CheckPointNumber != null && e.CheckPointNumber != "")
                             .Join(_context.LocoShiftEvents.Where(w => w.TrainNumber == locoId && w.EndShift == null),
                             ch => ch.ShiftId,
                             tr => tr.Id,
