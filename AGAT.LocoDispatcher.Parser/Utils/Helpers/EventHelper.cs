@@ -47,7 +47,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             }
 
         }
-        public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode)
+        public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode, string trackerId = "")
         {
             try
             {

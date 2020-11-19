@@ -50,10 +50,11 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     {
                         LocoNumber = startMove.TrainId,
                         Route = startMove.TrackNumber,
+                        
                         Type = startMove.Type,
                         Timestamp = startMove.Timestamp
                     };
-                    _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber).GetAwaiter().GetResult();
+                    _helper.InvokeEventToArchieveAsync(model, startMove.CheckPointNumber, startMove.TrackerId).GetAwaiter().GetResult();
                 }
                 _manager.startEventRepository.Save();
                 logger.Info($"{DateTime.Now} | Start event finish invoke");

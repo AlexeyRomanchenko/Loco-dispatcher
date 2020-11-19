@@ -48,7 +48,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                         Timestamp = checkpoint.Timestamp
                     };
                     _manager.checkpointEventRepository.CreatAsync(checkpoint);
-                    helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber).GetAwaiter().GetResult(); ;
+                    helper.InvokeEventToArchieveAsync(model, checkpoint.CheckPointNumber, checkpointEvent.TrackerId).GetAwaiter().GetResult(); ;
                 }
                 _manager.checkpointEventRepository.Save();
                 logger.Info("CheckpointEvent invoke");

@@ -14,7 +14,9 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
             string checkpointNumber,
             string trackNumber,
             string message,
-            string trainId)
+            string trainId,
+            string trackId
+            )
         {
             this.Type = type;
             this.Timestamp = timestamp;
@@ -23,6 +25,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
             this.TrackNumber = trackNumber;
             this.Message = message;
             this.TrainId = trainId;
+            this.TrackerId = trackId;
         }
         public int Distance { get; set; }
     }
