@@ -13,7 +13,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
             double speed,
             string checkpointNumber,
             string trackNumber,
-            string message
+            string message,
+            string trackId
             )
         {
             this.Type = type;
@@ -23,6 +24,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Events
             this.CheckPointNumber = checkpointNumber;
             this.TrackNumber = trackNumber;
             this.Message = message;
+            this.TrackerId = trackId;
         }
         public int Speed { get; set; }
     }

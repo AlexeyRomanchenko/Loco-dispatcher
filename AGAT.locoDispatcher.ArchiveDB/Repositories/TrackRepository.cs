@@ -16,7 +16,7 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
             context = new arhieveEntities();
         }
 
-        public void InvokeEventAsync(IMoveEvent model)
+        public void InvokeEventAsync(IMoveEvent model, string trackerId)
         {
             try
             {
@@ -42,6 +42,8 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
                 route.Value = model.Route;
                 var type = new SqlParameter("@rele", SqlDbType.NVarChar);
                 type.Value = model.Type;
+                var tracker = new SqlParameter("@num_uknb", SqlDbType.NVarChar);
+                tracker.Value = trackerId;
                 var distance = new SqlParameter("@km", SqlDbType.Int);
                 distance.Value = model.Distance;
                 
@@ -49,8 +51,8 @@ namespace AGAT.locoDispatcher.ArchiveDB.Repositories
                 {
                     return;
                 }
-                context.Database.ExecuteSqlCommand("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km", 
-                    stationCode,timestamp, locomotiveNumber, park, route, type, distance);
+                context.Database.ExecuteSqlCommand("exec LokM_Tracking @stanc, @timestamp,@num_lkmt, @park, @route, @rele, @km, @num_uknb", 
+                    stationCode,timestamp, locomotiveNumber, park, route, type, distance, tracker);
             }
             catch(Exception ex)
             {

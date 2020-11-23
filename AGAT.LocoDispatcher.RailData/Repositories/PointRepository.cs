@@ -83,7 +83,6 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                 }
                 using (DataContext context = new DataContext())
                 {
-                    context.Database.Log = e => Debug.WriteLine(e);
                     var stationInfo =  await context.Points.Where(p => p.Code == code)
                         .Include(e=>e.Park)
                         .Join(context.Stations,
@@ -91,11 +90,20 @@ namespace AGAT.LocoDispatcher.RailData.Repositories
                         station=>station.Id,
                         (_point, _st) => new StationInfo{
                             StationCode = _st.StationCode,
+                            ParkId = _point.ParkId,
                             Route = _point.RouteCode
                         })
                         .AsNoTracking().FirstOrDefaultAsync();
-                    stationInfo.Park = AggregateHelper.GetParkdCodeAndRoute(stationInfo.Route).Item1;
-                    stationInfo.Route = AggregateHelper.GetParkdCodeAndRoute(stationInfo.Route).Item2;
+                    if (string.IsNullOrEmpty(stationInfo.Route?.Trim()))
+                    {
+                        var _park = context.Parks.Where(p => p.Id == stationInfo.ParkId).FirstOrDefault();
+                        stationInfo.Park = _park.Code;
+                    }
+                    else
+                    {
+                        stationInfo.Park = AggregateHelper.GetParkdCodeAndRoute(stationInfo.Route).Item1;
+                        stationInfo.Route = AggregateHelper.GetParkdCodeAndRoute(stationInfo.Route).Item2;
+                    }                   
                     return stationInfo;
                 }
             }

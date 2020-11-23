@@ -51,7 +51,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Providers
                     };
 
                     _manager.stopEventRepository.CreatAsync(stopMoveEvent);
-                    _helper.InvokeEventToArchieveAsync(model, stopMove.CheckPointNumber).GetAwaiter().GetResult();
+                    _helper.InvokeEventToArchieveAsync(model, stopMove.CheckPointNumber, stopMove.TrackerId).GetAwaiter().GetResult();////////////// , stopMove.TrackerId
                 }
                 _manager.stopEventRepository.Save();
                 logger.Info($"StopEvent Invoked  {DateTime.Now}");

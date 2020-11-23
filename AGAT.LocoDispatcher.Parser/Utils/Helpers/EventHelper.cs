@@ -47,7 +47,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
             }
 
         }
-        public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode)
+        public async Task InvokeEventToArchieveAsync(IMoveEvent model, string pointCode, string trackerId = "")
         {
             try
             {
@@ -62,14 +62,14 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                     IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
                     model.Park = stationInfo?.Park;
                     model.StationCode = stationInfo?.StationCode;
-                    model.Route = model.Route.Length > 0 ?  model.Route :  stationInfo?.Route; 
+                    model.Route = model.Route?.Length > 0 ?  model.Route :  stationInfo?.Route; 
                     model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
                 }
                 logger.Info($"SP invoking with park {model.Park}, station code {model.StationCode},route {model.Route} , event dateTime {model.EventDateTime} ");
                 // Если крайняя точка, то меняем событие для передачи в процедуру
                 pointCode.CheckEdgeCheckpoint(model);
                 // Здесь вызываем процедуру для передачи в задания
-                manager.trackRepository.InvokeEventAsync(model);
+                manager.trackRepository.InvokeEventAsync(model, trackerId);
                 logger.Info($"SP was invoked successfully");
             }
             catch (Exception ex)

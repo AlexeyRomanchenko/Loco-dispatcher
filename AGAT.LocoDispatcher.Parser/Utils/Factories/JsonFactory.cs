@@ -33,7 +33,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                             jsonObject?.message?.ToString(),
                             jsonObject?.train_id?.ToString(),
                             jsonObject?.track_number?.ToString(),
-                            jsonObject?.checkpoint_number?.ToString()
+                            jsonObject?.checkpoint_number?.ToString(),
+                            jsonObject?.tracker_id?.ToString()
                             );
                         return startEvent;
                     }
@@ -53,7 +54,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                             jsonObject?.checkpoint_number?.ToString(),
                             jsonObject?.track_number?.ToString(),
                             jsonObject?.message?.ToString(),
-                            jsonObject?.train_id?.ToString()
+                            jsonObject?.train_id?.ToString(),
+                            jsonObject?.tracker_id?.ToString()
                             );
                         return stopEvent;
                     }
@@ -72,7 +74,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                             ConvertHelper.DynamicToDouble(jsonObject?.speed),
                             jsonObject?.checkpoint_number?.ToString(),
                             jsonObject?.track_number?.ToString(),
-                            jsonObject?.message?.ToString()
+                            jsonObject?.message?.ToString(),
+                            jsonObject?.tracker_id?.ToString()
                             );
                         return checkpointEvent;
                     }
@@ -91,7 +94,8 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Factories
                                 jsonObject?.checkpoint_number?.ToString(),
                                 jsonObject?.track_number?.ToString(),
                                 jsonObject?.message?.ToString(),
-                                jsonObject?.train_id?.ToString()
+                                jsonObject?.train_id?.ToString(),
+                                jsonObject?.tracker_id?.ToString()
                                 );
                         return stopEvent;
                     }
