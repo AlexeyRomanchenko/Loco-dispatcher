@@ -20,7 +20,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Schedulers
                 
                 .StartNow()                            // запуск сразу после начала выполнения
                 .WithSimpleSchedule(x => x
-                .WithIntervalInSeconds(20)
+                .WithIntervalInSeconds(30)
                 .RepeatForever()
                     )                   // бесконечное повторение
                 .Build();                               // создаем триггер

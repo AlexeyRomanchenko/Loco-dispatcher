@@ -62,7 +62,7 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Helpers
                     IStationInfo stationInfo = await manager.pointRepository.GetStationInfoByPointCode(pointCode);
                     model.Park = stationInfo?.Park;
                     model.StationCode = stationInfo?.StationCode;
-                    model.Route = model.Route.Length > 0 ?  model.Route :  stationInfo?.Route; 
+                    model.Route = model.Route?.Length > 0 ?  model.Route :  stationInfo?.Route; 
                     model.EventDateTime = ConvertHelper.TimestampToDateTime(model.Timestamp);
                 }
                 logger.Info($"SP invoking with park {model.Park}, station code {model.StationCode},route {model.Route} , event dateTime {model.EventDateTime} ");
