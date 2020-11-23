@@ -12,7 +12,6 @@ namespace AGAT.LocoDispatcher.Parser.Utils.Schedulers
         {
             IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
             scheduler.Start();
-
             IJobDetail job = JobBuilder.Create<ParseJob>().UsingJobData("path", path).UsingJobData("errorPath", errorPath).Build();
 
             ITrigger trigger = TriggerBuilder.Create()  // создаем триггер
